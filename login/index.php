@@ -183,7 +183,7 @@ date_default_timezone_set('europe/paris');
 
       function myGreeting() {
         
-
+// selection_menu_1_2_selection.php
         Ajax("selection_menu_action_2", "pages/selection_menu_1_1.php");
 
 
@@ -191,8 +191,7 @@ date_default_timezone_set('europe/paris');
         document.getElementById("selection_menu_1_3").className="opacity_0" ;
         document.getElementById("selection_menu_1_1").className="opacity_1" ;
 
-
-
+ 
 
 
       }
@@ -201,38 +200,7 @@ date_default_timezone_set('europe/paris');
 
 
 
-    function selection_menu_1_2_action(_this) {
-    const selection_menu_1_2_input =document.getElementById("selection_menu_1_2_input").value ; 
-    console.log(selection_menu_1_2_input) ; 
-
-
-    
-
-
-    var ok = new Information("php_add/selection_menu_1_3_info_action_3.php"); // création de la classe 
-      ok.add("liste_projet_name", selection_menu_1_2_input); // ajout de l'information pour lenvoi  
  
-
-
-      console.log(ok.info()); // demande l'information dans le tableau
-      ok.push(); // envoie l'information au code pkp 
-
-
-      const myTimeout = setTimeout(myGreeting, 250);
-
-function myGreeting() {
-  
-  Ajax("selection_menu_action_2", "pages/selection_menu_1_2.php");
-
-}
-
-
-
-
-
-
-
-    }
   </script>
 
   <style>

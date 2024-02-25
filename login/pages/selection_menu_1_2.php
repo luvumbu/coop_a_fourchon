@@ -51,13 +51,13 @@ $liste_projet_date = $apple->add_array_element($number);
 
 
 <div class="container mt-3">
-  <h2>Liste de themes</h2>
+  <h2>Liste de Commition</h2>
 
 
 
   <div action="/action_page.php">
 
-    <select class="form-select" id="sel1" name="sellist1">
+    <select class="form-select" id="sel1" name="sellist1" onchange="sellist1(this)">
       <?php
       for ($a = 0; $a < count($liste_projet_id_sha1_); $a++) {
         ?>
@@ -78,10 +78,12 @@ $liste_projet_date = $apple->add_array_element($number);
 
 
   <div>
-    <input type="text" class="form-control" id="selection_menu_1_2_input" placeholder="ajouter un théme de reunion" >
+    <input type="text" class="form-control" id="selection_menu_1_2_input" placeholder="ajouter un théme de Commition" >
     <div>
       <img width="50" height="50" style="margin-top:50px" src="https://img.icons8.com/offices/50/plus.png" alt="plus" onclick="selection_menu_1_2_action(this)" />
       <p>Ajouter un théme </p>
     </div>
   </div>
 </div>
+
+<div id="selection_menu_1_2_selection"></div>

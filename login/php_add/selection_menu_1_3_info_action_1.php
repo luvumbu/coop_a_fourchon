@@ -21,9 +21,9 @@ $apple = new Insertion_Bdd(
         
    
     $apple->set_msg_valudation("inserttion ok ") ;  
-    $apple->set_sql("INSERT INTO `liste_projet` (`liste_projet_id_sha1`,`liste_projet_name`,`liste_projet_description3`)
+    $apple->set_sql("INSERT INTO `liste_projet` (`liste_projet_id_sha1`,`liste_projet_name`,`liste_projet_description3`,`information_user_id_sha1`)
             
-    VALUES ('$t','$liste_projet_name','$array_setting[0]')") ; 
+    VALUES ('$t','$liste_projet_name','$array_setting[0]','$information_user_id_sha1 ')") ; 
     $apple->execution() ;
 
  
