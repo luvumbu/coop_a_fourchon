@@ -142,6 +142,12 @@ $execution_formulaire_php->set_action ("CREATE TABLE liste_projet (
   liste_projet_visibilite2 TEXT(200) NOT NULL,
 
   liste_projet_text_align_1_1 TEXT(200) NOT NULL,
+
+
+  liste_projet_user_name TEXT(200) NOT NULL,
+  liste_projet_user_prenom TEXT(200) NOT NULL,
+
+
   liste_projet_text_align_2_1 TEXT(200) NOT NULL,
   liste_projet_text_margin_all_1 TEXT(200) NOT NULL,
   liste_projet_text_margin_all_2 TEXT(200) NOT NULL,

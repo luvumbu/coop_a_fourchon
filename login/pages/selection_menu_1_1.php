@@ -44,7 +44,9 @@ array_push(
   'liste_projet_name_tittle',
   'liste_projet_description3',
   'information_user_id_sha1',
-  'liste_projet_date'
+  'liste_projet_date',
+  'liste_projet_user_name',
+  'liste_projet_user_prenom'
 );
 
 
@@ -69,11 +71,16 @@ $information_user_id_sha1 = $apple->add_array_element($number);
 $number++;
 $liste_projet_date = $apple->add_array_element($number);
 
+$number++;
+$liste_projet_user_name = $apple->add_array_element($number);
+$number++;
+$liste_projet_user_prenom = $apple->add_array_element($number);
 
 
 
 
 
+ 
 
 ?>
 
@@ -104,6 +111,13 @@ $liste_projet_date = $apple->add_array_element($number);
 
 
         $anne = $liste_projet_date[$a][0] . $liste_projet_date[$a][1] . $liste_projet_date[$a][2] . $liste_projet_date[$a][3];
+        $mois = $liste_projet_date[$a][5] . $liste_projet_date[$a][6]  ;
+        $jour = $liste_projet_date[$a][8] . $liste_projet_date[$a][9]  ;
+
+        $heure = $liste_projet_date[$a][11] . $liste_projet_date[$a][12].$liste_projet_date[$a][13].$liste_projet_date[$a][14]. $liste_projet_date[$a][15]  ;
+
+
+
         ?>
 
         <tr>
@@ -112,18 +126,20 @@ $liste_projet_date = $apple->add_array_element($number);
             <input type="text" class="border_none" value="<?php echo $liste_projet_name[$a] ?>">
           </td>
           <td>
-            <?php echo $liste_projet_id_sha1_[$a] ?>
+            <?php echo $liste_projet_user_name[$a]." ".$liste_projet_user_prenom[$a] ; ?>
           </td>
+  
           <td>
             <?php echo $liste_projet_name_tittle[$a] ?>
           </td>
+    
 
           <td>
 
-            <input type="text" class="border_none" value="<?php echo $anne ?>">
+            <?php echo $jour."/".$mois."/".$anne ?> 
           </td>
           <td>
-            <?php echo $liste_projet_date[$a] ?>
+            <?php echo   $heure  ?>
           </td>
 
 

@@ -17,7 +17,9 @@ $apple = new Select_datas($servername, $username, $password, $dbname);
 array_push(
   $apple->row,
   'information_user_id',
-  'information_user_adresse_mail'
+  'information_user_adresse_mail',
+  'information_user_name',
+  'information_user_prenom'
  
 
 
@@ -66,12 +68,25 @@ else {
   $information_user_adresse_mail = $apple->add_array_element($number);
   $number++;
  
+  $liste_projet_user_name = $apple->add_array_element($number);
+  $number++;
+  $liste_projet_user_prenom = $apple->add_array_element($number);
+  $number++;
   $_SESSION["info_login"] = $information_user_adresse_mail ;
 
   $_SESSION["info_login_verif"]= true ; 
 
   $_SESSION["information_user_id_sha1"] = $t ; 
   $_SESSION["t"] = $t ; 
+
+
+
+
+
+
+
+  $_SESSION["liste_projet_user_name"] = $liste_projet_user_name[0] ;  
+  $_SESSION["liste_projet_user_prenom"] = $liste_projet_user_prenom[0];  
 
 
 
