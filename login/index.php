@@ -48,7 +48,7 @@ date_default_timezone_set('europe/paris');
   <?php
 
 
- 
+  
   include("../model/class/php/Select_datas.php");
 
   include("../model/class/php/My_date.php");
@@ -202,7 +202,24 @@ date_default_timezone_set('europe/paris');
     }
 
 
+function selection_menu_4(_this) {
+ 
+  var ok = new Information("php_update/up.php"); // création de la classe 
 
+
+  liste_projet_user_name =document.getElementById("liste_projet_user_name").value; 
+liste_projet_user_prenom =document.getElementById("liste_projet_user_prenom").value; 
+      ok.add("liste_projet_user_name", liste_projet_user_name); // ajout de l'information pour lenvoi  
+      ok.add("liste_projet_user_prenom", liste_projet_user_prenom); // ajout de l'information pour lenvoi  
+
+    
+ 
+
+
+
+      console.log(ok.info()); // demande l'information dans le tableau
+      ok.push(); // envoie l'information au code pkp 
+}
  
   </script>
 

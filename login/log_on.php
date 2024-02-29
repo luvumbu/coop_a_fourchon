@@ -129,7 +129,7 @@ $number++;
 
 
     document.getElementById(_this.title).className = "opacity_1";
-    Ajax("selection_menu_action_1", "pages/" + _this.title + ".html");
+    Ajax("selection_menu_action_1", "pages/" + _this.title + ".php");
   }
 function disconnect(){
   Ajax("selection_menu_action_1", "pages/disconnect.php");

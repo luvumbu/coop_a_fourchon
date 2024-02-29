@@ -123,7 +123,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
         <tr>
           <td>
 
-            <input type="text" class="border_none" value="<?php echo $liste_projet_name[$a] ?>">
+           <?php echo $liste_projet_name[$a] ?> 
           </td>
           <td>
             <?php echo $liste_projet_user_name[$a]." ".$liste_projet_user_prenom[$a] ; ?>

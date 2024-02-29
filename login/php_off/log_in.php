@@ -19,7 +19,8 @@ array_push(
   'information_user_id',
   'information_user_adresse_mail',
   'information_user_name',
-  'information_user_prenom'
+  'information_user_prenom',
+  'information_user_id_sha1'
  
 
 
@@ -72,16 +73,21 @@ else {
   $number++;
   $liste_projet_user_prenom = $apple->add_array_element($number);
   $number++;
+
+  $information_user_id_sha1 = $apple->add_array_element($number);
+  $number++;
+
+
   $_SESSION["info_login"] = $information_user_adresse_mail ;
 
   $_SESSION["info_login_verif"]= true ; 
 
-  $_SESSION["information_user_id_sha1"] = $t ; 
+  $_SESSION["information_user_id_sha1"] = $information_user_id_sha1[0] ; 
   $_SESSION["t"] = $t ; 
 
 
 
-
+  
 
 
 
