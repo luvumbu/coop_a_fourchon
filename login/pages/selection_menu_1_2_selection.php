@@ -15,7 +15,10 @@ array_push(
   'liste_projet_name_tittle',
   'liste_projet_description3',
   'information_user_id_sha1',
-  'liste_projet_date' 
+  'liste_projet_date',
+  'liste_projet_user_name',
+  'liste_projet_user_prenom',
+  'liste_projet_reg_date' 
 
 );
 
@@ -41,7 +44,18 @@ $information_user_id_sha1 = $apple->add_array_element($number);
 $number++;
 $liste_projet_date = $apple->add_array_element($number);
 
+$number++;
+$liste_projet_user_name = $apple->add_array_element($number);
+$number++;
+$liste_projet_user_prenom = $apple->add_array_element($number);
+
+$number++;
+$liste_projet_reg_date = $apple->add_array_element($number);
+
  
+
+
+
 ?>
 
 
@@ -55,7 +69,7 @@ $liste_projet_date = $apple->add_array_element($number);
     <tr>
       <th>Sujet de la reunion</th>
       <th>Crée par</th>
-      <th>Commition</th>
+      <th>Création</th>
  
 
 
@@ -71,22 +85,30 @@ $liste_projet_date = $apple->add_array_element($number);
 
 
 
-      $anne = $liste_projet_date[$a][0] . $liste_projet_date[$a][1] . $liste_projet_date[$a][2] . $liste_projet_date[$a][3];
+      $anne = $liste_projet_reg_date[$a][0] . $liste_projet_reg_date[$a][1] . $liste_projet_reg_date[$a][2] . $liste_projet_reg_date[$a][3];
+
+
+
+      $anne = $liste_projet_reg_date[$a][0] . $liste_projet_reg_date[$a][1] . $liste_projet_reg_date[$a][2] . $liste_projet_reg_date[$a][3];
+      $mois = $liste_projet_reg_date[$a][5] . $liste_projet_reg_date[$a][6]  ;
+      $jour = $liste_projet_reg_date[$a][8] . $liste_projet_reg_date[$a][9]  ;
+
+      
       ?>
 
       <tr>
         <td>
 
-          <input type="text" class="border_none" value="<?php echo $liste_projet_name[$a] ?>">
+          <?php echo $liste_projet_name[$a] ?>
         </td>
         <td>
-          <?php echo $liste_projet_id_sha1_[$a] ?>
+          <?php echo $liste_projet_user_name[$a].' '.$liste_projet_user_prenom[$a] ?>
         </td>
 
 
         <td>
         
-        <?php echo $liste_projet_description3[$a] ?>
+        <?php echo $jour."/".$mois."/".$anne ?> 
         </td>
      
 
