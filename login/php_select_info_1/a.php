@@ -79,12 +79,14 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
  
 ?>
  
- <img width="100" height="100" src="https://img.icons8.com/office/100/checked--v1.png" alt="checked--v1" onclick="not_selection_menu_1_1_setting()" />
+ <img width="100" title='<?php echo $give_url ?>' height="100" src="https://img.icons8.com/office/100/checked--v1.png" alt="checked--v1" onclick="not_selection_menu_1_1_setting(this)" />
 
-
+ 
 
  <script>
-  function not_selection_menu_1_1_setting(){
-    window.location.replace(window.location.href.replace("index.php/1709360980", "")+"cookie/not_selection_menu_1_1_setting.php");
+  function not_selection_menu_1_1_setting(_this){
+
+ 
+   window.location.replace(window.location.href.replace("index.php/"+_this.title, "")+"cookie/not_selection_menu_1_1_setting.php");
   }
  </script>

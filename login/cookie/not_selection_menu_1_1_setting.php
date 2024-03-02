@@ -44,10 +44,7 @@ echo give_url() ;
 
 
 <script>
- var url_page =    "cookie/"+document.getElementById("url_page").innerHTML ;   
- 
- 
+ var url_page =   document.getElementById("url_page").innerHTML ;  
 
-
-   window.location.replace(window.location.href.replace(url_page,"")+"index.php");
+   window.location.replace("index.php");
 </script>
