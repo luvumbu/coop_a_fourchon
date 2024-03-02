@@ -2,10 +2,7 @@
 session_start() ; 
 header("Access-Control-Allow-Origin: *");
 unset($_SESSION["selection_menu_1_1_setting"]);
-?>
-
-
-<?php
+ 
 
 function give_url(){
 

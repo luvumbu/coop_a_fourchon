@@ -84,13 +84,6 @@ else {
 
   $_SESSION["information_user_id_sha1"] = $information_user_id_sha1[0] ; 
   $_SESSION["t"] = $t ; 
-
-
-
-  
-
-
-
   $_SESSION["liste_projet_user_name"] = $liste_projet_user_name[0] ;  
   $_SESSION["liste_projet_user_prenom"] = $liste_projet_user_prenom[0];  
 
