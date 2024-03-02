@@ -117,7 +117,7 @@ $liste_projet_reg_date = $apple->add_array_element($number);
  
  <td>
  
- <img width="40" height="40" src="https://img.icons8.com/ios/40/settings--v1.png" alt="settings--v1" class="cursor_pointer"/>
+ <img onclick="selection_menu_1_1_setting(this)" title="<?php echo $liste_projet_id_sha1_[$a] ;?>" width="40" height="40" src="https://img.icons8.com/ios/40/settings--v1.png" alt="settings--v1" class="cursor_pointer"/>
  </td>
 
 
