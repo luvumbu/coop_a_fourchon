@@ -28,7 +28,7 @@
     ?>
   </select>
   <div class="cursor_pointer">
-    Ajouter une commition
+    Ajouter une COMMISSION
     <input type="text" class="form-control taile_r" id="selection_menu_1_3_info_5" placeholder="Nom de la commution" name="email" min="1"
       max="24">
 

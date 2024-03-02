@@ -7,5 +7,5 @@ include("../../model/class/php/Insertion_Bdd.php") ;
 include("../../model/class/php/My_date.php") ;  
 include("../../model/class/php/connexion.php") ;  
 
-$array_setting = array("COMMUTION", "REUNION");
+$array_setting = array("COMMISSION", "REUNION");
 ?>

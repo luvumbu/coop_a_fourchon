@@ -80,7 +80,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
 
 
- 
+
 
 ?>
 
@@ -93,9 +93,10 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
       <tr>
         <th>Sujet de la reunion</th>
         <th>Crée par</th>
-        <th>Commition</th>
+        <th>COMMISSION</th>
         <th>Date</th>
         <th>Heure</th>
+        <th>Option</th>
 
 
       </tr>
@@ -111,10 +112,10 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
 
         $anne = $liste_projet_date[$a][0] . $liste_projet_date[$a][1] . $liste_projet_date[$a][2] . $liste_projet_date[$a][3];
-        $mois = $liste_projet_date[$a][5] . $liste_projet_date[$a][6]  ;
-        $jour = $liste_projet_date[$a][8] . $liste_projet_date[$a][9]  ;
+        $mois = $liste_projet_date[$a][5] . $liste_projet_date[$a][6];
+        $jour = $liste_projet_date[$a][8] . $liste_projet_date[$a][9];
 
-        $heure = $liste_projet_date[$a][11] . $liste_projet_date[$a][12].$liste_projet_date[$a][13].$liste_projet_date[$a][14]. $liste_projet_date[$a][15]  ;
+        $heure = $liste_projet_date[$a][11] . $liste_projet_date[$a][12] . $liste_projet_date[$a][13] . $liste_projet_date[$a][14] . $liste_projet_date[$a][15];
 
 
 
@@ -123,24 +124,31 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
         <tr>
           <td>
 
-           <?php echo $liste_projet_name[$a] ?> 
+            <?php echo $liste_projet_name[$a] ?>
           </td>
           <td>
-            <?php echo $liste_projet_user_name[$a]." ".$liste_projet_user_prenom[$a] ; ?>
+            <?php echo $liste_projet_user_name[$a] . " " . $liste_projet_user_prenom[$a]; ?>
           </td>
-  
+
           <td>
             <?php echo $liste_projet_name_tittle[$a] ?>
           </td>
-    
+
 
           <td>
 
-            <?php echo $jour."/".$mois."/".$anne ?> 
+            <?php echo $jour . "/" . $mois . "/" . $anne ?>
           </td>
           <td>
-            <?php echo   $heure  ?>
+            <?php echo $heure ?>
           </td>
+
+
+          <td title="<?php echo $liste_projet_id_sha1_[$a] ?>" onclick="selection_menu_1_1_setting(this)">
+            <img width="40" height="40" src="https://img.icons8.com/ios/40/settings--v1.png" alt="settings--v1"
+              class="cursor_pointer" />
+          </td>
+
 
 
         </tr>
@@ -148,7 +156,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
 
 
-<!--
+        <!--
         <tr class="modif">
           <td><input type="text"></td>
           <td><input type="text"></td>
@@ -164,7 +172,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
 
 
-      <?php
+        <?php
       }
       ?>
 
@@ -176,7 +184,8 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
   .border_none {
     border: 1px solid rgba(0, 0, 0, 0);
   }
-  .modif{
-    background-color:blue;
+
+  .modif {
+    background-color: blue;
   }
 </style>

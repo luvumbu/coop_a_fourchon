@@ -10,7 +10,7 @@
         src="https://img.icons8.com/external-parzival-1997-outline-color-parzival-1997/50/external-popular-voting-and-elections-parzival-1997-outline-color-parzival-1997.png"
         alt="external-popular-voting-and-elections-parzival-1997-outline-color-parzival-1997" />
       <div>
-        Commition par théme
+      COMMISSION par théme
       </div>
     </div>
     <div  onclick="selection_menu_action_2(this)" title="selection_menu_1_3" id="selection_menu_1_3" >

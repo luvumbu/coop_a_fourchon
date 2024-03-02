@@ -1,9 +1,33 @@
-<?php
-include("path.php");
-?>
+ 
 
 <?php
+ 
 
+function give_url(){
+
+    // url == $_SERVER['PHP_SELF'] ; 
+    $reverse_el =strrev($_SERVER['PHP_SELF'])  ; 
+    $val_final ="" ; 
+     for($a = 0 ; $a<strlen($_SERVER['PHP_SELF']) ; $a ++){
+       
+     
+        if($reverse_el[$a]=="/"){
+            break ; 
+        } 
+        else {
+            $val_final = $val_final.$reverse_el[$a] ; 
+        }
+     }
+    
+     $val_final =strrev($val_final)  ; 
+     return  $val_final ; 
+}
+/*
+
+echo give_url() ; 
+
+*/
+ $give_url= give_url() ; 
 $apple = new Select_datas($servername, $username, $password, $dbname);
 
 array_push(
@@ -19,7 +43,7 @@ array_push(
 );
 
 
-$apple->sql = 'SELECT * FROM `liste_projet` WHERE  `liste_projet_description3`="COMMUTION" ORDER BY  `liste_projet_id` DESC';
+$apple->sql = 'SELECT * FROM `liste_projet` WHERE  `liste_projet_id_sha1`="'.$give_url.'"';
 $apple->execution();
 $myJSON = json_encode($apple->list_row);
 
@@ -48,49 +72,19 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
 
 
+ var_dump($liste_projet_id_sha1_);
 
 
 
+ 
 ?>
+ 
+ <img width="100" height="100" src="https://img.icons8.com/office/100/checked--v1.png" alt="checked--v1" onclick="not_selection_menu_1_1_setting()" />
 
 
 
-
-
-<div class="container mt-3">
-  <h2>Liste de Commission</h2>
-
-
-
-  <div action="/action_page.php">
-
-    <select class="form-select" id="sel1" name="sellist1" onchange="sellist1(this)">
-      <?php
-      for ($a = 0; $a < count($liste_projet_id_sha1_); $a++) {
-        ?>
-
-        <option>
-          <?php echo $liste_projet_name[$a] ?>
-        </option>
-      <?php
-      }
-
-      ?>
-
-    </select>
-    <br>
-
-
-  </div>
-
-
-  <div>
-    <input type="text" class="form-control" id="selection_menu_1_2_input" placeholder="ajouter un théme de Commition" >
-    <div>
-      <img width="50" height="50" style="margin-top:50px" src="https://img.icons8.com/offices/50/plus.png" alt="plus" onclick="selection_menu_1_2_action(this)" />
-      <p>Ajouter un théme </p>
-    </div>
-  </div>
-</div>
-
-<div id="selection_menu_1_2_selection"></div>
+ <script>
+  function not_selection_menu_1_1_setting(){
+    window.location.replace(window.location.href.replace("index.php/1709360980", "")+"cookie/not_selection_menu_1_1_setting.php");
+  }
+ </script>

@@ -15,7 +15,7 @@ array_push(
 );
 
 
-$apple->sql = 'SELECT * FROM `liste_projet` WHERE  `liste_projet_description3`="COMMUTION" ORDER BY `liste_projet_reg_date` DESC';
+$apple->sql = 'SELECT * FROM `liste_projet` WHERE  `liste_projet_description3`="COMMISSION" ORDER BY `liste_projet_reg_date` DESC';
 $apple->execution();
 $myJSON = json_encode($apple->list_row);
 

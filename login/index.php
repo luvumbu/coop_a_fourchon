@@ -15,9 +15,9 @@ date_default_timezone_set('europe/paris');
 
 <body>
 
-  <script src="../model/class/js/Ajax.js"></script>
-  <script src="../model/class/js/Information.js"></script>
-  <script src="../model/class/js/Atribute.js"></script>
+
+
+
 
 
   <script>
@@ -48,7 +48,7 @@ date_default_timezone_set('europe/paris');
   <?php
 
 
-  
+
   include("../model/class/php/Select_datas.php");
 
   include("../model/class/php/My_date.php");
@@ -59,21 +59,74 @@ date_default_timezone_set('europe/paris');
   if (isset($_SESSION["info_login_verif"])) {
     if ($_SESSION["info_login_verif"]) {
       include("log_on.php");
+
+
+      if (isset($_SESSION["selection_menu_1_1_setting"])) {
+        // condition pour faire apparaitre menu principal
+  
+        ?>
+        <script>
+          document.getElementById("selection_menu").style.display = "none"; 
+        </script>
+        <?php
+           include("php_select_info_1/a.php");
+
+        // condition pour faire apparaitre menu principal
+  
+      } else {
+        ?>
+        <script src="../model/class/js/Ajax.js"></script>
+        <script src="../model/class/js/Information.js"></script>
+        <script src="../model/class/js/Atribute.js"></script>
+
+        <?php
+      }
+
+
     } else {
       include("log_off.php");
     }
   } else {
+
+    ?>
+
+<script src="../model/class/js/Ajax.js"></script>
+        <script src="../model/class/js/Information.js"></script>
+        <script src="../model/class/js/Atribute.js"></script>
+<?php
     include("log_off.php");
   }
 
   ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
     function submit_1(_this) {
 
 
 
-      const adress_mail = document.getElementById("adress_mail").value;  
+      const adress_mail = document.getElementById("adress_mail").value;
       const password = document.getElementById("password").value;
 
 
@@ -110,20 +163,20 @@ date_default_timezone_set('europe/paris');
       //  alert(document.getElementById("selection_menu_1_3_info_select").value) ; 
       _this.style.display = "none";
       const liste_projet_name = document.getElementById("selection_menu_1_3_info_5").value;
-    
+
       const myTimeout = setTimeout(myGreeting, 500);
 
 
- 
+
 
       var ok = new Information("php_add/selection_menu_1_3_info_action_1.php"); // création de la classe 
-      ok.add("liste_projet_name",liste_projet_name); // ajout de l'information pour lenvoi  
-    
+      ok.add("liste_projet_name", liste_projet_name); // ajout de l'information pour lenvoi  
+
 
 
 
       console.log(ok.info()); // demande l'information dans le tableau
-   ok.push(); // envoie l'information au code pkp 
+      ok.push(); // envoie l'information au code pkp 
 
 
 
@@ -132,7 +185,7 @@ date_default_timezone_set('europe/paris');
 
       function myGreeting() {
         _this.style.display = "block";
-        
+
 
 
         Ajax("selection_menu_1_3_info_select", "pages/commition.php");
@@ -145,7 +198,7 @@ date_default_timezone_set('europe/paris');
 
     function selection_menu_1_3_info_action_2(_this) {
 
-      _this.style.display="none" ; 
+      _this.style.display = "none";
       const selection_menu_1_3_info_1 = document.getElementById("selection_menu_1_3_info_1").value;
       const selection_menu_1_3_info_2 = document.getElementById("selection_menu_1_3_info_2").value;
       const selection_menu_1_3_info_3 = document.getElementById("selection_menu_1_3_info_3").value;
@@ -185,16 +238,16 @@ date_default_timezone_set('europe/paris');
       const myTimeout = setTimeout(myGreeting, 500);
 
       function myGreeting() {
-        
-// selection_menu_1_2_selection.php
+
+        // selection_menu_1_2_selection.php
         Ajax("selection_menu_action_2", "pages/selection_menu_1_1.php");
 
 
-        document.getElementById("selection_menu_1_2").className="opacity_0" ;
-        document.getElementById("selection_menu_1_3").className="opacity_0" ;
-        document.getElementById("selection_menu_1_1").className="opacity_1" ;
+        document.getElementById("selection_menu_1_2").className = "opacity_0";
+        document.getElementById("selection_menu_1_3").className = "opacity_0";
+        document.getElementById("selection_menu_1_1").className = "opacity_1";
 
- 
+
 
 
       }
@@ -202,25 +255,50 @@ date_default_timezone_set('europe/paris');
     }
 
 
-function selection_menu_4(_this) {
- 
-  var ok = new Information("php_update/up.php"); // création de la classe 
+    function selection_menu_4(_this) {
+
+      var ok = new Information("php_update/up.php"); // création de la classe 
 
 
-  liste_projet_user_name =document.getElementById("liste_projet_user_name").value; 
-liste_projet_user_prenom =document.getElementById("liste_projet_user_prenom").value; 
+      liste_projet_user_name = document.getElementById("liste_projet_user_name").value;
+      liste_projet_user_prenom = document.getElementById("liste_projet_user_prenom").value;
       ok.add("liste_projet_user_name", liste_projet_user_name); // ajout de l'information pour lenvoi  
       ok.add("liste_projet_user_prenom", liste_projet_user_prenom); // ajout de l'information pour lenvoi  
 
-    
- 
+
+
 
 
 
       console.log(ok.info()); // demande l'information dans le tableau
       ok.push(); // envoie l'information au code pkp 
-}
- 
+    }
+
+
+    function selection_menu_1_1_setting(_this) {
+
+
+
+      var ok = new Information("cookie/selection_menu_1_1_setting.php"); // création de la classe  
+      ok.add("selection_menu_1_1_setting", _this.title); // ajout de l'information pour lenvoi  
+      console.log(ok.info()); // demande l'information dans le tableau
+      ok.push(); // envoie l'information au code pkp 
+
+
+
+      const myTimeout = setTimeout(myGreeting, 250);
+
+      function myGreeting() {
+        window.location.replace(window.location.href + "/" + _this.title);
+
+      }
+
+
+
+
+
+    }
+
   </script>
 
   <style>
@@ -230,6 +308,9 @@ liste_projet_user_prenom =document.getElementById("liste_projet_user_prenom").va
   </style>
 
   <?php
+
+
+
   /*
     if(isset($_SESSION["information_user_id_sha1"])){
       echo $_SESSION["information_user_id_sha1"] ; 
