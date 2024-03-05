@@ -242,12 +242,12 @@ function xx() {
 
   
  
-  const myTimeout = setTimeout(myGreeting, 200);
-
+  const myTimeout = setTimeout(myGreeting, 0);
+document.getElementById("selection_menu_1_2_selection").className="none" ; 
 function myGreeting() {
   Ajax("selection_menu_1_2_selection", "pages/selection_menu_1_2_selection.php");
 
-  const myTimeout2 = setTimeout(myGreeting2,100);
+  const myTimeout2 = setTimeout(myGreeting2,50);
 
  
 }
@@ -262,6 +262,7 @@ function myGreeting() {
 
    function myGreeting2() {
 
+document.getElementById("selection_menu_1_2_selection").className="" ; 
    
     console.log(_this.title);
 
