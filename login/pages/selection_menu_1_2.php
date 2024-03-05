@@ -19,7 +19,7 @@ array_push(
 );
 
 
-$apple->sql = 'SELECT * FROM `liste_projet` WHERE  `liste_projet_description3`="COMMUTION" ORDER BY  `liste_projet_id` DESC';
+$apple->sql = 'SELECT * FROM `liste_projet` WHERE  `liste_projet_description3`="COMMISSION" ORDER BY  `liste_projet_id` DESC';
 $apple->execution();
 $myJSON = json_encode($apple->list_row);
 
@@ -47,6 +47,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
 
 
+ 
 
 
 
@@ -64,9 +65,19 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
   <div action="/action_page.php">
 
-    <select class="form-select" id="sel1" name="sellist1" onchange="sellist1(this)">
+    <select class="form-select" id="sel1" title="selection_menu_1_2" onchange="sellist1(this)">
       <?php
       for ($a = 0; $a < count($liste_projet_id_sha1_); $a++) {
+
+
+        if($a==0){
+          ?>
+        <option>
+          <?php echo "Toutes" ?>
+        </option>
+
+          <?php
+        }
         ?>
 
         <option>
@@ -94,3 +105,5 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 </div>
 
 <div id="selection_menu_1_2_selection"></div>
+
+

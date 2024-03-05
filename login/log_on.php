@@ -233,25 +233,102 @@ function xx() {
     }
 
     function sellist1(_this) {
-     
-
-     var ok = new Information("cookie/sel1.php"); // création de la classe 
+ 
 
 
 
+ 
 
 
-ok.add("sel1", _this.value); // ajout de l'information pour lenvoi  
-console.log(ok.info()); // demande l'information dans le tableau
-ok.push(); // envoie l'information au code pkp 
+  
+ 
+  const myTimeout = setTimeout(myGreeting, 200);
+
+function myGreeting() {
+  Ajax("selection_menu_1_2_selection", "pages/selection_menu_1_2_selection.php");
+
+  const myTimeout2 = setTimeout(myGreeting2,100);
+
+ 
+}
+ 
+
+   // Ajax("selection_menu_action_2", "pages/" + _this.title + ".php");
 
 
 
 
 
 
+   function myGreeting2() {
+
+   
+    console.log(_this.title);
 
 
 
+      
+      
+     // Ajax("selection_menu_action_2", "pages/selection_menu_1_2.php");
+
+var effacer = [];
+
+
+ var info_array =document.getElementsByClassName("info_array");
+
+ var ok = document.getElementsByClassName(_this.value); 
+ info_array_length = info_array.length;
+
+
+
+for(r =0 ; r<info_array_length; r++){
+
+
+if(info_array[r].innerText!=_this.value)
+{
+
+if(effacer.indexOf(info_array[r].innerText)==-1){
+  effacer.push(info_array[r].innerText);
+}
+}
+}
+
+ 
+
+ 
+
+ 
+
+ 
+for(var i=0; i<effacer.length ; i ++) {
+  
+
+   
+  var taille_ = document.getElementsByClassName(effacer[i]).length ; 
+  console.log(taille_ ) ; 
+
+
+  for(y = 0 ; y<taille_ ; y ++ ) {
+    
+
+    console.log(effacer[i]) ;  
+    document.getElementsByClassName(effacer[i])[0].className="none";
+
+  }
+
+
+}
+
+ 
+    }
+
+ 
     }
 </script>
+
+
+<style>
+  .none{
+    display:none ; 
+  }
+</style>

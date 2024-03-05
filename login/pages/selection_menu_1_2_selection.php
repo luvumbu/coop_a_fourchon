@@ -23,7 +23,7 @@ array_push(
 );
 
 
-$apple->sql = 'SELECT * FROM `liste_projet` WHERE `liste_projet_description3` ="COMMISSION"';
+$apple->sql = 'SELECT * FROM `liste_projet` WHERE `liste_projet_description3` !="COMMISSION"  ORDER BY  `liste_projet_id` DESC';
 $apple->execution();
 $myJSON = json_encode($apple->list_row);
 
@@ -54,7 +54,7 @@ $liste_projet_reg_date = $apple->add_array_element($number);
 
 
 
-
+ 
 
 ?>
 
@@ -70,7 +70,10 @@ $liste_projet_reg_date = $apple->add_array_element($number);
         <th>Sujet de la reunion</th>
         <th>Crée par</th>
         <th>Création</th>
+        <th>Nom commission</th>
         <th>Option</th>
+
+
 
 
 
@@ -78,6 +81,9 @@ $liste_projet_reg_date = $apple->add_array_element($number);
 
       </tr>
     </thead>
+
+
+ 
     <tbody>
 
 
@@ -87,6 +93,11 @@ $liste_projet_reg_date = $apple->add_array_element($number);
       for ($a = 0; $a < count($liste_projet_id_sha1_); $a++) {
 
 
+
+?>
+
+<div class="info_array none"><?php echo $liste_projet_name_tittle[$a]?></div>
+<?php
 
         $anne = $liste_projet_reg_date[$a][0] . $liste_projet_reg_date[$a][1] . $liste_projet_reg_date[$a][2] . $liste_projet_reg_date[$a][3];
 
@@ -99,7 +110,7 @@ $liste_projet_reg_date = $apple->add_array_element($number);
 
         ?>
 
-        <tr>
+        <tr class="<?php echo $liste_projet_name_tittle[$a]?>">
           <td>
 
             <?php echo $liste_projet_name[$a] ?>
@@ -113,6 +124,12 @@ $liste_projet_reg_date = $apple->add_array_element($number);
 
             <?php echo $jour . "/" . $mois . "/" . $anne ?>
           </td>
+
+          <td>
+
+          <?php echo $liste_projet_name_tittle[$a]?>
+</td>
+          
 
  
  <td>
