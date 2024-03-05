@@ -89,10 +89,11 @@ date_default_timezone_set('europe/paris');
   } else {
 
     ?>
-
-<script src="../model/class/js/Ajax.js"></script>
+        <script src="../model/class/js/Ajax.js"></script>
         <script src="../model/class/js/Information.js"></script>
         <script src="../model/class/js/Atribute.js"></script>
+
+
 <?php
     include("log_off.php");
   }
@@ -100,30 +101,13 @@ date_default_timezone_set('europe/paris');
   ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <script>
-    function submit_1(_this) {
 
+
+
+
+    function submit_1(_this) {
+ 
 
 
       const adress_mail = document.getElementById("adress_mail").value;
