@@ -169,12 +169,12 @@ $liste_projet_name_ = $apple__->add_array_element($number);
   <h2>Stacked form</h2>
 
   <div class="mb-3 mt-3">
-    <label for="liste_projet_name">liste_projet_name</label>
+    <label>liste_projet_name</label>
     <input type="text" class="form-control" id="liste_projet_name" placeholder="liste_projet_name"
       value="<?php echo $liste_projet_name[0] ?>">
   </div>
   <div class="mb-3 mt-3">
-    <label for="email">COMMISSION</label>
+    <label>COMMISSION</label>
     <select class="form-select" aria-label="Default select example" id="liste_projet_name_2">
 
       <option value="<?php echo $liste_projet_name_tittle[0] ?>">
@@ -200,17 +200,17 @@ $liste_projet_name_ = $apple__->add_array_element($number);
     </select>
   </div>
   <div class="mb-3 mt-3">
-    <label for="email">Date</label>
+    <label>Date</label>
     <input type="date" class="form-control" id="liste_projet_date" placeholder="liste_projet_date"
       value="<?php echo $anne . "-" . $mois . "-" . $jour ?>">
   </div>
   <div class="mb-3 mt-3">
-    <label for="email">Heure:</label>
+    <label>Heure:</label>
     <input type="number" min="1" max="24" class="form-control" id="liste_projet_date_1" placeholder="Enter email"
       name="email" value="<?php echo $heure[0] . $heure[1] ?>">
   </div>
   <div class="mb-3 mt-3">
-    <label for="email">Minutes:</label>
+    <label>Minutes:</label>
     <input type="number" min="0" max="59" class="form-control" id="liste_projet_date_2" placeholder="Enter email"
       name="email" value="<?php echo $heure[3] . $heure[4] ?>">
   </div>

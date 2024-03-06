@@ -349,7 +349,7 @@ for(var i=0; i<effacer.length ; i ++) {
 
 var liste_projet_name = document.getElementById("liste_projet_name").value ;
 var liste_projet_name_2 = document.getElementById("liste_projet_name_2").value ;
-var liste_projet_date =document.getElementById("liste_projet_name_2") ; 
+var liste_projet_date =document.getElementById("liste_projet_date").value ; 
 var liste_projet_date_1 = document.getElementById("liste_projet_date_1").value ;
 var liste_projet_date_2 = document.getElementById("liste_projet_date_2").value ;
 
