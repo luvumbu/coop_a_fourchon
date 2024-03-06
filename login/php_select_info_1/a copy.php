@@ -128,7 +128,7 @@ $liste_projet_name_ = $apple__->add_array_element($number);
 
 
 
- 
+var_dump($liste_projet_name_);
 
 
 
@@ -175,25 +175,12 @@ $liste_projet_name_ = $apple__->add_array_element($number);
   </div>
   <div class="mb-3 mt-3">
     <label for="email">COMMISSION</label>
-    <select class="form-select" aria-label="Default select example" id="liste_projet_name_2">
-
-      <option value="<?php echo $liste_projet_name_tittle[0] ?>">
-        <?php echo $liste_projet_name_tittle[0] ?>
-      </option>
+    <select class="form-select" aria-label="Default select example" id="liste_projet_name" >
       <?php
-
       for ($a = 0; $a < count($liste_projet_name_); $a++) {
-
-
-        if ($liste_projet_name_tittle[0] != $liste_projet_name_[$a]) {
-          ?>
-          <option value="<?php echo $liste_projet_name_[$a] ?>">
-            <?php echo $liste_projet_name_[$a] ?>
-          </option>
-          <?php
-        }
-
-
+        ?>
+          <option value="1"><?php echo $liste_projet_name_[$a] ?></option>
+        <?php
       }
       ?>
 
