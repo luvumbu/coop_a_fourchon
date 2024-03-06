@@ -65,11 +65,19 @@ date_default_timezone_set('europe/paris');
         // condition pour faire apparaitre menu principal
   
         ?>
+
+        <script src="../../model/class/js/Ajax.js"></script>
+        <script src="../../model/class/js/Information.js"></script>
+        <script src="../../model/class/js/Atribute.js"></script>
+
+
         <script>
           document.getElementById("selection_menu").style.display = "none"; 
         </script>
+
+
         <?php
-           include("php_select_info_1/a.php");
+        include("php_select_info_1/a.php");
 
         // condition pour faire apparaitre menu principal
   
@@ -89,12 +97,12 @@ date_default_timezone_set('europe/paris');
   } else {
 
     ?>
-        <script src="../model/class/js/Ajax.js"></script>
-        <script src="../model/class/js/Information.js"></script>
-        <script src="../model/class/js/Atribute.js"></script>
+    <script src="../model/class/js/Ajax.js"></script>
+    <script src="../model/class/js/Information.js"></script>
+    <script src="../model/class/js/Atribute.js"></script>
 
 
-<?php
+    <?php
     include("log_off.php");
   }
 
@@ -103,11 +111,11 @@ date_default_timezone_set('europe/paris');
 
   <script>
 
- 
+
 
 
     function submit_1(_this) {
- 
+
 
 
       const adress_mail = document.getElementById("adress_mail").value;

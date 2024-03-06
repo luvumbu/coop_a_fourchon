@@ -108,27 +108,27 @@ $heure = $liste_projet_date[0][11] . $liste_projet_date[0][12] . $liste_projet_d
   
     <div class="mb-3 mt-3">
       <label for="liste_projet_name">liste_projet_name</label>
-      <input type="email" class="form-control" id="liste_projet_name" placeholder="liste_projet_name" value="<?php echo $liste_projet_name[0] ?>">
+      <input type="text" class="form-control" id="liste_projet_name" placeholder="liste_projet_name" value="<?php echo $liste_projet_name[0] ?>">
     </div>
     <div class="mb-3 mt-3">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php echo $liste_projet_name_tittle[0] ?>">
+      <input type="text" class="form-control" id="liste_projet_name_tittle" placeholder="liste_projet_name_tittle"  value="<?php echo $liste_projet_name_tittle[0] ?>">
     </div>
     <div class="mb-3 mt-3">
       <label for="email">Email:</label>
-      <input type="date" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php echo $anne."-".$mois."-".$jour?>" >
+      <input type="date" class="form-control" id="liste_projet_date" placeholder="liste_projet_date"   value="<?php echo $anne."-".$mois."-".$jour?>" >
     </div>
     <div class="mb-3 mt-3">
       <label for="email">Heure:</label>
-      <input type="number" min="1" max="24" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php echo $heure[0].$heure[1]?>">
+      <input type="number" min="1" max="24" class="form-control" id="liste_projet_date_1" placeholder="Enter email" name="email" value="<?php echo $heure[0].$heure[1]?>">
     </div>
     <div class="mb-3 mt-3">
       <label for="email">Minutes:</label>
-      <input type="number" min="0" max="59" class="form-control" id="email" placeholder="Enter email" name="email" value="<?php echo $heure[3].$heure[4]?>">
+      <input type="number" min="0" max="59" class="form-control" id="liste_projet_date_2" placeholder="Enter email" name="email" value="<?php echo $heure[3].$heure[4]?>">
     </div>
  
  
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" title="<?php echo $liste_projet_id_sha1_[0] ;?>" onclick="php_select_info_1_submit(this)" class="btn btn-primary">Submit</button>
   </div>
  
 

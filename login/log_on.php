@@ -327,6 +327,53 @@ for(var i=0; i<effacer.length ; i ++) {
 
  
     }
+
+
+    function php_select_info_1_submit(_this){
+
+
+ 
+
+      
+
+
+
+
+
+
+
+
+
+
+var liste_projet_name = document.getElementById("liste_projet_name").value ;
+var liste_projet_name_tittle = document.getElementById("liste_projet_name_tittle").value ;
+var liste_projet_date = document.getElementById("liste_projet_date").value ;
+var liste_projet_date_1 = document.getElementById("liste_projet_date_1").value ;
+var liste_projet_date_2 = document.getElementById("liste_projet_date_2").value ;
+
+
+ 
+
+
+
+      var ok = new Information("../php_update/php_select_info_1_submit.php"); // création de la classe 
+
+      
+      ok.add("liste_projet_id_sha1", _this.title); // ajout de l'information pour lenvoi  
+
+      ok.add("liste_projet_name", liste_projet_name); // ajout de l'information pour lenvoi  
+      ok.add("liste_projet_name_tittle", liste_projet_name_tittle); // ajout de l'information pour lenvoi  
+
+      ok.add("liste_projet_date", liste_projet_date); // ajout de l'information pour lenvoi  
+      ok.add("liste_projet_date_1", liste_projet_date_1); // ajout de l'information pour lenvoi  
+      ok.add("liste_projet_date_2", liste_projet_date_2); // ajout de l'information pour lenvoi  
+
+ 
+
+
+      console.log(ok.info()); // demande l'information dans le tableau
+      ok.push(); // envoie l'information au code pkp 
+    }
 </script>
 
 
