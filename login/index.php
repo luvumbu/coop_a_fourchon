@@ -117,7 +117,7 @@ date_default_timezone_set('europe/paris');
 
 
 
- 
+
 
 
   if ($verif_cookie == "false") {
@@ -144,28 +144,30 @@ date_default_timezone_set('europe/paris');
 
 
     if (give_url() != "index.php") {
- 
-
- 
- ?>
 
 
-<div id="location"><?php echo  str_replace("/".give_url(),"",$_SERVER['HTTP_REFERER'])?></div>
+
+      ?>
 
 
-<script>
-const location_ = document.getElementById("location").innerText ; 
-  
-
-   
-window.location.replace(location_);
+      <div id="location">
+        <?php echo str_replace("/" . give_url(), "", $_SERVER['HTTP_REFERER']) ?>
+      </div>
 
 
-</script>
-<?php 
+      <script>
+        const location_ = document.getElementById("location").innerText;
 
- 
- 
+
+
+        window.location.replace(location_);
+
+
+      </script>
+    <?php
+
+
+
     }
   }
 
