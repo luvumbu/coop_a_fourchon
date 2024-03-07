@@ -154,8 +154,8 @@ $liste_projet_name_ = $apple__->add_array_element($number);
 
 ?>
 
-<img width="100" title='<?php echo $give_url ?>' height="100" src="https://img.icons8.com/office/100/checked--v1.png"
-  alt="checked--v1" onclick="not_selection_menu_1_1_setting(this)" />
+
+
 
 
 
@@ -225,7 +225,7 @@ $liste_projet_name_ = $apple__->add_array_element($number);
 
   <button type="submit" title="<?php echo $liste_projet_id_sha1_[0]; ?>" onclick="php_select_info_1_submit(this)"
     class="btn btn-primary">Submit</button>
-    <button title='<?php echo $give_url ?>' height="100" src="https://img.icons8.com/office/100/checked--v1.png"
+    <button title='<?php echo $give_url ?>' height="100" 
   alt="checked--v1" onclick="not_selection_menu_1_1_setting(this)" type="button" class="btn btn-success" onclick="not_selection_menu_1_1_setting(this)">Terminer</button>
 
     

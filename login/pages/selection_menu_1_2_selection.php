@@ -69,10 +69,11 @@ $liste_projet_reg_date = $apple->add_array_element($number);
       <tr>
         <th>Sujet de la reunion</th>
         <th>Crée par</th>
-        <th>Création</th>
+        
         <th>Nom commission</th>
-        <th>Option</th>
 
+        <th>Date</th>
+        <th>Option</th>
 
 
 
@@ -107,6 +108,9 @@ $liste_projet_reg_date = $apple->add_array_element($number);
         $mois = $liste_projet_reg_date[$a][5] . $liste_projet_reg_date[$a][6];
         $jour = $liste_projet_reg_date[$a][8] . $liste_projet_reg_date[$a][9];
 
+        $heure = $liste_projet_date[$a][11].$liste_projet_date[$a][12] ; 
+        $minutes = $liste_projet_date[$a][14].$liste_projet_date[$a][15] ; 
+
 
         ?>
 
@@ -120,14 +124,14 @@ $liste_projet_reg_date = $apple->add_array_element($number);
           </td>
 
 
-          <td>
-
-            <?php echo $jour . "/" . $mois . "/" . $anne ?>
-          </td>
+ 
 
           <td>
 
           <?php echo $liste_projet_name_tittle[$a]?>
+</td>
+<td>
+<?php echo  $jour."/".$mois."/".$anne." ". $heure.":".$minutes ?>
 </td>
           
 
