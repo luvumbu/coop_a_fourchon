@@ -60,11 +60,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
 <div class="container mt-3">
   <h2>Liste de Commission</h2>
-
-
-
-  <div action="/action_page.php">
-
+  <div action="/action_page.php"> 
     <select class="form-select" id="sel1" title="selection_menu_1_2" onchange="sellist1(this)">
       <?php
       for ($a = 0; $a < count($liste_projet_id_sha1_); $a++) {
@@ -72,9 +68,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
         if($a==0){
           ?>
-        <option>
-          <?php echo "Toutes" ?>
-        </option>
+ 
 
           <?php
         }
@@ -90,7 +84,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
 
     </select>
     <br>
-
+    <img  id="selection_menu_1_2_all" onclick="selection_menu_1_2_all(this)" title="<?php echo $liste_projet_name[0] ;?>" width="50" height="50" src="https://img.icons8.com/ios/50/visible--v1.png" alt="visible--v1" class="cursor_pointer" style="margin-top:25px;margin-bottom:25px"/>
 
   </div>
 

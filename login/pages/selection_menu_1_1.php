@@ -4,7 +4,7 @@ include("path.php");
 <div class="selection_menu">
 
   <h1 class="text_center">
-    Toutes les reuinions
+    Toutes les évenements
   </h1>
 </div>
 

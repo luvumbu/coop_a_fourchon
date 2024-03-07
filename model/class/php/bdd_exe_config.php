@@ -187,6 +187,7 @@ $execution_formulaire_php->set_action ("CREATE TABLE liste_projet (
   liste_projet_background_color_2  VARCHAR(200) NOT NULL,
 
   liste_projet_date   DATETIME NOT NULL,
+  liste_projet_date2   DATETIME NOT NULL,
   liste_projet_last_update   DATE NOT NULL,
 
 
@@ -205,6 +206,21 @@ $execution_formulaire_php->set_action ("CREATE TABLE liste_log (
   
   liste_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
   )");
+
+
+// FILE ADD 
+$execution_formulaire_php->set_action ("CREATE TABLE file_log (
+  file_log_id	 INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,  
+  file_log_ip TEXT(2000) NOT NULL,
+  file_log_id_sha1  TEXT(2000) NOT NULL,
+  liste_projet_id_sha1 TEXT(2000) NOT NULL,
+  
+  information_user_id_sha1 TEXT(2000) NOT NULL,  
+
+  
+  liste_reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  )");
+// FILE ADD
 
 
 $execution_formulaire_php->set_action ("CREATE TABLE liste_log2 (

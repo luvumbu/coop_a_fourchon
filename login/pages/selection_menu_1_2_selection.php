@@ -101,13 +101,9 @@ $liste_projet_reg_date = $apple->add_array_element($number);
 <?php
 
         $anne = $liste_projet_reg_date[$a][0] . $liste_projet_reg_date[$a][1] . $liste_projet_reg_date[$a][2] . $liste_projet_reg_date[$a][3];
-
-
-
         $anne = $liste_projet_reg_date[$a][0] . $liste_projet_reg_date[$a][1] . $liste_projet_reg_date[$a][2] . $liste_projet_reg_date[$a][3];
         $mois = $liste_projet_reg_date[$a][5] . $liste_projet_reg_date[$a][6];
         $jour = $liste_projet_reg_date[$a][8] . $liste_projet_reg_date[$a][9];
-
         $heure = $liste_projet_date[$a][11].$liste_projet_date[$a][12] ; 
         $minutes = $liste_projet_date[$a][14].$liste_projet_date[$a][15] ; 
 

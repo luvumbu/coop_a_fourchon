@@ -124,7 +124,7 @@ z-index: 1;
 
 <?php
 
-
+$_SESSION["information_user_id_sha1"] = "XX" ; 
 
  
 

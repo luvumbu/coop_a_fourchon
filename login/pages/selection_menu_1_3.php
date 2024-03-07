@@ -1,26 +1,50 @@
 <div class="selection_menu_1_3">
   <div class="mb-3 mt-3">
-    <label for="selection_menu_1_3_info_1" class="form-label">Sujet de la reunion:</label>
-    <input type="text" class="form-control" id="selection_menu_1_3_info_1" placeholder="Enter le sujet de la reunion ex:salle commune"
+    <label for="selection_menu_1_3_info_1" class="form-label">Sujet de l'évenement:</label>
+    <input type="text" class="form-control" id="selection_menu_1_3_info_1" placeholder="Enter le sujet de la évenement ex:salle commune"
       name="email">
   </div>
+
   <div class="mb-3">
-    <label for="selection_menu_1_3_info_2" class="form-label">Jour de la reuinion</label>
+    <label for="selection_menu_1_3_info_2" class="form-label"><b>commencement de la reuinion</b>  </label>
     <input type="date" class="form-control" id="selection_menu_1_3_info_2" placeholder="Enter password" name="pswd">
   </div>
   <div class="mb-3">
     <label for="selection_menu_1_3_info_3" class="form-label">heure</label>
     <input type="number" class="form-control taile_r" id="selection_menu_1_3_info_3"
-      placeholder="Enter le sujet de la reunion ex:salle commune" name="email" min="1" max="24">
+      placeholder="Enter le sujet de la évenement ex:salle commune" name="email" min="1" max="24">
 
 
 
     <label for="selection_menu_1_3_info_4" class="form-label">minute</label>
     <input type="number" class="form-control taile_r" id="selection_menu_1_3_info_4"
-      placeholder="Enter le sujet de la reunion ex:salle commune"   min="1" max="59">
+      placeholder="Enter le sujet de la évenement ex:salle commune"   min="1" max="59">
+
+  </div>
+ 
+
+
+  <div class="mb-3">
+    <label for="selection_menu_1_3_info_2_x" class="form-label"> <b>Fin de la reuinion</b>  </label>
+    <input type="date" class="form-control" id="selection_menu_1_3_info_2_x" placeholder="Enter password" name="pswd">
+  </div>
+  <div class="mb-3">
+    <label for="selection_menu_1_3_info_3_x" class="form-label">heure</label>
+    <input type="number" class="form-control taile_r" id="selection_menu_1_3_info_3_x"
+      placeholder="Enter le sujet de la évenement ex:salle commune" name="email" min="1" max="24">
+
+
+
+    <label for="selection_menu_1_3_info_4_x" class="form-label">minute</label>
+    <input type="number" class="form-control taile_r" id="selection_menu_1_3_info_4_x"
+      placeholder="Enter le sujet de la évenement ex:salle commune"   min="1" max="59">
 
   </div>
   <label  style="margin-top:25px;">Commition</label>
+
+
+
+
   <select class="form-select" aria-label="Default select example" style="margin-top:50px;" id="selection_menu_1_3_info_select">
 
     <?php

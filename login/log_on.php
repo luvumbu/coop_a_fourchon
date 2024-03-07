@@ -16,10 +16,7 @@ array_push(
 $apple->sql = 'SELECT * FROM `liste_projet` WHERE `liste_projet_date` >= CURDATE()  ORDER BY `liste_projet_date`';
 $apple->execution();
 $myJSON = json_encode($apple->list_row);
-
-
 $number = 0;
-
 $liste_projet_id_sha1 = $apple->add_array_element($number);
 $number++;
 $liste_projet_name = $apple->add_array_element($number);
@@ -32,19 +29,13 @@ $number++;
    var_dump($liste_projet_id_sha1 ) ; 
    var_dump($liste_projet_name ) ; 
    var_dump($liste_projet_id ) ; 
-
    */
-
-?>
-
-
-
+  ?>
 <div class="selection_menu" id="selection_menu">
   <div onclick="selection_menu_action_1(this)" id="selection_menu_1" title="selection_menu_1">
     <img width="50" height="50"
       src="https://img.icons8.com/external-becris-lineal-color-becris/50/external-meeting-business-consultant-becris-lineal-color-becris-1.png"
       alt="external-meeting-business-consultant-becris-lineal-color-becris-1" />
-
     <div>
       Nos réunions/Commition
     </div>
@@ -57,7 +48,6 @@ $number++;
       Notre syndicat
     </div>
   </div>
-
   <div onclick="selection_menu_action_1(this)" id="selection_menu_3" title="selection_menu_3" style="display:none">
     <img width="50" height="50"
       src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/50/external-setting-seo-and-marketing-xnimrodx-lineal-color-xnimrodx-2.png"
@@ -65,32 +55,22 @@ $number++;
     <div>
       Nos commissions
     </div>
-
   </div>
-
   <div onclick="selection_menu_action_1(this)" id="selection_menu_4" title="selection_menu_4">
     <img width="50" height="50" src="https://img.icons8.com/color/50/settings--v1.png" alt="settings--v1" />
     <div>
       Paramètres
     </div>
-
   </div>
   <div onclick="disconnect()" id="selection_menu_5" title="selection_menu_5">
     <img width="50" height="50" src="https://img.icons8.com/color/50/cancel--v1.png" alt="cancel--v1" />
     <div>
       Déconnexion
     </div>
-
   </div>
 </div>
-
-
-
-
 <div id="selection_menu_action_1"> </div>
 <div id="selection_menu_action_2"> </div>
-
-
 <style>
   .selection_menu {
     display: flex;
@@ -115,7 +95,6 @@ $number++;
     transition: 1s all;
   }
 </style>
-
 <script>
   function selection_menu_action_1(_this) {
 
@@ -234,13 +213,11 @@ $number++;
 
   function sellist1(_this) {
 
+  
 
 
-
-
-
-
-
+ 
+ document.getElementById("selection_menu_1_2_all").title=_this.value ; 
 
     const myTimeout = setTimeout(myGreeting, 0);
     document.getElementById("selection_menu_1_2_selection").className = "none";
@@ -355,6 +332,42 @@ function myGreeting() {
   _this.style.display="" ; 
 }
 
+  }
+
+
+  function selection_menu_1_2_all(_this){
+    
+
+    
+
+
+
+    var ok = new Information("cookie/selection_menu_1_2_all_cookie.php"); // création de la classe 
+
+
+ok.add("selection_menu_1_2_all_cookie", _this.title); // ajout de l'information pour lenvoi  
+ 
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+
+
+
+
+const myTimeout = setTimeout(myGreeting, 250);
+
+function myGreeting() {
+  Ajax("selection_menu_action_2", "pages/selection_menu_1_2_selection2.php");
+   
+}
+
+
+
+
+
+
+
+
+    
   }
 </script>
 
