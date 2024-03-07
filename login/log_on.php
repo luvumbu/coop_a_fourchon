@@ -1,4 +1,4 @@
-<?php 
+<?php
 $apple = new Select_datas($servername, $username, $password, $dbname);
 
 array_push(
@@ -57,7 +57,7 @@ $number++;
       Notre syndicat
     </div>
   </div>
- 
+
   <div onclick="selection_menu_action_1(this)" id="selection_menu_3" title="selection_menu_3" style="display:none">
     <img width="50" height="50"
       src="https://img.icons8.com/external-xnimrodx-lineal-color-xnimrodx/50/external-setting-seo-and-marketing-xnimrodx-lineal-color-xnimrodx-2.png"
@@ -67,18 +67,18 @@ $number++;
     </div>
 
   </div>
- 
+
   <div onclick="selection_menu_action_1(this)" id="selection_menu_4" title="selection_menu_4">
     <img width="50" height="50" src="https://img.icons8.com/color/50/settings--v1.png" alt="settings--v1" />
     <div>
-    Paramètres
+      Paramètres
     </div>
 
   </div>
   <div onclick="disconnect()" id="selection_menu_5" title="selection_menu_5">
-            <img width="50" height="50" src="https://img.icons8.com/color/50/cancel--v1.png" alt="cancel--v1"/>
+    <img width="50" height="50" src="https://img.icons8.com/color/50/cancel--v1.png" alt="cancel--v1" />
     <div>
-    Déconnexion
+      Déconnexion
     </div>
 
   </div>
@@ -125,24 +125,24 @@ $number++;
     document.getElementById("selection_menu_2").className = "opacity_0";
     document.getElementById("selection_menu_3").className = "opacity_0";
     document.getElementById("selection_menu_4").className = "opacity_0";
- 
+
 
 
     document.getElementById(_this.title).className = "opacity_1";
     Ajax("selection_menu_action_1", "pages/" + _this.title + ".php");
   }
-function disconnect(){
-  Ajax("selection_menu_action_1", "pages/disconnect.php");
+  function disconnect() {
+    Ajax("selection_menu_action_1", "pages/disconnect.php");
 
-  const myTimeout = setTimeout(disconnect_, 100);
+    const myTimeout = setTimeout(disconnect_, 100);
 
-function disconnect_() {
-  location.reload();
-}
+    function disconnect_() {
+      location.reload();
+    }
 
 
 
-}
+  }
   function selection_menu_action_2(_this) {
 
     document.getElementById("selection_menu_1_1").className = "opacity_0";
@@ -151,24 +151,24 @@ function disconnect_() {
     document.getElementById(_this.title).className = "opacity_1";
 
 
-  
- if(_this.title=="selection_menu_1_2"){
-  const myTimeout = setTimeout(myGreeting, 200);
 
-function myGreeting() {
-  Ajax("selection_menu_1_2_selection", "pages/selection_menu_1_2_selection.php");
-       var sel1 = document.getElementById("sel1").value ; 
-       var ok = new Information("cookie/sel1.php"); // création de la classe 
+    if (_this.title == "selection_menu_1_2") {
+      const myTimeout = setTimeout(myGreeting, 200);
 
-      ok.add("sel1", sel1); // ajout de l'information pour lenvoi  
- 
+      function myGreeting() {
+        Ajax("selection_menu_1_2_selection", "pages/selection_menu_1_2_selection.php");
+        var sel1 = document.getElementById("sel1").value;
+        var ok = new Information("cookie/sel1.php"); // création de la classe 
 
+        ok.add("sel1", sel1); // ajout de l'information pour lenvoi  
 
 
-      console.log(ok.info()); // demande l'information dans le tableau
-      ok.push(); // envoie l'information au code pkp 
-}
- }
+
+
+        console.log(ok.info()); // demande l'information dans le tableau
+        ok.push(); // envoie l'information au code pkp 
+      }
+    }
 
     Ajax("selection_menu_action_2", "pages/" + _this.title + ".php");
 
@@ -181,22 +181,19 @@ function myGreeting() {
 
 
   function selection_menu_1_2_action(_this) {
- 
 
-    
-    const selection_menu_1_2_input =document.getElementById("selection_menu_1_2_input").value ; 
-    console.log(selection_menu_1_2_input) ; 
+
+
+    const selection_menu_1_2_input = document.getElementById("selection_menu_1_2_input").value;
+    console.log(selection_menu_1_2_input);
 
     var ok = new Information("php_add/selection_menu_1_3_info_action_3.php"); // création de la classe 
-      ok.add("liste_projet_name", selection_menu_1_2_input); // ajout de l'information pour lenvoi  
- 
-
-
-      console.log(ok.info()); // demande l'information dans le tableau
-      ok.push(); // envoie l'information au code pkp 
+    ok.add("liste_projet_name", selection_menu_1_2_input); // ajout de l'information pour lenvoi  
 
 
 
+    console.log(ok.info()); // demande l'information dans le tableau
+    ok.push(); // envoie l'information au code pkp 
 
 
 
@@ -206,54 +203,36 @@ function myGreeting() {
 
 
 
-      const myTimeout = setTimeout(myGreeting, 250);
-
-function myGreeting() {
-  
-  Ajax("selection_menu_action_2", "pages/selection_menu_1_2.php");
-
-  const myTimeout = setTimeout(xx, 500);
 
 
 
-}
+    const myTimeout = setTimeout(myGreeting, 250);
 
+    function myGreeting() {
 
+      Ajax("selection_menu_action_2", "pages/selection_menu_1_2.php");
 
-
-function xx() {
-  Ajax("selection_menu_1_2_selection", "pages/selection_menu_1_2_selection.php");
-  var sel1 = document.getElementById("sel1") ; 
-  console.log(sel1.value) ; 
-}
-
+      const myTimeout = setTimeout(xx, 500);
 
 
 
     }
 
-    function sellist1(_this) {
- 
 
 
 
- 
+    function xx() {
+      Ajax("selection_menu_1_2_selection", "pages/selection_menu_1_2_selection.php");
+      var sel1 = document.getElementById("sel1");
+      console.log(sel1.value);
+    }
 
 
-  
- 
-  const myTimeout = setTimeout(myGreeting, 0);
-document.getElementById("selection_menu_1_2_selection").className="none" ; 
-function myGreeting() {
-  Ajax("selection_menu_1_2_selection", "pages/selection_menu_1_2_selection.php");
 
-  const myTimeout2 = setTimeout(myGreeting2,50);
 
- 
-}
- 
+  }
 
-   // Ajax("selection_menu_action_2", "pages/" + _this.title + ".php");
+  function sellist1(_this) {
 
 
 
@@ -261,128 +240,127 @@ function myGreeting() {
 
 
 
-   
-   function myGreeting2() {
-
-document.getElementById("selection_menu_1_2_selection").className="" ; 
-   
-    console.log(_this.title);
 
 
+    const myTimeout = setTimeout(myGreeting, 0);
+    document.getElementById("selection_menu_1_2_selection").className = "none";
+    function myGreeting() {
+      Ajax("selection_menu_1_2_selection", "pages/selection_menu_1_2_selection.php");
 
-      
-      
-     // Ajax("selection_menu_action_2", "pages/selection_menu_1_2.php");
-
-var effacer = [];
+      const myTimeout2 = setTimeout(myGreeting2, 50);
 
 
- var info_array =document.getElementsByClassName("info_array");
+    }
 
- var ok = document.getElementsByClassName(_this.value); 
- info_array_length = info_array.length;
+
+    // Ajax("selection_menu_action_2", "pages/" + _this.title + ".php");
 
 
 
-for(r =0 ; r<info_array_length; r++){
 
 
-if(info_array[r].innerText!=_this.value)
-{
-
-if(effacer.indexOf(info_array[r].innerText)==-1){
-  effacer.push(info_array[r].innerText);
-}
-}
-}
-
- 
-
- 
-
- 
-
- 
-for(var i=0; i<effacer.length ; i ++) {
-  
-
-   
-  var taille_ = document.getElementsByClassName(effacer[i]).length ; 
-  console.log(taille_ ) ; 
 
 
-  for(y = 0 ; y<taille_ ; y ++ ) {
-    
 
-    console.log(effacer[i]) ;  
-    document.getElementsByClassName(effacer[i])[0].className="none";
+    function myGreeting2() {
+
+      document.getElementById("selection_menu_1_2_selection").className = "";
+
+      console.log(_this.title);
+
+
+
+
+
+      // Ajax("selection_menu_action_2", "pages/selection_menu_1_2.php");
+
+      var effacer = [];
+
+
+      var info_array = document.getElementsByClassName("info_array");
+
+      var ok = document.getElementsByClassName(_this.value);
+      info_array_length = info_array.length;
+
+
+
+      for (r = 0; r < info_array_length; r++) {
+
+
+        if (info_array[r].innerText != _this.value) {
+
+          if (effacer.indexOf(info_array[r].innerText) == -1) {
+            effacer.push(info_array[r].innerText);
+          }
+        }
+      }
+
+
+
+
+
+
+
+
+      for (var i = 0; i < effacer.length; i++) {
+
+
+
+        var taille_ = document.getElementsByClassName(effacer[i]).length;
+        console.log(taille_);
+
+
+        for (y = 0; y < taille_; y++) {
+
+
+          console.log(effacer[i]);
+          document.getElementsByClassName(effacer[i])[0].className = "none";
+
+        }
+
+
+      }
+
+
+    }
+
 
   }
 
 
+  function php_select_info_1_submit(_this) {
+    var liste_projet_name = document.getElementById("liste_projet_name").value;
+    var liste_projet_name_2 = document.getElementById("liste_projet_name_2").value;
+    var liste_projet_date = document.getElementById("liste_projet_date").value;
+    var liste_projet_date_1 = document.getElementById("liste_projet_date_1").value;
+    var liste_projet_date_2 = document.getElementById("liste_projet_date_2").value;
+    var ok = new Information("../php_update/php_select_info_1_submit.php"); // création de la classe 
+
+
+    ok.add("liste_projet_id_sha1", _this.title); // ajout de l'information pour lenvoi  
+    ok.add("liste_projet_name", liste_projet_name); // ajout de l'information pour lenvoi  
+    ok.add("liste_projet_name_tittle", liste_projet_name_2); // ajout de l'information pour lenvoi  
+    ok.add("liste_projet_date", liste_projet_date); // ajout de l'information pour lenvoi  
+    ok.add("liste_projet_date_1", liste_projet_date_1); // ajout de l'information pour lenvoi  
+    ok.add("liste_projet_date_2", liste_projet_date_2); // ajout de l'information pour lenvoi  
+    console.log(ok.info()); // demande l'information dans le tableau
+    ok.push(); // envoie l'information au code pkp 
+_this.style.display="none" ; 
+
+
+
+const myTimeout = setTimeout(myGreeting, 250);
+
+function myGreeting() {
+  _this.style.display="" ; 
 }
 
- 
-    }
-
- 
-    }
-
-
-    function php_select_info_1_submit(_this){
-
-
- 
- 
-
-
- 
-      
- 
-
-
-
-
-
-
-
-
-var liste_projet_name = document.getElementById("liste_projet_name").value ;
-var liste_projet_name_2 = document.getElementById("liste_projet_name_2").value ;
-var liste_projet_date =document.getElementById("liste_projet_date").value ; 
-var liste_projet_date_1 = document.getElementById("liste_projet_date_1").value ;
-var liste_projet_date_2 = document.getElementById("liste_projet_date_2").value ;
-
- 
- 
-
-
-
-      var ok = new Information("../php_update/php_select_info_1_submit.php"); // création de la classe 
-
-      
-      ok.add("liste_projet_id_sha1", _this.title); // ajout de l'information pour lenvoi  
-
-      ok.add("liste_projet_name", liste_projet_name); // ajout de l'information pour lenvoi  
-      ok.add("liste_projet_name_tittle", liste_projet_name_2); // ajout de l'information pour lenvoi  
-
-      ok.add("liste_projet_date", liste_projet_date); // ajout de l'information pour lenvoi  
-      ok.add("liste_projet_date_1", liste_projet_date_1); // ajout de l'information pour lenvoi  
-      ok.add("liste_projet_date_2", liste_projet_date_2); // ajout de l'information pour lenvoi  
-
- 
-
-
-      console.log(ok.info()); // demande l'information dans le tableau
-      ok.push(); // envoie l'information au code pkp 
- 
-   
-    }
+  }
 </script>
 
 
 <style>
-  .none{
-    display:none ; 
+  .none {
+    display: none;
   }
 </style>

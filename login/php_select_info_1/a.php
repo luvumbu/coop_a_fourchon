@@ -1,6 +1,6 @@
 <?php
 
-
+ 
 function give_url()
 {
 
@@ -20,6 +20,8 @@ function give_url()
   $val_final = strrev($val_final);
   return $val_final;
 }
+
+
 /*
 
 echo give_url() ; 
@@ -46,6 +48,11 @@ $apple->sql = 'SELECT * FROM `liste_projet` WHERE  `liste_projet_id_sha1`="' . $
 $apple->execution();
 $myJSON = json_encode($apple->list_row);
 
+
+ 
+
+
+if(count($apple->list_row)>0){
 
 
 $number = 0;
@@ -90,10 +97,10 @@ $heure = $liste_projet_date[0][11] . $liste_projet_date[0][12] . $liste_projet_d
 
 
 
+ 
 
 
-
-
+ 
 
 
 
@@ -166,7 +173,7 @@ $liste_projet_name_ = $apple__->add_array_element($number);
 
 <div id="all_title" title="<?php echo $liste_projet_id_sha1_[0] ?>"> </div>
 <div class="container mt-3">
-  <h2>Stacked form</h2>
+ 
 
   <div class="mb-3 mt-3">
     <label>liste_projet_name</label>
@@ -218,4 +225,27 @@ $liste_projet_name_ = $apple__->add_array_element($number);
 
   <button type="submit" title="<?php echo $liste_projet_id_sha1_[0]; ?>" onclick="php_select_info_1_submit(this)"
     class="btn btn-primary">Submit</button>
+    <button title='<?php echo $give_url ?>' height="100" src="https://img.icons8.com/office/100/checked--v1.png"
+  alt="checked--v1" onclick="not_selection_menu_1_1_setting(this)" type="button" class="btn btn-success" onclick="not_selection_menu_1_1_setting(this)">Terminer</button>
+
+    
 </div>
+
+
+<?php 
+
+
+}
+else {
+  unset($_SESSION["selection_menu_1_1_setting"]);
+
+
+
+  ?>
+  <script>
+  
+  location.reload();
+  </script>
+ <?php
+}
+?>
