@@ -55,12 +55,24 @@ date_default_timezone_set('europe/paris');
 
   <?php
 
+$filename = '../model/class/php/connexion.php';
 
+if (file_exists($filename)) {
+   
+
+
+
+  
+} else {
+   ?>
+
+<meta http-equiv="refresh" content="0;URL=../index.php">
+<?php
+}
 
   include("../model/class/php/Select_datas.php");
 
   include("../model/class/php/My_date.php");
-
 
 
 
@@ -376,8 +388,40 @@ date_default_timezone_set('europe/paris');
     }
 
     */
-  ?>
+ 
 
+
+ 
+
+// Connexion à la base de données
+$connexion = new mysqli($servername, $username, $password, $dbname);
+
+// Vérification de la connexion
+if ($connexion->connect_error) {
+    die("La connexion à la base de données a échoué : " . $connexion->connect_error);
+}
+
+// Nom de la table à vérifier
+$nomTable = "liste_projet";
+
+// Requête pour vérifier l'existence de la table
+$requete = "SHOW TABLES LIKE '$nomTable'";
+$resultat = $connexion->query($requete);
+
+// Vérification du résultat
+if ($resultat->num_rows > 0) {
+    
+} else {
+
+  unlink($filename);
+  ?>
+  <meta http-equiv="refresh" content="0;URL=../index.php">
+  <?php
+}
+
+// Fermeture de la connexion
+$connexion->close();
+?>
 
 
 
