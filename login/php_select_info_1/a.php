@@ -1,6 +1,6 @@
 <?php
 
- 
+$verif_cookie ="true" ; 
 function give_url()
 {
 

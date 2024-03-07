@@ -15,6 +15,14 @@ date_default_timezone_set('europe/paris');
 
 <body>
 
+  <?php
+  $verif_cookie = "false";
+
+
+  ?>
+
+
+
 
 
 
@@ -105,6 +113,63 @@ date_default_timezone_set('europe/paris');
     <?php
     include("log_off.php");
   }
+
+
+
+
+ 
+
+
+  if ($verif_cookie == "false") {
+    function give_url()
+    {
+
+      // url == $_SERVER['PHP_SELF'] ; 
+      $reverse_el = strrev($_SERVER['PHP_SELF']);
+      $val_final = "";
+      for ($a = 0; $a < strlen($_SERVER['PHP_SELF']); $a++) {
+
+
+        if ($reverse_el[$a] == "/") {
+          break;
+        } else {
+          $val_final = $val_final . $reverse_el[$a];
+        }
+      }
+
+      $val_final = strrev($val_final);
+      return $val_final;
+    }
+
+
+
+    if (give_url() != "index.php") {
+ 
+
+ 
+ ?>
+
+
+<div id="location"><?php echo  str_replace("/".give_url(),"",$_SERVER['HTTP_REFERER'])?></div>
+
+
+<script>
+const location_ = document.getElementById("location").innerText ; 
+  
+
+   
+window.location.replace(location_);
+
+
+</script>
+<?php 
+
+ 
+ 
+    }
+  }
+
+
 
   ?>
 
