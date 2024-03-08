@@ -92,7 +92,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
   <div>
     <input type="text" class="form-control" id="selection_menu_1_2_input" placeholder="ajouter un théme de Commition" >
     <div>
-      <img width="50" height="50" style="margin-top:50px" src="https://img.icons8.com/offices/50/plus.png" alt="plus" onclick="selection_menu_1_2_action(this)" />
+      <img width="50"  class="cursor_pointer" height="50" style="margin-top:50px" src="https://img.icons8.com/offices/50/plus.png" alt="plus" onclick="selection_menu_1_2_action(this)" />
       <p>Ajouter un théme </p>
     </div>
   </div>

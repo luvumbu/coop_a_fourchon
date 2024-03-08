@@ -97,6 +97,7 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
         <th>Date</th>
         <th>Heure</th>
         <th>Option</th>
+        <th>Voir</th>
 
 
       </tr>
@@ -147,6 +148,9 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
           <td title="<?php echo $liste_projet_id_sha1_[$a] ?>" onclick="selection_menu_1_1_setting(this)">
             <img width="40" height="40" src="https://img.icons8.com/ios/40/settings--v1.png" alt="settings--v1"
               class="cursor_pointer" />
+          </td>
+          <td>
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/visible--v1.png" alt="visible--v1"  class="cursor_pointer"/>
           </td>
 
 
