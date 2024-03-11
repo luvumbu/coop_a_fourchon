@@ -1,0 +1,88 @@
+
+<div class="text-center add_element_parent" style="text-align:center">
+
+    <h5 for="add_blog">
+    Ajouter un element :
+    </h5>
+   <div class="add_element">
+
+
+    <div>
+      <div    id="add_blog" class="col-sm-4"><img width="50" height="50"  class="cursor_pointer" src="https://img.icons8.com/ios/50/google-blog-search.png" alt="google-blog-search"></div>
+    <h5>
+    Blog
+    </h5>
+    </div>
+    <div>
+      <div  id="add_img" class="col-sm-4"><img width="50" height="50" onclick="add_img2(this)" class="cursor_pointer" src="https://img.icons8.com/ios/50/image--v1.png" alt="image--v1"> </div>
+    <h5>
+      image
+    </h5>
+    </div>
+    <div>
+      <div  id="add_folder" class="col-sm-4"> <img width="50" height="50"  class="cursor_pointer" src="https://img.icons8.com/glyph-neue/50/folder-invoices--v1.png" alt="folder-invoices--v1"></div>
+    <h5>
+      Dossier
+    </h5>
+    </div>
+</div>
+
+
+
+</div>
+
+ 
+
+    </div>
+      
+
+    <div class="black_element" id="black_element"></div>
+
+
+<style>
+
+.change_img{
+    width : 100px; 
+    height : 100px ; 
+    border:1px solid black ; 
+}
+.cursor_pointer:hover{
+    cursor:pointer ; 
+}
+
+  .add_element_parent{
+       border:1px solid rgba(0,0,0,0.2);
+    border-radius : 15px; 
+    
+    
+    width:40%; 
+    margin:auto ; 
+    margin-top : 45px; 
+    padding:15px; 
+    
+    z-index : 2 ; 
+    position:absolute ; 
+ background-color:white ; 
+
+margin-left:30% ; 
+  }
+  .add_element{
+
+    display:flex; 
+    justify-content:space-around ; 
+
+    
+  }
+  .black_element{
+    background-color:rgba(0,0,0,0.8) ; 
+    height:100%;
+    width:100%; 
+    position:absolute ; 
+    top:0; 
+    z-index : 1 ; 
+
+  }
+</style>
+
+
+ 

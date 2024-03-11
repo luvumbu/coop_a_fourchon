@@ -1,0 +1,204 @@
+
+
+ <div class="pas_visible" id="pas_visible"> </div>
+ <div class="container mt-5 text-center demo" style="background-color:white; padding-top: 100px;padding-bottom: 100px;">
+  <div class="mb-3">     
+    <input type="email" class="form-control liste_projet_name_" onkeyup="input_update_all(this)"  aria-describedby="emailHelp" maxlength="50">
+  </div>
+  <div class="mb-3"> 
+    <textarea name="" onkeyup="input_update_all(this)" class="liste_projet_description1" ></textarea>
+  </div> 
+
+
+
+<img   onclick="add_img(this)"  alt="" srcset=""  class="element_ change_img change_img1">
+
+
+<img alt=""      onclick="add_img()" class="change_img2 add_img">
+ 
+
+
+  <div type="submit" onclick="submit__()" class="btn btn-primary" style="width:100%"   >TERMINER</div>
+  <div class="dislay_flex">
+    <!--<img id="visible_2_parent_1696121731807" onclick="visible_2_parent_(this)" class="cursor_pointer space_right_20" width="50" height="50" src="https://img.icons8.com/badges/50/visible.png" alt="visible">
+    -->
+    <img   onclick="onclick_update_visibility1(this)"  class="cursor_pointer space_right_20 onclick_update_all onclick_update_visibility1" width="50" height="50" src="https://img.icons8.com/badges/50/invisible.png" alt="visible">
+    <img   onclick="onclick_update_visibility2(this)"         class="cursor_pointer space_right_20 onclick_update_all onclick_update_visibility2" width="50" height="50" src="https://img.icons8.com/ios/50/without-internet.png" alt="internet--v1">
+    <img   onclick="onclick_update_remove(this)"      class="cursor_pointer space_right_20 onclick_update_all onclick_update_remove" width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1">
+   <img    onclick="onclick_add_element(this)"        class="cursor_pointer onclick_add_element"   width="50" height="50" src="https://img.icons8.com/office/50/plus--v1.png" alt="plus--v1"  /> 
+  </div>
+
+</div>
+
+
+ <!-- 
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+  <img src="https://cdns-images.dzcdn.net/images/artist/cb499091fda9a837d0059cbde5e52450/500x500.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+  <img src="https://cdns-images.dzcdn.net/images/artist/cb499091fda9a837d0059cbde5e52450/500x500.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+  <img src="https://cdns-images.dzcdn.net/images/artist/cb499091fda9a837d0059cbde5e52450/500x500.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+  <img src="https://cdns-images.dzcdn.net/images/artist/cb499091fda9a837d0059cbde5e52450/500x500.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+  <img src="https://cdns-images.dzcdn.net/images/artist/cb499091fda9a837d0059cbde5e52450/500x500.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+  <img src="https://cdns-images.dzcdn.net/images/artist/cb499091fda9a837d0059cbde5e52450/500x500.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+  <img src="https://cdns-images.dzcdn.net/images/artist/cb499091fda9a837d0059cbde5e52450/500x500.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+  <img src="https://cdns-images.dzcdn.net/images/artist/cb499091fda9a837d0059cbde5e52450/500x500.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+  <img src="https://cdns-images.dzcdn.net/images/artist/cb499091fda9a837d0059cbde5e52450/500x500.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+    </div>
+</div>
+
+-->
+ <div id="header_action_2_info"></div>
+<div id="header_action_2_info_child" class="display_1"></div>
+
+
+
+
+
+ 
+
+<style>
+  .display_1{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .element_{
+min-width: 50px;
+min-height: 50px;
+ 
+  }
+  .demo2{
+    display: none;
+  }
+  textarea{
+    width: 100%;
+    height : 100% ; 
+    border:1px solid rgba(0,0,0,0.3) ; 
+  }
+  .change_img{
+ 
+    margin-bottom : 25px ; 
+    max-width: 300px;
+ 
+  background-image: url("https://img.icons8.com/sf-regular/100/picture.png");
+background-size:100% ; 
+}
+.change_img:hover{
+  cursor:pointer ; 
+}
+.dislay_flex{
+  display: flex;
+  justify-content: space-around;
+  margin-top:45px ; 
+}
+.change_img2{
+
+  max-width:500px; 
+  width:200px; 
+  margin-bottom: 50px; 
+  margin-top: 50px; 
+
+}
+ 
+
+
+.cursor_pointer:hover{
+  cursor: pointer;
+}
+
+.pas_visible{
+  width:100%;
+  height:1200px;
+  background-color:rgba(0,0,0,0.6) ; 
+  position:absolute ; 
+  top:0 ; 
+
+}
+
+
+
+</style>

@@ -120,9 +120,11 @@ $number++;
     }
 
 
-
+selection_menu_1_2
   }
   function selection_menu_action_2(_this) {
+
+   
 
     document.getElementById("selection_menu_1_1").className = "opacity_0";
     document.getElementById("selection_menu_1_2").className = "opacity_0";
@@ -368,6 +370,64 @@ function myGreeting() {
 
 
     
+  }
+
+
+
+  function add_member_input() {
+     const  add_member_input =document.getElementById("add_member_input").value; 
+
+
+     alert(add_member_input) ; 
+  }
+
+
+  function selection_menu_1_2_selection2_add(_this) {
+   
+
+
+    _this.style.display="none" ; 
+    var selection_menu_1_2_selection2_add =document.getElementById("input_"+_this.title).value ; 
+
+ 
+
+
+
+    var ok = new Information("php_add/selection_menu_1_2_selection2_1.php"); // création de la classe 
+    ok.add("liste_projet_id_parent",_this.title); // ajout de l'information pour lenvoi  
+    ok.add("selection_menu_1_2_selection2_add", selection_menu_1_2_selection2_add); // ajout de l'information pour lenvoi  
+ 
+    console.log(ok.info()); // demande l'information dans le tableau
+    ok.push(); // envoie l'information au code pkp 
+
+
+
+    const myTimeout = setTimeout(myGreeting, 250);
+
+function myGreeting() {
+  _this.style.display="" ; 
+  Ajax("selection_menu_action_2", "pages/selection_menu_1_2_selection2.php");
+
+}
+
+  }
+
+
+  function add_member_input_remove_element(_this){
+ 
+
+
+    var ok = new Information("php_update/add_member_input_remove_element.php"); // création de la classe 
+    ok.add("liste_projet_id_sha1",_this.title); // ajout de l'information pour lenvoi  
+ 
+ 
+    console.log(ok.info()); // demande l'information dans le tableau
+    ok.push(); // envoie l'information au code pkp 
+
+
+
+
+document.getElementById(_this.title).style.display="none";
   }
 </script>
 

@@ -63,7 +63,9 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
   <div action="/action_page.php"> 
     <select class="form-select" id="sel1" title="selection_menu_1_2" onchange="sellist1(this)">
       <?php
+      echo "ICI" ; 
       for ($a = 0; $a < count($liste_projet_id_sha1_); $a++) {
+        
 
 
         if($a==0){
@@ -75,17 +77,36 @@ $liste_projet_user_prenom = $apple->add_array_element($number);
         ?>
 
         <option>
-          <?php echo $liste_projet_name[$a] ?>
+          <?php
+        
+          if(count($apple->list_row)>0){
+            echo $liste_projet_name[$a]  ;
+          }
+     
+        
+          
+          ?>
         </option>
       <?php
+    
       }
 
       ?>
 
     </select>
     <br>
-    <img  id="selection_menu_1_2_all" onclick="selection_menu_1_2_all(this)" title="<?php echo $liste_projet_name[0] ;?>" width="50" height="50" src="https://img.icons8.com/ios/50/visible--v1.png" alt="visible--v1" class="cursor_pointer" style="margin-top:25px;margin-bottom:25px"/>
+   
+   
+   <?php 
 
+if(count($apple->list_row)>0){
+   ?>
+     <img  id="selection_menu_1_2_all" onclick="selection_menu_1_2_all(this)" title="<?php echo $liste_projet_name[0] ;?>" width="50" height="50" src="https://img.icons8.com/ios/50/visible--v1.png" alt="visible--v1" class="cursor_pointer" style="margin-top:25px;margin-bottom:25px"/>
+   <?php 
+}
+
+ 
+?>
   </div>
 
 

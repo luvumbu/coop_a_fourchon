@@ -1,0 +1,76 @@
+<style>
+
+.hreff_el_0{
+    text-align:center ; 
+    
+   
+    padding:5px ; 
+    width:100%; 
+     }
+     .hreff_el_00{
+       text-decoration:none ; 
+    
+       padding-top:5px ; 
+       padding-bottom:5px ; 
+   
+       text-align:center;
+       margin-bottom:3px; 
+     }
+     #hreff_el_0{
+       
+     }
+     .visibility_menue_1{
+       display:none ; 
+       
+     }
+     #img_visibility_x:hover{
+       cursor:pointer;
+     }
+     
+     .hreff_el_00:hover{
+    
+       transition:1s all ; 
+       background-color:red; 
+     }
+   
+     .hreff_el_00:hover{
+      
+       transition:0.5s all ; 
+   
+     }
+     .hreff_el_01:hover{
+   
+       color:white ; 
+       transition:0.5s all ; 
+       background-color:rgba(0,0,0,0.6) ; 
+   
+     }
+   
+     .hreff_el_01{
+    padding:5px;
+       transition:0.5s all ; 
+       background-color:black ; 
+   
+   
+     }
+     .deux_em{
+       font-size:1.5em; 
+     }
+  
+</style>
+
+<script>
+  function img_visibility_x(_this){
+      console.log(_this.className) ; 
+      if(_this.className=="img_visibility_x"){
+          _this.className ="";
+          document.getElementById("hreff_el_0").className="" ; 
+      }
+      else {
+          _this.className ="img_visibility_x";
+         
+          document.getElementById("hreff_el_0").className="visibility_menue_1" ; 
+      }
+    
+  }
+</script>

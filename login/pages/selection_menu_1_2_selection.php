@@ -23,7 +23,7 @@ array_push(
 );
 
 
-$apple->sql = 'SELECT * FROM `liste_projet` WHERE `liste_projet_description3` !="COMMISSION"  ORDER BY  `liste_projet_id` DESC';
+$apple->sql = 'SELECT * FROM `liste_projet` WHERE `liste_projet_description3` ="REUNION"  ORDER BY  `liste_projet_id` DESC';
 $apple->execution();
 $myJSON = json_encode($apple->list_row);
 
