@@ -123,7 +123,8 @@ $set_img->set_className("description_projet", ""); // Suppression de l'ID du par
  
 
         <input onkeyup="<?php  echo $input_1->function_name.'(this)' ;?>" id="<?php echo  $input_1->name ?>" type="text" class="<?php echo  $input_1->className_array_total.' '.$input_1->class_style ?>">
-        </div>
+       
+    </div>
 
 
 
@@ -138,8 +139,7 @@ $set_img->set_className("description_projet", ""); // Suppression de l'ID du par
 
             <div class="form-group">
                 <label for="textarea-field">Zone de texte :</label>
-            <?php echo $input_2->get_input("input"); // Crée un champ de texte (input) ?>
-                
+                <textarea onkeyup="<?php  echo $input_2->function_name.'(this)' ;?>" id="<?php echo  $input_2->name ?>" type="text" class="<?php echo  $input_2->className_array_total.' '.$input_2->class_style ?>"></textarea>
             </div>
         </form>
     </div>
