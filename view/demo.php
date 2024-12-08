@@ -38,6 +38,11 @@
 
     var_dump($dynamicVariables['img_projet_src']);
 
+    var_dump($dynamicVariables['title_projet']);
+    var_dump($dynamicVariables['description_projet']);
+
+
+
     $count = count($dynamicVariables['img_projet_src']);
 
 
@@ -112,8 +117,12 @@
 
 
  
-
-    ?>
+$src1 = "https://i.pinimg.com/236x/02/3f/c6/023fc6874164528602203e053b6f620d.jpg" ; 
+ 
+$title_projet = $dynamicVariables['title_projet'][$a] ; 
+$description_projet = $dynamicVariables['description_projet'][$a] ; 
+ 
+ ?>
 
 
 
@@ -121,26 +130,32 @@
      <div class="form-container">
          <h1>Gestion des Éléments</h1>
          <form>
+
+         
+
              <div class="form-group">
                  <label for="input-field">Entrée :</label>
-                 <input onkeyup="<?php echo $input_1->function_name . '(this)'; ?>" id="<?php echo  $input_1->name ?>" type="text" class="<?php echo  $input_1->className_array_total . ' ' . $input_1->class_style ?>">
+                 <input value="<?php echo $title_projet  ?>" onkeyup="<?php echo $input_1->function_name . '(this)'; ?>" id="<?php echo  $input_1->name ?>" type="text" class="<?php echo  $input_1->className_array_total . ' ' . $input_1->class_style ?>">
              </div>
 
+        
+     <div class="box">
+     <img class="<?php echo  $add_img->className_array_total . ' ' . $add_img->class_style ?>" onclick="add_img(this)" id="<?php echo  $add_img->name ?>"  src="<?php  echo $src1  ?>" alt="" srcset="">
+     </div>
      
-             <div onclick="add_img(this)" id="<?php echo  $add_img->name ?>" type="text" class="<?php echo  $add_img->className_array_total . ' ' . $add_img->class_style ?>">
-                <?php echo $add_img->text ?>
-             </div>
+  
+             
+           
   
              <div class="image-container"> 
                  <div class="image-buttons">
-                     <button type="button" class="remove-image-btn black">Supprimer</button>
-                     <button type="button" class="add-image-btn black">Ajouter une image</button>
+                     <button type="button" class="remove-image-btn black">Supprimer l'image</button>
                  </div>
              </div>
 
              <div class="form-group">
                  <label for="textarea-field">Zone de texte :</label>
-                 <textarea onkeyup="<?php echo $input_2->function_name . '(this)'; ?>" id="<?php echo  $input_2->name ?>" type="text" class="<?php echo  $input_2->className_array_total . ' ' . $input_2->class_style ?>"></textarea>
+                 <textarea onkeyup="<?php echo $input_2->function_name . '(this)'; ?>" id="<?php echo  $input_2->name ?>" type="text" class="<?php echo  $input_2->className_array_total . ' ' . $input_2->class_style ?>"><?php echo $description_projet ?></textarea>
              </div>
          </form>
      </div>
@@ -152,13 +167,14 @@
  <style>
 .black {
     background-color: black;
+    text-align: center;
+
 }
     .add_img{
-        margin-top: 50px;
-        margin-bottom: 50px;
+  
         background-color: black;
         color: white;
-        padding: 100px;
+    
         text-align: center;
 
 
@@ -185,4 +201,10 @@ cursor: pointer;
      #div_generator_img_input:hover {
          cursor: pointer;
      }
+     .box{
+        width: 150px;
+        margin: auto;
+     }
  </style>
+
+ 

@@ -13,8 +13,8 @@
 
 
 
-<form>   
-
+<form style="position: fixed;">    
+<div id="upload-progress"   ></div>
 <div>
     <label for="file-input"><img width="50" height="50" src="https://img.icons8.com/external-xnimrodx-lineal-xnimrodx/50/external-dowload-big-data-xnimrodx-lineal-xnimrodx.png" alt="external-dowload-big-data-xnimrodx-lineal-xnimrodx"></label>
     
@@ -48,7 +48,7 @@ function name_file() {
 
 
 
- var ok = new Information("name.php"); // création de la classe 
+ var ok = new Information("add_img/name.php"); // création de la classe 
 ok.add("name", time); // ajout de l'information pour lenvoi 
    
 console.log(ok.info()); // demande l'information dans le tableau
@@ -60,16 +60,15 @@ ok.push(); // envoie l'information au code pkp
 }
 
 </script>
-<div id="upload-progress" ></div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="upload.js"></script>
 
-<a href="uploads/" class="class4"><div><img width="50" height="50" src="https://img.icons8.com/android/50/picture.png" alt="picture"/></div></a>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="add_img/upload.js"></script>
+
 </div>
 
 
 
-<div id="bg_black" onclick="bg_black()"></div>
+<div id="bg_black" onclick="bg_black(this)"></div>
  
 <style>
     .class1{
@@ -93,14 +92,17 @@ left:35%;
     }
     .element_1 div {
         padding:7px ; 
+        padding-left: 90px;
+        padding-right: 90px;
+
     }
     #bg_black{
 z-index: 1;
 
-        background-color:rgba(0,0,0,0.9) ; 
-        width : 99%;
-        height : 99% ; 
-        position:absolute ; 
+        background-color:rgba(0,0,0,0.6) ; 
+        width : 100%;
+        height : 100% ; 
+        position:fixed ; 
         top:0 ; 
     }
     body{
@@ -110,8 +112,9 @@ z-index: 1;
 </style>
 
 <script>
-    function  bg_black() {
-        window.location.href = "../index.php";
+    function  bg_black(_this) {
+       
+       document.getElementById("add_img").className ="display_none" ; 
     }
 </script>
 <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">

@@ -53,7 +53,9 @@ $total = strrev($total) ;
 
 
 
-$file_path = 'uploads/' . $_SESSION["name"].$total;
+$file_path = '../src/img/' . $_SESSION["name"].$total;
+
+$file_path2 = '../src/img/XXXX' . $_SESSION["name"].$total;
 $file_data = decode_chunk($_POST['file_data']);
 
 if (false === $file_data) {
@@ -66,4 +68,11 @@ file_put_contents($file_path, $file_data, FILE_APPEND);
 
 // nécessaire pour que JavaScript considère que la requête s'est bien passée:
 echo json_encode([]); 
+
+
+
+
+
+
+
 ?>

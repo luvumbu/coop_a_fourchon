@@ -25,7 +25,7 @@
 
  <script>
    document.getElementById('div_generator').addEventListener('click', function() {
-   document.getElementById('div_generator').style.display="none" ; 
+     document.getElementById('div_generator').style.display = "none";
 
      function afficherMessage(message) {
        const xhttp = new XMLHttpRequest();
@@ -47,24 +47,32 @@
 
 
    function div_generator_img_input(_this) {
-    window.location.href = "add_img/index.php";
+     window.location.href = "add_img/index.php";
    }
 
 
    const xhttp = new XMLHttpRequest();
-       xhttp.onload = function() {
-         document.getElementById("demo").innerHTML = this.responseText;
-       }
-       xhttp.open("GET", "view/demo.php");
-       xhttp.send();  
+   xhttp.onload = function() {
+     document.getElementById("demo").innerHTML = this.responseText;
+   }
+   xhttp.open("GET", "view/demo.php");
+   xhttp.send();
 
    function add_img(_this) {
+
+     const texteFormatte = afficherValeursFormattees(_this.className);
+     console.log(texteFormatte[3]); // Affiche les valeurs formatées dans la console pour le débogage
  
-    const texteFormatte = afficherValeursFormattees(_this.className);
-        console.log(texteFormatte[3]); // Affiche les valeurs formatées dans la console pour le débogage
-        window.location.href = "add_img/index.php";
+
+
+     document.getElementById("add_img").className ="" ; 
 
    }
  </script>
 
 
+ <div id="add_img" class="display_none">
+   <?php
+    include_once "view/add_img.php";
+    ?>
+ </div>
