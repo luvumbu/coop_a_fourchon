@@ -39,6 +39,11 @@ $databaseHandler->general_dynamique();
  
 var_dump($dynamicVariables['img_projet_src']);
 
+$count = count($dynamicVariables['img_projet_src']) ; 
+
+
+ 
+
 // Dernier exemple d'ajout d'éléments à un div
 // Ce script illustre comment modifier et ajouter des éléments à un div généré en utilisant la classe DivGenerator.
 
@@ -49,7 +54,13 @@ var_dump($dynamicVariables['img_projet_src']);
 // Paramètre n°4 : Séparateur des noms de classe, ici "__".
 // Paramètre n°5 : Texte affiché dans le div généré, ici 'My source' (indique la source ou une note d'information).
 
-$input_1 = new DivGenerator("projet", "div_generator", "update_1", "__", 'Saisissez un texte...');
+
+for($a = 0 ; $a < $count; $a ++ ) {
+
+
+ 
+$colonne_table_recherche_resultat =  $dynamicVariables['id_sha1_projet'][$a]   ; 
+$input_1 = new DivGenerator("projet", "div_generator_".$a, "update_1", "__", 'Saisissez un texte...');
 // Ajout ou modification de classes au div généré
 // Ligne n°1 : Spécifie la classe "id_user" et associe la valeur "200", ce qui permet de modifier l'ID de l'utilisateur.
 // Ligne n°2 : Spécifie la classe "id_parent_user" et la vide, ce qui correspond à la suppression de l'ID du parent utilisateur.
@@ -64,7 +75,7 @@ $input_1->generateDiv(); // Affiche le div généré après modification.
 
 
 
-$input_2 = new DivGenerator("projet", "div_generator_text", "update_1", "__", 'Saisissez un texte...');
+$input_2 = new DivGenerator("projet", "div_generator_text_".$a, "update_1", "__", 'Saisissez un texte...');
 $input_2->set_input("text") ; 
 // Ajout ou modification de classes au div généré
 // Ligne n°1 : Spécifie la classe "id_user" et associe la valeur "200", ce qui permet de modifier l'ID de l'utilisateur.
@@ -82,7 +93,7 @@ $input_2->generateDiv(); // Affiche le div généré après modification.
 
 
 
-$set_img = new DivGenerator("projet", "div_generator_img", "update_1", "__", '150x150');
+$set_img = new DivGenerator("projet", "div_generator_img_".$a, "update_1", "__", '150x150');
 
 
 $set_img->set_onclick_text("div_generator_img_input(this)") ; 
@@ -130,7 +141,10 @@ $set_img->set_className("description_projet", ""); // Suppression de l'ID du par
         </form>
     </div>
 
+<?php 
+}
 
+?>
  <style>
     #div_generator_text_input{
         width: 100%;
