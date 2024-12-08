@@ -61,13 +61,14 @@ for($a = 0 ; $a < $count; $a ++ ) {
  
 $colonne_table_recherche_resultat =  $dynamicVariables['id_sha1_projet'][$a]   ; 
 $input_1 = new DivGenerator("projet", "div_generator_".$a, "update_1", "__", 'Saisissez un texte...');
+$input_1->set_class_style("test") ;
+
 // Ajout ou modification de classes au div généré
 // Ligne n°1 : Spécifie la classe "id_user" et associe la valeur "200", ce qui permet de modifier l'ID de l'utilisateur.
 // Ligne n°2 : Spécifie la classe "id_parent_user" et la vide, ce qui correspond à la suppression de l'ID du parent utilisateur.
 $input_1->set_className("id_sha1_projet", $colonne_table_recherche_resultat); // Modification de l'ID utilisateur
 $input_1->set_className("title_projet", ""); // Suppression de l'ID du parent utilisateur
 // Génération du div avec les classes et les valeurs définies ci-dessus
-
 $input_1->set_input("input") ; 
 $input_1->generateDiv(); // Affiche le div généré après modification.
 
@@ -76,7 +77,7 @@ $input_1->generateDiv(); // Affiche le div généré après modification.
 
 
 $input_2 = new DivGenerator("projet", "div_generator_text_".$a, "update_1", "__", 'Saisissez un texte...');
-$input_2->set_input("text") ; 
+$input_2->set_input(" text") ; 
 // Ajout ou modification de classes au div généré
 // Ligne n°1 : Spécifie la classe "id_user" et associe la valeur "200", ce qui permet de modifier l'ID de l'utilisateur.
 // Ligne n°2 : Spécifie la classe "id_parent_user" et la vide, ce qui correspond à la suppression de l'ID du parent utilisateur.
@@ -119,8 +120,10 @@ $set_img->set_className("description_projet", ""); // Suppression de l'ID du par
         <form>
             <div class="form-group">
                 <label for="input-field">Entrée :</label>
-            <?php echo $input_1->get_input("input"); // Crée un champ de texte (input) ?>
-            </div>
+ 
+
+        <input onkeyup="<?php  echo $input_1->function_name.'(this)' ;?>" id="<?php echo  $input_1->name ?>" type="text" class="<?php echo  $input_1->className_array_total.' '.$input_1->class_style ?>">
+        </div>
 
 
 
@@ -146,7 +149,7 @@ $set_img->set_className("description_projet", ""); // Suppression de l'ID du par
 
 ?>
  <style>
-    #div_generator_text_input{
+    textarea{
         width: 100%;
         border: 1px solid rgba(0, 0, 0,0.3);
         height: 200px;
@@ -162,5 +165,6 @@ $set_img->set_className("description_projet", ""); // Suppression de l'ID du par
     #div_generator_img_input:hover{
         cursor: pointer;
     }
+   
  </style>
 

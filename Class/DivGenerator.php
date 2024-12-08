@@ -13,6 +13,7 @@ class DivGenerator
     public $onclick_text ="";
 
     public $type ="" ; 
+    public $class_style ="";
 
 
 
@@ -64,6 +65,10 @@ echo '<style>
       
     }
 
+
+    function set_class_style($class_style){
+            $this->class_style = $class_style ;
+    }
     function get_text()
     {
 
