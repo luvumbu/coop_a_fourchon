@@ -81,5 +81,3 @@ $urlParams = str_replace('index.php/', '', $urlPath);
  
   </div>
 
-
-  

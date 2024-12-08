@@ -43,4 +43,12 @@
 
 
    });
+
+
+
+   function div_generator_img_input(_this) {
+    window.location.href = "add_img/index.php";
+   }
  </script>
+
+

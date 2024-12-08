@@ -10,6 +10,7 @@ class DivGenerator
     public $function_split;
     public $dbname;
     public $text;
+    public $onclick_text ="";
 
     public $type ="" ; 
 
@@ -29,6 +30,13 @@ class DivGenerator
      
         $this->type = $type;
 
+    }
+
+    function set_onclick_text($onclick_text){
+        $this->onclick_text = $onclick_text;
+    }
+    function get_onclick_text(){
+        return $this->onclick_text ;
     }
     function get_input()
     {
@@ -60,10 +68,16 @@ echo '<style>
     {
 
 
-    
+    if($this->onclick_text==""){
+        $divHtml = '<div id="' . $this->name .'_input" onkeyup="' . $this->function_name . '(this)">' . $this->text . '</div>';
+
+    }
+    else {
+        $divHtml = '<div onclick="'.$this->onclick_text.'" id="' . $this->name .'_input" onkeyup="' . $this->function_name . '(this)">' . $this->text . '</div>';
+
+    }
 
       
-        $divHtml = '<div id="' . $this->name .'_input" onkeyup="' . $this->function_name . '(this)" onclick="' . $this->function_name . '(this)" class="' . $this->className_array_total . '">' . $this->text . '</div>';
       
         return $divHtml; // Retourne le code HTML généré
 
@@ -201,6 +215,9 @@ echo $divGenerator->get_input("text"); // Crée le champ de texte (input)
         // Envoie les informations collectées vers le script PHP via la méthode 'push'
         ok.push();
     }
+
+
+ 
 
     // Fonction similaire à 'remove_1', mais avec un nom différent pour des actions spécifiques
     function add_2(_this) {

@@ -84,6 +84,8 @@ $input_2->generateDiv(); // Affiche le div généré après modification.
 
 $set_img = new DivGenerator("projet", "div_generator_img", "update_1", "__", '150x150');
 
+
+$set_img->set_onclick_text("div_generator_img_input(this)") ; 
 // Ajout ou modification de classes au div généré
 // Ligne n°1 : Spécifie la classe "id_user" et associe la valeur "200", ce qui permet de modifier l'ID de l'utilisateur.
 // Ligne n°2 : Spécifie la classe "id_parent_user" et la vide, ce qui correspond à la suppression de l'ID du parent utilisateur.
@@ -147,3 +149,4 @@ $set_img->set_className("description_projet", ""); // Suppression de l'ID du par
         cursor: pointer;
     }
  </style>
+
