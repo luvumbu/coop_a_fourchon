@@ -60,18 +60,25 @@ $url->split_basename('__');
 $count_url = count($url->get_elements());
 switch ($option0_1) {
 case 'add_1':
+$option1_2 = htmlspecialchars($option1_2, ENT_QUOTES | ENT_HTML5, 'UTF-8'); 
 $databaseHandler->action_sql("INSERT INTO `$option0_2` ($option1_1) VALUES ('$option1_2')");
 break;
 case 'add_2':
+$option1_2 = htmlspecialchars($option1_2, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+$option2_2 = htmlspecialchars($option2_2, ENT_QUOTES | ENT_HTML5, 'UTF-8');    
 $databaseHandler->action_sql("INSERT INTO `$option0_2` ($option1_1,$option2_1) VALUES ('$option1_2','$option2_2')");
 break;
-case 'add_3':
+case 'add_3':   
+$option1_2 = htmlspecialchars($option1_2, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+$option2_2 = htmlspecialchars($option2_2, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+$option3_2 = htmlspecialchars($option3_2, ENT_QUOTES | ENT_HTML5, 'UTF-8');
 $databaseHandler->action_sql("INSERT INTO `$option0_2` ($option1_1,$option2_1,$option3_1) VALUES ('$option1_2','$option2_2','$option3_2')");
 break;
 case 'remove_1':
 $databaseHandler->action_sql("DELETE FROM  `$option0_2` WHERE   `$option1_1` = '$option1_2'");
 break;
 case 'update_1':
+$option2_2 = htmlspecialchars($option2_2, ENT_QUOTES | ENT_HTML5, 'UTF-8');
  $databaseHandler->action_sql("UPDATE  `$option0_2` SET `$option2_1` = '$option2_2'   WHERE  `$option1_1` ='$option1_2'");
 break;
 }

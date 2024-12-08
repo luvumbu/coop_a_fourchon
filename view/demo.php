@@ -1,9 +1,5 @@
  <?php
     session_start();
-
-
-
-
     require_once '../Class/path_general_class.php';
     require_once '../Class/DivGenerator.php';
     require_once '../Class/DatabaseHandler.php';
@@ -25,21 +21,37 @@
 
 
 
+
+
+
+
+
+    $_SESSION["name_table"] =$name_table ;
+    $_SESSION["colonne_table"] =$colonne_table ;
+    $_SESSION["id_user"] = $id_user ;
+    $_SESSION["colonne_table_recherche"] = $colonne_table_recherche ;
+    $_SESSION["colonne_table_recherche_resultat"] =$colonne_table_recherche_resultat;
+
+
+
     // Exemple d'utilisation n°8
     // cet exemple pemmet de dnner le nom d'une table et de faire une boucle 
     // demad
     $databaseHandler = new DatabaseHandler($dbname, $username);
 
     $databaseHandler->set_mysql_general("SELECT * FROM `$name_table` WHERE `$colonne_table_recherche` ='$colonne_table_recherche_resultat' ");
+    $databaseHandler->set_mysql_general("SELECT * FROM `$name_table` WHERE 1 ");
+
     // nom table + mysql+ connoles demande
     $databaseHandler->set_table_general("projet");
     $databaseHandler->general_dynamique();
 
 
-    var_dump($dynamicVariables['img_projet_src']);
-
+    var_dump($dynamicVariables['id_sha1_projet']);
     var_dump($dynamicVariables['title_projet']);
     var_dump($dynamicVariables['description_projet']);
+    var_dump($dynamicVariables['img_projet_src']);
+
 
 
 
@@ -64,9 +76,10 @@
 
 
         $colonne_table_recherche_resultat =  $dynamicVariables['id_sha1_projet'][$a];
+        $img_projet_src_ =   $dynamicVariables['img_projet_src'][$a];
         $input_1 = new DivGenerator("projet", "div_generator_" . $a, "update_1", "__", 'Saisissez un texte...');
         $input_1->set_class_style("input_1");
-
+        echo  'ID =  ' . $colonne_table_recherche_resultat . '<br/>';
         // Ajout ou modification de classes au div généré
         // Ligne n°1 : Spécifie la classe "id_user" et associe la valeur "200", ce qui permet de modifier l'ID de l'utilisateur.
         // Ligne n°2 : Spécifie la classe "id_parent_user" et la vide, ce qui correspond à la suppression de l'ID du parent utilisateur.
@@ -116,13 +129,13 @@
 
 
 
- 
-$src1 = "https://i.pinimg.com/236x/02/3f/c6/023fc6874164528602203e053b6f620d.jpg" ; 
- 
-$title_projet = $dynamicVariables['title_projet'][$a] ; 
-$description_projet = $dynamicVariables['description_projet'][$a] ; 
- 
- ?>
+
+        $src1 = "https://i.pinimg.com/236x/02/3f/c6/023fc6874164528602203e053b6f620d.jpg";
+
+        $title_projet = $dynamicVariables['title_projet'][$a];
+        $description_projet = $dynamicVariables['description_projet'][$a];
+
+    ?>
 
 
 
@@ -131,30 +144,40 @@ $description_projet = $dynamicVariables['description_projet'][$a] ;
          <h1>Gestion des Éléments</h1>
          <form>
 
-         
+
 
              <div class="form-group">
                  <label for="input-field">Entrée :</label>
                  <input value="<?php echo $title_projet  ?>" onkeyup="<?php echo $input_1->function_name . '(this)'; ?>" id="<?php echo  $input_1->name ?>" type="text" class="<?php echo  $input_1->className_array_total . ' ' . $input_1->class_style ?>">
              </div>
 
-        
-     <div class="box">
-     <img class="<?php echo  $add_img->className_array_total . ' ' . $add_img->class_style ?>" onclick="add_img(this)" id="<?php echo  $add_img->name ?>"  src="<?php  echo $src1  ?>" alt="" srcset="">
-     </div>
-     
-  
-             
-           
-  
-             <div class="image-container"> 
+
+             <div class="box">
+
+                 <?php
+                    if ($img_projet_src_ == "") {
+                    ?>
+                     <img class="<?php echo  $add_img->className_array_total . ' ' . $add_img->class_style ?>" onclick="add_img(this)" id="<?php echo  $add_img->name ?>" src="<?php echo $src1  ?>" alt="" srcset="">
+
+                 <?php
+                    } else {
+                        ?>
+                     <img class="<?php echo  $add_img->className_array_total . ' ' . $add_img->class_style ?>" onclick="add_img(this)" id="<?php echo  $add_img->name ?>" src="<?php echo $img_projet_src_   ?>" alt="" srcset="">
+
+                        <?php 
+                    }
+                    ?>
+             </div>
+
+
+             <div class="image-container" style="margin-bottom: 50px;">
                  <div class="image-buttons">
                      <button type="button" class="remove-image-btn black">Supprimer l'image</button>
                  </div>
              </div>
 
              <div class="form-group">
-                 <label for="textarea-field">Zone de texte :</label>
+            
                  <textarea onkeyup="<?php echo $input_2->function_name . '(this)'; ?>" id="<?php echo  $input_2->name ?>" type="text" class="<?php echo  $input_2->className_array_total . ' ' . $input_2->class_style ?>"><?php echo $description_projet ?></textarea>
              </div>
          </form>
@@ -165,24 +188,27 @@ $description_projet = $dynamicVariables['description_projet'][$a] ;
 
     ?>
  <style>
-.black {
-    background-color: black;
-    text-align: center;
+     .black {
+         background-color: black;
+         text-align: center;
 
-}
-    .add_img{
-  
-        background-color: black;
-        color: white;
-    
-        text-align: center;
+     }
+
+     .add_img {
+
+         background-color: black;
+         color: white;
+
+         text-align: center;
 
 
-    }
-    .add_img:hover{
-cursor: pointer;       
+     }
 
-    }
+     .add_img:hover {
+         cursor: pointer;
+
+     }
+
      .input_2 {
          width: 100%;
          border: 1px solid rgba(0, 0, 0, 0.3);
@@ -201,10 +227,15 @@ cursor: pointer;
      #div_generator_img_input:hover {
          cursor: pointer;
      }
-     .box{
-        width: 150px;
-        margin: auto;
+
+     .box img {
+         width: 150px;
+         margin: auto;
+     }
+
+     .box  {
+   
+         margin-bottom: 50px;
+         margin-top: 50px;
      }
  </style>
-
- 

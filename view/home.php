@@ -62,10 +62,14 @@
 
      const texteFormatte = afficherValeursFormattees(_this.className);
      console.log(texteFormatte[3]); // Affiche les valeurs formatées dans la console pour le débogage
- 
-
-
      document.getElementById("add_img").className ="" ; 
+ 
+var ok = new Information("add_img/name.php"); // création de la classe 
+ok.add("name", texteFormatte[3]); // ajout de l'information pour lenvoi 
+ 
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+ 
 
    }
  </script>

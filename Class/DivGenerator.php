@@ -98,6 +98,9 @@ echo '<style>
 
         $nom_class = htmlspecialchars($this->function_split . $nom_class . $this->function_split);
         $parametre = htmlspecialchars($parametre);
+
+
+        
         $this->className_array[] = [$nom_class, $parametre]; // Ajoute une nouvelle ligne avec 2 éléments
     }
 

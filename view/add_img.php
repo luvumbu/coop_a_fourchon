@@ -21,7 +21,7 @@
 </div>
 
 
-<input type="file" name="" id="file-input"  class="class1"  onclick="name_file()" /><br />
+<input type="file" name="" id="file-input"  class="class1"   /><br />
  
 
 <div>
@@ -37,27 +37,7 @@ function disip()
     document.getElementById("submit-button").style.display="none"; 
   
 }
-function name_file() {
-    const d = new Date();
- time = d.getTime();
-
-
- console.log(time) ; 
-
-
-
-
-
- var ok = new Information("add_img/name.php"); // création de la classe 
-ok.add("name", time); // ajout de l'information pour lenvoi 
-   
-console.log(ok.info()); // demande l'information dans le tableau
-ok.push(); // envoie l'information au code pkp 
-
-
-
-
-}
+ 
 
 </script>
 
@@ -88,7 +68,7 @@ ok.push(); // envoie l'information au code pkp
         position:absolute ; 
 background-color:white ; 
 z-index: 2;
-left:35%;
+left:45%;
     }
     .element_1 div {
         padding:7px ; 

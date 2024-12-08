@@ -55,7 +55,7 @@ $total = strrev($total) ;
 
 $file_path = '../src/img/' . $_SESSION["name"].$total;
 
-$file_path2 = '../src/img/XXXX' . $_SESSION["name"].$total;
+$_SESSION["file_path"] = $file_path ; 
 $file_data = decode_chunk($_POST['file_data']);
 
 if (false === $file_data) {
