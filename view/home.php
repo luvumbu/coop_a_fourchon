@@ -14,6 +14,12 @@
 
   // METHODE  update_1 add 
   ?>
+
+
+
+<div onclick="terminer(this)" class="terminer">
+  TERMINER
+</div>
  <div id="demo"></div>
  <style>
    #div_generator {
@@ -26,6 +32,19 @@
  <script>
    document.getElementById('div_generator').addEventListener('click', function() {
      document.getElementById('div_generator').style.display = "none";
+
+
+
+
+     var ok = new Information("config/home_menu.php"); // création de la classe 
+   //  ok.add("login", "root"); // ajout de l'information pour lenvoi 
+   
+     console.log(ok.info()); // demande l'information dans le tableau
+     ok.push(); // envoie l'information au code pkp 
+
+
+
+
 
      function afficherMessage(message) {
        const xhttp = new XMLHttpRequest();
@@ -45,31 +64,43 @@
    });
 
 
+function terminer(_this) {
+  
+  var ok = new Information("config/terminer.php"); // création de la classe 
+   //  ok.add("login", "root"); // ajout de l'information pour lenvoi 
+   
+     console.log(ok.info()); // demande l'information dans le tableau
+     ok.push(); // envoie l'information au code pkp 
 
+     location.reload() ; 
+
+}
    function div_generator_img_input(_this) {
      window.location.href = "add_img/index.php";
    }
 
 
-   const xhttp = new XMLHttpRequest();
-   xhttp.onload = function() {
-     document.getElementById("demo").innerHTML = this.responseText;
-   }
-   xhttp.open("GET", "view/demo.php");
-   xhttp.send();
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function() {
+        document.getElementById("demo").innerHTML = this.responseText;
+      }
+      xhttp.open("GET", "view/demo.php");
+      xhttp.send();
+
+
 
    function add_img(_this) {
 
      const texteFormatte = afficherValeursFormattees(_this.className);
      console.log(texteFormatte[3]); // Affiche les valeurs formatées dans la console pour le débogage
-     document.getElementById("add_img").className ="" ; 
- 
-var ok = new Information("add_img/name.php"); // création de la classe 
-ok.add("name", texteFormatte[3]); // ajout de l'information pour lenvoi 
- 
-console.log(ok.info()); // demande l'information dans le tableau
-ok.push(); // envoie l'information au code pkp 
- 
+     document.getElementById("add_img").className = "";
+
+     var ok = new Information("add_img/name.php"); // création de la classe 
+     ok.add("name", texteFormatte[3]); // ajout de l'information pour lenvoi 
+
+     console.log(ok.info()); // demande l'information dans le tableau
+     ok.push(); // envoie l'information au code pkp 
+
 
    }
  </script>
@@ -80,3 +111,14 @@ ok.push(); // envoie l'information au code pkp
     include_once "view/add_img.php";
     ?>
  </div>
+
+ <style>
+  .terminer{
+    margin-top: 60px;
+    background-color: red; 
+    color: white;
+    width: 150px;
+    text-align: center;
+    padding: 15px;
+  }
+ </style>

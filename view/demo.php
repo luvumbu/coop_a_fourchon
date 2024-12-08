@@ -39,8 +39,16 @@
     // demad
     $databaseHandler = new DatabaseHandler($dbname, $username);
 
+    
+
+
+if($_SESSION["home_menu"] ==1){
     $databaseHandler->set_mysql_general("SELECT * FROM `$name_table` WHERE `$colonne_table_recherche` ='$colonne_table_recherche_resultat' ");
-    $databaseHandler->set_mysql_general("SELECT * FROM `$name_table` WHERE 1 ");
+
+}
+else {
+   $databaseHandler->set_mysql_general("SELECT * FROM `$name_table` WHERE 1 "); 
+}
 
     // nom table + mysql+ connoles demande
     $databaseHandler->set_table_general("projet");
