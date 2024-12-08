@@ -237,13 +237,27 @@ else {
      }
 
      .box img {
-         width: 150px;
+         width: 200px;
          margin: auto;
+         box-shadow: 1px 1px 4px black;
+         border-radius: 7px;
+      
+         transition : 0.1s all ; 
+     }
+
+     .box img:hover {
+       
+         box-shadow: 1px 1px 9px black;
+         transition : 0.1s all ; 
+        
+      
      }
 
      .box  {
    
          margin-bottom: 50px;
          margin-top: 50px;
+ 
+         text-align: center;
      }
  </style>
