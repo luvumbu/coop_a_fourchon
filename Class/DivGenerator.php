@@ -11,7 +11,7 @@ class DivGenerator
     public $dbname;
     public $text;
 
-    public $type ; 
+    public $type ="" ; 
 
 
 
@@ -30,7 +30,7 @@ class DivGenerator
         $this->type = $type;
 
     }
-    function get_input($type)
+    function get_input()
     {
 
 
@@ -42,8 +42,8 @@ echo '<style>
     }
 </style>';
 
-        if($type=="input"){
-            $divHtml = '<input id="' . $this->name .'_input" onkeyup="' . $this->function_name . '(this)" onclick="' . $this->function_name . '(this)" class="' . $this->className_array_total . '">';
+        if($this->type=="input"){
+            $divHtml = '<input placeholder="'.$this->text.'" type ="text" id="' . $this->name .'_input" onkeyup="' . $this->function_name . '(this)" onclick="' . $this->function_name . '(this)" class="' . $this->className_array_total . '">';
         }
         else {
   
@@ -53,6 +53,23 @@ echo '<style>
 
 
         return $divHtml; // Retourne le code HTML généré
+      
+    }
+
+    function get_text()
+    {
+
+
+    
+
+      
+        $divHtml = '<div id="' . $this->name .'_input" onkeyup="' . $this->function_name . '(this)" onclick="' . $this->function_name . '(this)" class="' . $this->className_array_total . '">' . $this->text . '</div>';
+      
+        return $divHtml; // Retourne le code HTML généré
+
+
+
+  
       
     }
 
