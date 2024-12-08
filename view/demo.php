@@ -46,12 +46,12 @@
     $databaseHandler->set_table_general("projet");
     $databaseHandler->general_dynamique();
 
-
+/*
     var_dump($dynamicVariables['id_sha1_projet']);
     var_dump($dynamicVariables['title_projet']);
     var_dump($dynamicVariables['description_projet']);
     var_dump($dynamicVariables['img_projet_src']);
-
+*/
 
 
 
@@ -79,7 +79,7 @@
         $img_projet_src_ =   $dynamicVariables['img_projet_src'][$a];
         $input_1 = new DivGenerator("projet", "div_generator_" . $a, "update_1", "__", 'Saisissez un texte...');
         $input_1->set_class_style("input_1");
-        echo  'ID =  ' . $colonne_table_recherche_resultat . '<br/>';
+    
         // Ajout ou modification de classes au div généré
         // Ligne n°1 : Spécifie la classe "id_user" et associe la valeur "200", ce qui permet de modifier l'ID de l'utilisateur.
         // Ligne n°2 : Spécifie la classe "id_parent_user" et la vide, ce qui correspond à la suppression de l'ID du parent utilisateur.
