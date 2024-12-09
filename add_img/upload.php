@@ -56,7 +56,7 @@ $_SESSION["name_extention_projet"] = $total ;
 
 
 
-$dir = '../src/img/'.$_SESSION["name2"];
+$dir = '../src/img/'.$_SESSION["index"][2];
 
 // Vérifie si le dossier existe déjà
 if (!file_exists($dir)) {
@@ -71,7 +71,7 @@ if (!file_exists($dir)) {
 
 
 
-$file_path = '../src/img/'.$_SESSION["name2"].'/' . $_SESSION["name"].$total;
+$file_path = $dir.'/' . $_SESSION["name"].$total;
 
 $_SESSION["file_path"] = $file_path ; 
 $file_data = decode_chunk($_POST['file_data']);
