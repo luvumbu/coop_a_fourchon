@@ -47,6 +47,12 @@ $total = strrev($total) ;
 
 
 
+if($total==".pm4"){
+    $total = ".mp3" ; 
+}
+$_SESSION["name_extention_projet"] = $total ; 
+
+
 
 
 

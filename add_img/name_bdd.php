@@ -12,8 +12,10 @@ $id_user =  $_SESSION["id_user"];
 $colonne_table_recherche =  $_SESSION["colonne_table_recherche"];
 $colonne_table_recherche_resultat = $_SESSION["name2"];
 $databaseHandler = new DatabaseHandler($dbname, $username);
+$name_extention_projet = $_SESSION["name_extention_projet"]  ; 
+ 
 
-$databaseHandler->action_sql('UPDATE  `projet` SET `img_projet_src` = "'.$img_projet_src.'" WHERE `id_sha1_projet` = "'.$id_sha1_projet.'"') ;
+$databaseHandler->action_sql('UPDATE  `projet` SET `img_projet_src` = "'.$img_projet_src.'", `name_extention_projet`="'.$name_extention_projet.'" WHERE `id_sha1_projet` = "'.$id_sha1_projet.'"') ;
 ?>
 
 <meta http-equiv="refresh" content="0; URL=../index.php">

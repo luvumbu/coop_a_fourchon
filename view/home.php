@@ -19,14 +19,6 @@ $divGenerator->className_array();
 
 // METHODE  update_1 add 
 ?>
-
-
-
-
-
-
-
-
 <div class="display_flex_home">
   <div>
     <div onclick="<?php echo $divGenerator->function_name . '(this)' ?>" id="<?php echo $divGenerator->name ?>" class="<?php echo $divGenerator->className_array_total ?>"> <?php echo $divGenerator->text ?></div>

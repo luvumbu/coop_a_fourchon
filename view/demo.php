@@ -8,6 +8,19 @@
 
 
 
+    $fileExtensions = [
+        'images' => ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'webp'],
+        'documents' => ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'txt', 'odt'],
+        'audio' => ['mp3', 'wav', 'aac', 'flac', 'ogg', 'm4a','m4a'],
+        'video' => ['mp4', 'avi', 'mkv', 'mov', 'wmv', 'flv', 'webm'],
+        'archives' => ['zip', 'rar', '7z', 'tar', 'gz', 'bz2'],
+        'code' => ['html', 'css', 'js', 'php', 'py', 'java', 'c', 'cpp', 'cs', 'rb', 'ts', 'json', 'xml', 'yml'],
+        'executables' => ['exe', 'bin', 'sh', 'bat', 'msi', 'app'],
+    ];
+
+
+
+
 
 
 
@@ -26,11 +39,11 @@
 
 
 
-    $_SESSION["name_table"] =$name_table ;
-    $_SESSION["colonne_table"] =$colonne_table ;
-    $_SESSION["id_user"] = $id_user ;
-    $_SESSION["colonne_table_recherche"] = $colonne_table_recherche ;
-    $_SESSION["colonne_table_recherche_resultat"] =$colonne_table_recherche_resultat;
+    $_SESSION["name_table"] = $name_table;
+    $_SESSION["colonne_table"] = $colonne_table;
+    $_SESSION["id_user"] = $id_user;
+    $_SESSION["colonne_table_recherche"] = $colonne_table_recherche;
+    $_SESSION["colonne_table_recherche_resultat"] = $colonne_table_recherche_resultat;
 
 
 
@@ -39,29 +52,27 @@
     // demad
     $databaseHandler = new DatabaseHandler($dbname, $username);
 
-    
 
 
-if($_SESSION["home_menu"] ==1){
-    $databaseHandler->set_mysql_general("SELECT * FROM `$name_table` WHERE `$colonne_table_recherche` ='$colonne_table_recherche_resultat' ");
 
-}
-else {
-   $databaseHandler->set_mysql_general("SELECT * FROM `$name_table` WHERE 1 "); 
-}
+    if ($_SESSION["home_menu"] == 1) {
+        $databaseHandler->set_mysql_general("SELECT * FROM `$name_table` WHERE `$colonne_table_recherche` ='$colonne_table_recherche_resultat' ");
+    } else {
+        $databaseHandler->set_mysql_general("SELECT * FROM `projet` WHERE 1 ");
+    }
 
     // nom table + mysql+ connoles demande
     $databaseHandler->set_table_general("projet");
     $databaseHandler->general_dynamique();
 
-/*
+    /*
     var_dump($dynamicVariables['id_sha1_projet']);
     var_dump($dynamicVariables['title_projet']);
     var_dump($dynamicVariables['description_projet']);
-    var_dump($dynamicVariables['img_projet_src']);
+ 
 */
 
-
+  
 
     $count = count($dynamicVariables['img_projet_src']);
 
@@ -87,7 +98,7 @@ else {
         $img_projet_src_ =   $dynamicVariables['img_projet_src'][$a];
         $input_1 = new DivGenerator("projet", "div_generator_" . $a, "update_1", "__", 'Saisissez un texte...');
         $input_1->set_class_style("input_1");
-    
+
         // Ajout ou modification de classes au div généré
         // Ligne n°1 : Spécifie la classe "id_user" et associe la valeur "200", ce qui permet de modifier l'ID de l'utilisateur.
         // Ligne n°2 : Spécifie la classe "id_parent_user" et la vide, ce qui correspond à la suppression de l'ID du parent utilisateur.
@@ -163,16 +174,141 @@ else {
              <div class="box">
 
                  <?php
+
+
+
+
+                    $filz = $dynamicVariables['name_extention_projet'][$a];
+
+                    // Supprimer le point au début de l'extension
+                    $extension = ltrim($filz, '.');
+
+                    // Parcourir les catégories pour trouver l'appartenance
+                    $category = null;
+                    foreach ($fileExtensions as $key => $extensions) {
+                        if (in_array($extension, $extensions)) {
+                            $category = $key;
+                            break;
+                        }
+                    }
+
+  
+
+
+
+
+
                     if ($img_projet_src_ == "") {
                     ?>
                      <img class="<?php echo  $add_img->className_array_total . ' ' . $add_img->class_style ?>" onclick="add_img(this)" id="<?php echo  $add_img->name ?>" src="<?php echo $src1  ?>" alt="" srcset="">
 
                  <?php
                     } else {
-                        ?>
-                     <img class="<?php echo  $add_img->className_array_total . ' ' . $add_img->class_style ?>" onclick="add_img(this)" id="<?php echo  $add_img->name ?>" src="<?php echo $img_projet_src_   ?>" alt="" srcset="">
+                    ?>
+                     <?php
+ 
+ 
+ 
+ 
+switch ($filz) {
+    case '.jpg':
+    case '.jpeg':
+    case '.png':
+    case '.gif':
+        // Afficher une image
+        echo "<div   class='{$add_img->className_array_total} {$add_img->class_style}' onclick='add_img(this)' id='{$add_img->name}' alt='Image' style='width:150px; height:auto;'>IMAGE</div>";
+    
+        echo "<img src='{$img_projet_src_}' class='{$add_img->className_array_total} {$add_img->class_style}' onclick='add_img(this)' id='{$add_img->name}' alt='Image' style='width:150px; height:auto;'><br>";
+ 
+        
+                // Lien pour télécharger un document
+                echo "<a href='{$img_projet_src_}' class='{$add_document->className_array_total} {$add_document->class_style}' onclick='add_document(this)' id='{$add_document->name}' download>
+                Télécharger le document : {$img_projet_src_}
+              </a><br>";
+        break;
 
-                        <?php 
+    case '.pdf':
+    case '.doc':
+    case '.docx':
+
+        echo "<div   class='{$add_img->className_array_total} {$add_img->class_style}' onclick='add_img(this)' id='{$add_img->name}' alt='Image' style='width:150px; height:auto;'>DOCUMENT</div>";
+ 
+      
+        // Lien pour télécharger un document
+        echo "<a href='{$img_projet_src_}' class='{$add_document->className_array_total} {$add_document->class_style}' onclick='add_document(this)' id='{$add_document->name}' download>
+                Télécharger le document : {$img_projet_src_}
+              </a><br>";
+        break;
+
+    case '.mp3':
+    case '.wav':
+    case '.m4a':
+
+        ?>
+
+ 
+<?php 
+        // Lecteur audio
+        echo "<div   class='{$add_img->className_array_total} {$add_img->class_style}' onclick='add_img(this)' id='{$add_img->name}' alt='Image' style='width:150px; height:auto;'>MUSIQUE</div>";
+
+        echo "<audio src='{$img_projet_src_}' controls class='{$add_audio->className_array_total} {$add_audio->class_style}' id='{$add_audio->name}' onclick='add_audio(this)'>
+                <source src='{$audio_src}' type='audio/mpeg'>
+                Votre navigateur ne supporte pas le lecteur audio.
+              </audio><br>";
+        echo "Audio : {$audio_src}";
+
+                // Lien pour télécharger un document
+
+        break;
+
+    case '.mp4':
+    case '.avi':
+    case '.mov':
+        // Lecteur vidéo
+        echo "<div   class='{$add_img->className_array_total} {$add_img->class_style}' onclick='add_img(this)' id='{$add_img->name}' alt='Image' style='width:150px; height:auto;'>PDF</div>";
+
+        echo "<video src='{$img_projet_src_}'  width='300' controls class='{$add_video->className_array_total} {$add_video->class_style}' id='{$add_video->name}' onclick='add_video(this)'>
+                <source src='{$video_src}' type='video/mp4'>
+                Votre navigateur ne supporte pas le lecteur vidéo.
+              </video><br>";
+        echo "Vidéo : {$video_src}";
+
+
+                // Lien pour télécharger un document
+
+        break;
+
+    case '.php':
+    case '.css':
+    case '.js':
+        // Lien de téléchargement pour le code
+        echo "<a href='{$code_src}' class='{$add_code->className_array_total} {$add_code->class_style}' onclick='add_code(this)' id='{$add_code->name}' download>
+                Télécharger le fichier : {$code_src}
+              </a><br>";
+
+                      // Lien pour télécharger un document
+        echo "<a href='{$img_projet_src_}' class='{$add_document->className_array_total} {$add_document->class_style}' onclick='add_document(this)' id='{$add_document->name}' download>
+        Télécharger le document : {$img_projet_src_}
+      </a><br>";
+        break;
+
+    default:
+
+    echo "AUCUN TYPE" ; 
+        // Cas où l'extension n'est pas reconnue
+        echo "<div class='{$add_unknown->className_array_total} {$add_unknown->class_style}' id='{$add_unknown->name}' onclick='add_unknown(this)'>
+                 
+              </div><br>";
+
+                      // Lien pour télécharger un document
+        echo "<a href='{$img_projet_src_}' class='{$add_document->className_array_total} {$add_document->class_style}' onclick='add_document(this)' id='{$add_document->name}' download>
+        Télécharger le document : {$img_projet_src_}
+      </a><br>";
+        break;
+}
+?>
+
+                 <?php
                     }
                     ?>
              </div>
@@ -185,7 +321,7 @@ else {
              </div>
 
              <div class="form-group">
-            
+
                  <textarea onkeyup="<?php echo $input_2->function_name . '(this)'; ?>" id="<?php echo  $input_2->name ?>" type="text" class="<?php echo  $input_2->className_array_total . ' ' . $input_2->class_style ?>"><?php echo $description_projet ?></textarea>
              </div>
          </form>
@@ -241,23 +377,23 @@ else {
          margin: auto;
          box-shadow: 1px 1px 4px black;
          border-radius: 7px;
-      
-         transition : 0.1s all ; 
+
+         transition: 0.1s all;
      }
 
      .box img:hover {
-       
+
          box-shadow: 1px 1px 9px black;
-         transition : 0.1s all ; 
-        
-      
+         transition: 0.1s all;
+
+
      }
 
-     .box  {
-   
+     .box {
+
          margin-bottom: 50px;
          margin-top: 50px;
- 
+
          text-align: center;
      }
  </style>
