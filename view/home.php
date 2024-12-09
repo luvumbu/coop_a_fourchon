@@ -147,15 +147,22 @@ function option_img(_this) {
  
  
 
-
+ 
      
 
-if(texteFormatte[3]==' remove_img') {
+if(texteFormatte[3]==' remove_img ') {
 
 
  
   document.getElementById("id_"+_this.title).className="display_none" ; 
  
+}
+else {
+  const myTimeout = setTimeout(myGreeting, 250);
+
+function myGreeting() {
+  location.reload() ; 
+}
 }
  
 

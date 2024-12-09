@@ -32,9 +32,10 @@ $databaseHandler = new DatabaseHandler($dbname, $username);
 
 
 switch ($option_img) {
-  case ' remove_img':
-    $databaseHandler->action_sql("DELETE FROM  `$projet` WHERE   `img_projet_src` = '$img_projet_src'");
-    // Example usage
+  case ' remove_img ':
+ 
+    $databaseHandler->action_sql('UPDATE  `projet` SET `img_projet_src` = "" WHERE `id_sha1_projet` = "'.$nom_dossier.'"') ;
+
     $path =  $id_sha1_projet;
     if (checkFileExists($path)) {
       delete_file($path);
