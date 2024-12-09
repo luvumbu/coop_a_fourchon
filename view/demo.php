@@ -69,12 +69,15 @@ $src_default ="https://i.pinimg.com/originals/2f/75/be/2f75beb4f91360a68f9d4aa5e
 
 
 
-
+$index = $_SESSION["index"][2] ; 
     if ($_SESSION["home_menu"] == 1) {
         $databaseHandler->set_mysql_general("SELECT * FROM `$name_table` WHERE `$colonne_table_recherche` ='$colonne_table_recherche_resultat' ");
     } else {
-        $databaseHandler->set_mysql_general("SELECT * FROM `projet` WHERE 1 ");
+        $databaseHandler->set_mysql_general("SELECT * FROM `projet` WHERE `id_user_projet` ='$index' ");
     }
+
+ 
+    
 
     // nom table + mysql+ connoles demande
     $databaseHandler->set_table_general("projet");
