@@ -248,7 +248,7 @@ $index = $_SESSION["index"][2] ;
     }
 </style>
 
-<h3 title="<?php echo $colonne_table_recherche_resultat ;?>" onclick="all_img_f(this)" class="bblack">Voir toutes les images  <?php echo $colonne_table_recherche_resultat ?></h3>
+<h3 title="<?php echo $colonne_table_recherche_resultat ;?>" onclick="all_img_f(this)" class="bblack">Voir toutes les images  <?php //echo $colonne_table_recherche_resultat ?></h3>
 <div class="display_none" id="<?php echo 'all_img'.$colonne_table_recherche_resultat ;?>">
 <?php 
 
@@ -358,8 +358,11 @@ switch ($filz) {
     default:
 
     echo "AUCUN TYPE" ; 
-        // Cas où l'extension n'est pas reconnue
-        echo "<div class='{$add_unknown->className_array_total} {$add_unknown->class_style}' id='{$add_unknown->name}' onclick='add_unknown(this)'>
+       
+    
+
+    
+        echo "<div class='{$add_document->className_array_total} {$add_document->class_style}' id='{$add_document->name}' onclick='add_document(this)'>
                  
               </div><br>";
 
@@ -387,9 +390,11 @@ switch ($filz) {
 
                  <textarea onkeyup="<?php echo $input_2->function_name . '(this)'; ?>" id="<?php echo  $input_2->name ?>" type="text" class="<?php echo  $input_2->className_array_total . ' ' . $input_2->class_style ?>"><?php echo $description_projet ?></textarea>
              </div>
+     <img onclick="remove_element(this)" class="<?php echo $input_1->className_array_total ;?>" width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1"/>
+ 
          </form>
-     </div>
 
+     </div>
  <?php
     }
 

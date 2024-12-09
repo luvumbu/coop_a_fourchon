@@ -52,7 +52,7 @@ $divGenerator->className_array();
 
 
 
-
+document.getElementById("div_generator").className="display_none" ; 
 
     var ok = new Information("config/home_menu.php"); // création de la classe 
     // ok.add("login", "root"); // ajout de l'information pour lenvoi 
@@ -218,5 +218,27 @@ padding: 17px ;
  <script>
   function deconnexion() {
     window.location.href = "Class/log_off.php";
+  }
+
+
+
+  function remove_element(_this) {
+    const texteFormatte = afficherValeursFormattees(_this.className);
+        console.log(texteFormatte); // Affiche les valeurs formatées dans la console pour le débogage
+
+
+
+var ok = new Information("config/remove_element.php"); // création de la classe 
+ 
+ok.add("texteFormatte_3", texteFormatte[3]); // ajout de l'information pour lenvoi 
+ 
+   
+console.log(ok.info()); // demande l'information dans le tableau
+  ok.push(); // envoie l'information au code pkp 
+
+
+  location.reload() ; 
+        
+    
   }
  </script>
