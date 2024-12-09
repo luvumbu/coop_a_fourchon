@@ -233,6 +233,33 @@ $index = $_SESSION["index"][2] ;
 
  
 
+
+?>
+
+<div>
+
+</div>
+
+<style>
+    .bblack{
+        background-color: black;
+        color: white;
+        padding: 8px;
+    }
+</style>
+
+<h3 title="<?php echo $colonne_table_recherche_resultat ;?>" onclick="all_img_f(this)" class="bblack">Voir toutes les images  <?php echo $colonne_table_recherche_resultat ?></h3>
+<div class="display_none" id="<?php echo 'all_img'.$colonne_table_recherche_resultat ;?>">
+<?php 
+
+require 'all_file.php' ; 
+
+
+?>
+</div>
+
+<?php 
+
  if(!checkFileExists($path)){
     $img_projet_src_ = $src_default  ;
  }

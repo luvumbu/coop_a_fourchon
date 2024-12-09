@@ -18,5 +18,7 @@ function delete_file($file_path) {
 // Exemple d'utilisation
 $file_path = "path/to/your/file.txt";
 delete_file($file_path);
+
+delete_file
 */
 ?>

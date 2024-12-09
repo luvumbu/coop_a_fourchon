@@ -14,9 +14,6 @@ $divGenerator->className_array();
 // Ligne n°2 demande les information la ou les cherchercherche je demande   id_user quand il est egale a 168 
 // Appel direct de la méthode pour générer le div
 //echo  $divGenerator->generateDiv(); // Cela va directement afficher le div géné
-
-
-
 // METHODE  update_1 add 
 ?>
 <div class="display_flex_home">
@@ -114,8 +111,64 @@ $divGenerator->className_array();
 
 
   }
-</script>
 
+
+
+
+  
+</script>
+<script>
+  function all_img_f(_this) {
+ 
+    var info = document.getElementById("all_img"+_this.title) ; 
+ 
+
+
+    if(info.className=="display_none") {
+      info.className="" ; 
+    }
+    else {
+      info.className="display_none" ; 
+
+    }
+}
+
+
+
+function option_img(_this) {
+
+
+
+  const texteFormatte = afficherValeursFormattees(_this.className);
+        console.log(texteFormatte); // Affiche les valeurs formatées dans la console pour le débogage
+
+
+  
+ 
+     
+
+if(texteFormatte[3]==' remove_img') {
+
+
+ 
+  document.getElementById("id_"+_this.title).className="display_none" ; 
+ 
+}
+
+  
+var ok = new Information("config/option_img.php"); // création de la classe 
+ok.add("projet", texteFormatte[0]); // ajout de l'information pour lenvoi 
+ok.add("id_sha1_projet", texteFormatte[1]); // ajout de l'information pour lenvoi 
+ok.add("img_projet_src", texteFormatte[2]); // ajout de l'information pour lenvoi 
+ok.add("option_img", texteFormatte[3]); // ajout de l'information pour lenvoi 
+ 
+   
+console.log(ok.info()); // demande l'information dans le tableau
+ ok.push(); // envoie l'information au code pkp 
+ 
+
+}
+</script>
 
 <div id="add_img" class="display_none">
   <?php
