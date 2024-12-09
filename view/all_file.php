@@ -34,10 +34,10 @@ if (is_dir($dossier)) {
 
 <div id="<?php echo 'id_'.$boucle_ ;  ?>">
 <img style="width: 50px;" src="<?php echo $last ?>" alt="">
-<div title="<?php echo $boucle_?>" class="<?php echo  'projet__'.$filePath.'__'.$last.'__ remove_img' ?>" onclick="option_img(this)" >
+<div title="<?php echo $boucle_?>" class="<?php echo  'projet__'.$filePath.'__'.$last.'__ remove_img __'.$colonne_table_recherche_resultat  ?>" onclick="option_img(this)" >
     Suprimer
 </div>
-<div title="<?php echo $boucle_?>" class="<?php echo  'select__'.$filePath.'__'.$last.'__ select_img' ?>" onclick="option_img(this)" >
+<div title="<?php echo $boucle_?>" class="<?php echo  'select__'.$filePath.'__'.$last.'__ select_img __'.$colonne_table_recherche_resultat  ?>" onclick="option_img(this)" >
     Selectionner
 </div>
 </div>

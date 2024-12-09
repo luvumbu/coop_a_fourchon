@@ -145,6 +145,9 @@ function option_img(_this) {
 
   
  
+ 
+
+
      
 
 if(texteFormatte[3]==' remove_img') {
@@ -154,17 +157,23 @@ if(texteFormatte[3]==' remove_img') {
   document.getElementById("id_"+_this.title).className="display_none" ; 
  
 }
+ 
 
-  
+
+ 
 var ok = new Information("config/option_img.php"); // création de la classe 
 ok.add("projet", texteFormatte[0]); // ajout de l'information pour lenvoi 
 ok.add("id_sha1_projet", texteFormatte[1]); // ajout de l'information pour lenvoi 
 ok.add("img_projet_src", texteFormatte[2]); // ajout de l'information pour lenvoi 
 ok.add("option_img", texteFormatte[3]); // ajout de l'information pour lenvoi 
+ok.add("nom_dossier", texteFormatte[4]); // ajout de l'information pour lenvoi 
+
+
+ 
  
    
 console.log(ok.info()); // demande l'information dans le tableau
- ok.push(); // envoie l'information au code pkp 
+  ok.push(); // envoie l'information au code pkp 
  
 
 }
