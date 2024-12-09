@@ -1,6 +1,6 @@
 
 <?php
-function CheckFileExists($filePath) {
+function checkFileExists($filePath) {
     if (file_exists($filePath)) {
         return true; // The file exists
     } else {

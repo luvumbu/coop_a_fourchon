@@ -4,7 +4,22 @@
     require_once '../Class/DivGenerator.php';
     require_once '../Class/DatabaseHandler.php';
     require_once '../Class/dbCheck.php';
+    require_once '../Class/CheckFileExists.php' ; 
+    require_once '../Class/delete_file.php' ; 
 
+
+ 
+// Example usage
+
+    
+
+
+    
+/*
+// Exemple d'utilisation
+$file_path = "path/to/your/file.txt";
+delete_file($file_path);
+*/
 
 
 
@@ -208,6 +223,16 @@ $src_default ="https://i.pinimg.com/originals/2f/75/be/2f75beb4f91360a68f9d4aa5e
                      <?php
  
  
+
+
+ $path = "../".$img_projet_src_;
+
+
+ 
+
+ if(!checkFileExists($path)){
+    $img_projet_src_ = $src_default  ;
+ }
  
  
 switch ($filz) {
