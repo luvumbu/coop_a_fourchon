@@ -274,6 +274,8 @@ echo $divGenerator->get_input("text"); // Crée le champ de texte (input)
 
     // Une autre fonction similaire à 'remove_1' et 'add_2', mais avec des actions légèrement différentes
     function add_1(_this) {
+
+       
         // Récupère et formate les valeurs de la classe de l'élément cliqué
         const texteFormatte = afficherValeursFormattees(_this.className);
         console.log(texteFormatte); // Affiche les valeurs formatées dans la console
