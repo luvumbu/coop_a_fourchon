@@ -56,10 +56,22 @@ $_SESSION["name_extention_projet"] = $total ;
 
 
 
+$dir = '../src/img/'.$_SESSION["name2"];
+
+// Vérifie si le dossier existe déjà
+if (!file_exists($dir)) {
+    // Crée le dossier avec des permissions par défaut (0777)
+    if (mkdir($dir, 0777, true)) {
+    } else {
+    }
+} else {
+}
 
 
 
-$file_path = '../src/img/' . $_SESSION["name"].$total;
+
+
+$file_path = '../src/img/'.$_SESSION["name2"].'/' . $_SESSION["name"].$total;
 
 $_SESSION["file_path"] = $file_path ; 
 $file_data = decode_chunk($_POST['file_data']);

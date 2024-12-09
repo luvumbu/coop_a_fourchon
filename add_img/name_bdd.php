@@ -15,6 +15,28 @@ $databaseHandler = new DatabaseHandler($dbname, $username);
 $name_extention_projet = $_SESSION["name_extention_projet"]  ; 
  
 
+
+
+
+
+
+ 
+// Définir les chemins des fichiers source et de destination
+$source = $dir;  // Remplacez par le chemin réel du fichier
+$destination = $dir.'';  // Le fichier sera copié dans la racine
+
+// Copier le fichier
+if (copy($source, $destination)) {
+    echo "Le fichier a été copié avec succès.";
+} else {
+    echo "Une erreur est survenue lors de la copie du fichier.";
+}
+ 
+
+ 
+
+
+
 $databaseHandler->action_sql('UPDATE  `projet` SET `img_projet_src` = "'.$img_projet_src.'", `name_extention_projet`="'.$name_extention_projet.'" WHERE `id_sha1_projet` = "'.$id_sha1_projet.'"') ;
 ?>
 
