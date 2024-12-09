@@ -34,7 +34,7 @@
 
 
 
-
+$src_default ="https://i.pinimg.com/originals/2f/75/be/2f75beb4f91360a68f9d4aa5e985ed85.gif" ; 
 
 
 
@@ -72,7 +72,7 @@
  
 */
 
-  
+ 
 
     $count = count($dynamicVariables['img_projet_src']);
 
@@ -215,6 +215,7 @@ switch ($filz) {
     case '.jpeg':
     case '.png':
     case '.gif':
+    case '.webp' :
         // Afficher une image
         echo "<div   class='{$add_img->className_array_total} {$add_img->class_style}' onclick='add_img(this)' id='{$add_img->name}' alt='Image' style='width:150px; height:auto;'>IMAGE</div>";
     
@@ -223,7 +224,7 @@ switch ($filz) {
         
                 // Lien pour télécharger un document
                 echo "<a href='{$img_projet_src_}' class='{$add_document->className_array_total} {$add_document->class_style}' onclick='add_document(this)' id='{$add_document->name}' download>
-                Télécharger le document : {$img_projet_src_}
+                Télécharger le document : 
               </a><br>";
         break;
 
@@ -231,12 +232,14 @@ switch ($filz) {
     case '.doc':
     case '.docx':
 
+
+   
         echo "<div   class='{$add_img->className_array_total} {$add_img->class_style}' onclick='add_img(this)' id='{$add_img->name}' alt='Image' style='width:150px; height:auto;'>DOCUMENT</div>";
  
       
         // Lien pour télécharger un document
         echo "<a href='{$img_projet_src_}' class='{$add_document->className_array_total} {$add_document->class_style}' onclick='add_document(this)' id='{$add_document->name}' download>
-                Télécharger le document : {$img_projet_src_}
+                Télécharger le document :  
               </a><br>";
         break;
 
@@ -281,9 +284,14 @@ switch ($filz) {
     case '.php':
     case '.css':
     case '.js':
+
+
+       
+        echo "<img src='{$src_default}' class='{$add_img->className_array_total} {$add_img->class_style}' onclick='add_img(this)' id='{$add_img->name}' alt='Image' style='width:150px; height:auto;'><br>";
+
         // Lien de téléchargement pour le code
         echo "<a href='{$code_src}' class='{$add_code->className_array_total} {$add_code->class_style}' onclick='add_code(this)' id='{$add_code->name}' download>
-                Télécharger le fichier : {$code_src}
+                Télécharger le fichier :  
               </a><br>";
 
                       // Lien pour télécharger un document
