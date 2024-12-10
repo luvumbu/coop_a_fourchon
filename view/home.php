@@ -221,41 +221,27 @@ padding: 17px ;
   }
 
 
-
-  function remove_element(_this) {
-    const texteFormatte = afficherValeursFormattees(_this.className);
-        console.log(texteFormatte); // Affiche les valeurs formatées dans la console pour le débogage
-
-
-
-var ok = new Information("config/remove_element.php"); // création de la classe 
  
-ok.add("texteFormatte_3", texteFormatte[3]); // ajout de l'information pour lenvoi 
+
+
+
+
  
-   
-console.log(ok.info()); // demande l'information dans le tableau
-  ok.push(); // envoie l'information au code pkp 
 
 
-  location.reload() ; 
-        
-    
-  }
+function operation_general(_this) {
 
-
-
-
-
-
-
-  function add_child(_this) {
-    const texteFormatte = afficherValeursFormattees(_this.className);
-        console.log(texteFormatte); // Affiche les valeurs formatées dans la console pour le débogage
-        console.log(texteFormatte); // Affiche les valeurs formatées dans la console pour le débogage
-var ok = new Information("config/add_child.php"); // création de la classe  
- ok.add("texteFormatte_3", texteFormatte[3]); // ajout de l'information pour lenvoi    
+  const texteFormatte = afficherValeursFormattees(_this.className);
+  console.log(texteFormatte); // Affiche les valeurs formatées dans la console pour le débogage
+  var ok = new Information("config/operation_general.php"); // création de la classe 
+ 
+ ok.add("texteFormatte_3", texteFormatte[3]); // ajout de l'information pour lenvoi 
+ ok.add("operation_general_nom",_this.title); // ajout de l'information pour lenvoi 
  console.log(ok.info()); // demande l'information dans le tableau
  ok.push(); // envoie l'information au code pkp 
  
-  }
+}
+
+
+  
  </script>

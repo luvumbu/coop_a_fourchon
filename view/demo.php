@@ -390,8 +390,8 @@ switch ($filz) {
 
                  <textarea onkeyup="<?php echo $input_2->function_name . '(this)'; ?>" id="<?php echo  $input_2->name ?>" type="text" class="<?php echo  $input_2->className_array_total . ' ' . $input_2->class_style ?>"><?php echo $description_projet ?></textarea>
              </div>
-     <img onclick="remove_element(this)" class="<?php echo $input_1->className_array_total ;?>" width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1"/>
-     <img onclick="add_child(this)" class="<?php echo $input_1->className_array_total ;?>"  width="40" height="40" src="https://img.icons8.com/office/40/plus--v1.png" alt="plus--v1"/>
+     <img title="remove" onclick="operation_general(this)" class="<?php echo $input_1->className_array_total ;?>" width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1"/>
+     <img title="add" onclick="operation_general(this)" class="<?php echo $input_1->className_array_total ;?>"  width="40" height="40" src="https://img.icons8.com/office/40/plus--v1.png" alt="plus--v1"/>
          </form>
 
      </div>
