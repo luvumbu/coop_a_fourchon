@@ -20,15 +20,17 @@ $username_ =$_POST["username"] ;
 $req_sql = 'SELECT * FROM `'.$dbname.'` WHERE `nom_user`="'.$dbname_.'" AND `password_user`="'.$username_.'" ';
 
 $databaseHandler = new DatabaseHandler($dbname, $username);
-$databaseHandler->getDataFromTable($req_sql, "id_user");
-$id_user = $databaseHandler->tableList_info;
- 
- 
 
 
-if($id_user[0]!=""){
-       $_SESSION["index"] = array($dbname_, $username_,$id_user[0]);
-}
+
+$databaseHandler->getListOfTables_Child($dbname);
+$databaseHandler->getDataFromTable2X($req_sql);
+$databaseHandler->get_dynamicVariables();
+ 
+$id_user = $dynamicVariables['id_user'][0];
+$id_sha1_user = $dynamicVariables['id_sha1_user'][0] ;
+$_SESSION["index"] = array($dbname_, $username_,$id_user,$id_sha1_user);
+ 
  
 
 

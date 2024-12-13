@@ -36,7 +36,9 @@ $databaseHandler = new DatabaseHandler($dbname,$username);
 $databaseHandler->set_column_names("id_projet");
 $databaseHandler->set_column_names("id_general");
 $databaseHandler->set_column_names("id_user_projet");
+$databaseHandler->set_column_names("id_sha1_user_projet");
 $databaseHandler->set_column_names("id_sha1_projet");
+
 $databaseHandler->set_column_names("id_sha1_parent_projet");
 $databaseHandler->set_column_names("id_sha1_parent_projet2");
 $databaseHandler->set_column_names("cryptage_projet");
@@ -62,6 +64,8 @@ $databaseHandler->set_column_names("shop_projet");
 $databaseHandler->set_column_names("date_inscription_projet");
 $databaseHandler->set_column_types("INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY");
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
+$databaseHandler->set_column_types("LONGTEXT NOT NULL");
+
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");

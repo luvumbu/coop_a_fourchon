@@ -9,7 +9,7 @@ $dbname =$_POST["dbname"] ;
 $username =$_POST["username"] ;
 // Create connection
  
- 
+$id_sha1_user = time() ; 
 
 
 $databaseHandler = new DatabaseHandler($dbname, $username);
@@ -41,6 +41,8 @@ else {
         $contenu = "<?php \n";
         $contenu =  $contenu.'$dbname = "'.$dbname.'";'."\n";
         $contenu =  $contenu.'$username = "'.$username.'";'."\n";
+        $contenu =  $contenu.'$admin_id_sha1_user  = "'.$id_sha1_user .'";'."\n";
+
         $contenu = $contenu."?>\n";
       
     
@@ -113,7 +115,10 @@ if(count($databaseHandlerxx->tableList_info)>0) {
    
 }
 else {
-$databaseHandler->action_sql("INSERT INTO `$dbname` (nom_user,password_user) VALUES ('$dbname','$username')") ;
+
+
+
+$databaseHandler->action_sql("INSERT INTO `$dbname` (nom_user,password_user,id_sha1_user) VALUES ('$dbname','$username','$id_sha1_user')") ;
  
 }
  

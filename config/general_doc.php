@@ -19,5 +19,5 @@ $req_sql__ = 'SELECT * FROM `'.$option0.'` WHERE `'.$option1.'`="'.$option2.'" A
 else {
 $req_sql__ = 'SELECT * FROM `'.$option0.'` WHERE `'.$option1.'`="'.$option2.'"  ' ; 
 }
-$databaseHandler->action_sql("INSERT INTO `projet` (id_sha1_projet,id_user_projet,id_sha1_parent_projet) VALUES ('$id_sha1_projet','$id_user_projet','$id_sha1_parent_projet')") ;
+//$databaseHandler->action_sql("INSERT INTO `projet` (id_sha1_projet,id_user_projet,id_sha1_parent_projet) VALUES ('$id_sha1_projet','$id_user_projet','$id_sha1_parent_projet')") ;
 ?>
