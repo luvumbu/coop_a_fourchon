@@ -48,8 +48,9 @@ switch ($general_function) {
     case "all":
       $_SESSION["home"] = "all" ;
       break;
-      case "remove":
-        //code block
+      case "remove": 
+       $databaseHandler->action_sql("DELETE FROM  `projet` WHERE   `id_sha1_projet` = '$id_sha1_projet'") ;
+
         break;
     default:
       //code block

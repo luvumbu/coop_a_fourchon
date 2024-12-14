@@ -71,7 +71,7 @@ if (!file_exists($dir)) {
 
 
 
-$file_path = $dir.'/' . $_SESSION["name"].$total;
+$file_path = $dir.'/oks' .$total;
 
 $_SESSION["file_path"] = $file_path ; 
 $file_data = decode_chunk($_POST['file_data']);
