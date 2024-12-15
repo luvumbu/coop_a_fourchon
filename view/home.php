@@ -23,10 +23,10 @@ $index = $index_0 . $__ . $index_1 . $__ . $index_2 . $__ . $index_3;
 $index_insert = $index . $__ . "insert";
 $index_update = $index . $__ . "update" . $__;
 $index_all = $index . $__ . "all" . $__;
-$index_remove= $index . $__ . "remove" . $__;
+$index_remove = $index . $__ . "remove" . $__;
 
-$index_sitting= $index . $__ . "sitting" . $__;
-$index_img= $index . $__ . "img" . $__;
+$index_sitting = $index . $__ . "sitting" . $__;
+$index_img = $index . $__ . "img" . $__;
 
 $databaseHandler = new DatabaseHandler("root", "root");
 
@@ -37,11 +37,10 @@ if (isset($_SESSION["home"])) {
         case "insert":
         case "all":
             $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' ";
-             break;
+            break;
         default:
             $id_sha1_projet =  $_SESSION["id_sha1_projet"];
             $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' ";
-           
     }
 
     $databaseHandler->getListOfTables_Child("projet");
@@ -53,20 +52,30 @@ if (isset($_SESSION["home"])) {
 
 
 
-      //  require 'all_doc.php'; 
- 
+        //  require 'all_doc.php'; 
 
-      echo '<div class="all_doc">';
+
+        echo '<div class="all_doc">';
         // echo $dynamicVariables['id_sha1_projet'][$a] ; 
         echo "<br/>";
         $id_sha1_projet =  $dynamicVariables['id_sha1_projet'][$a];
         $title_projet =  $dynamicVariables['title_projet'][$a];
         $description_projet =  $dynamicVariables['description_projet'][$a];
+
+
+        $img_projet_src = $dynamicVariables['img_projet_src'][$a] ; 
         echo '<input type="text" value="' . $title_projet . '" class="' . $index_update . $id_sha1_projet . '" onkeyup="a(this)">';
         echo '<textarea type="text" class="' . $index_update . $id_sha1_projet . '" onkeyup="a(this)">' . $description_projet . ' </textarea>';
         echo "<br/>";
-        echo '<div onclick="a(this)" class="' . $index_remove . $id_sha1_projet .'">'; 
-            echo '<img width="50" height="50" src="https://img.icons8.com/color/50/delete-forever.png" alt="delete-forever"/>';
+
+
+
+        echo '<div class="div_img_projet_src">';
+
+        if($img_projet_src!="") {
+            echo '<img class="' . $index_img . $id_sha1_projet . '" onclick="a(this)" src="'.$img_projet_src.'" alt="" srcset="">';
+        }
+             
         echo '</div>';
 
         /*
@@ -74,18 +83,22 @@ if (isset($_SESSION["home"])) {
             echo '<img width="50" height="50" src="https://img.icons8.com/ios/50/settings--v1.png" alt="settings--v1"/>';
         echo '</div>' ; 
         */
-        echo '<div class="' . $index_img . $id_sha1_projet .'" onclick="a(this)">' ; 
-            echo '<img class="cursor_pointer" width="50" height="50" src="https://img.icons8.com/ios/50/image-file.png" alt="image-file"/>';
-        echo '</div>' ; 
-        echo '</div>' ; 
+        echo '<div class="' . $index_img . $id_sha1_projet . '" onclick="a(this)">';
+        echo '<img class="cursor_pointer" width="50" height="50" src="https://img.icons8.com/ios/50/image-file.png" alt="image-file"/>';
+        echo '</div>';
 
-      
+
+        echo '<div onclick="a(this)" class="' . $index_remove . $id_sha1_projet . '">';
+        echo '<img width="50" height="50" src="https://img.icons8.com/color/50/delete-forever.png" alt="delete-forever"/>';
+        echo '</div>';
+        echo '</div>';
     }
 }
 
 
 //echo  'HOME : '.$_SESSION["home"] ; 
 ?>
+
 <div class="black_element" onkeyup="">
     <div class="<?php echo  $index_insert ?>" onclick="a(this)">option insert</div>
     <div class="<?php echo  $index_all ?>" onclick="a(this)">MES PROJET</div>
@@ -115,31 +128,35 @@ if (isset($_SESSION["home"])) {
         ok.add("general_function", element[4]); // ajout de l'information pour lenvoi 
         ok.add("tagName", _this.tagName); // ajout de l'information pour lenvoi 
         ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
-       console.log(ok.info()); // demande l'information dans le tableau
+        console.log(ok.info()); // demande l'information dans le tableau
         ok.push(); // envoie l'information au code pkp 
- 
- if( element[4]=="img") {
-    var add_img = document.getElementById("add_img").className ;
 
-if(add_img=="display_none"){
-    document.getElementById("add_img").className =""; 
-}
-else {
-    document.getElementById("add_img").className ="display_none"; 
+        if (element[4] == "img") {
+            var add_img = document.getElementById("add_img").className;
+
+            if (add_img == "display_none") {
+                document.getElementById("add_img").className = "";
+            } else {
+                document.getElementById("add_img").className = "display_none";
 
 
-}
-}
-if(_this.tagName=="DIV") {
- //  const myTimeout = setTimeout(x, 250);
-}
-       
- 
-       function x() {
+            }
+        }
+        if (_this.tagName == "DIV") {
+           
+
+            if(element[4]!="img"){
+                const myTimeout = setTimeout(x, 250);
+            }
+          
+        }
+
+
+        function x() {
             location.reload();
 
         }
-            
+
     }
 </script>
 
@@ -171,21 +188,37 @@ if(_this.tagName=="DIV") {
         color: black;
     }
 
-    .all_doc{
-        
+    .all_doc {
+
         margin-bottom: 135px;
     }
-    .all_doc  {
-     
+
+    .all_doc {
+
         width: 80%;
         margin: auto;
-       
+
     }
-   .all_doc textarea,.all_doc input{
+
+    .all_doc textarea,
+    .all_doc input {
         width: 100%;
         border: 1px solid rgba(0, 0, 0, 0.1);
     }
-    .cursor_pointer:hover{
+
+    .cursor_pointer:hover {
         cursor: pointer;
+    }
+    .div_img_projet_src img{
+        width: 300px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+
+    }
+    .div_img_projet_src img:hover{
+  cursor: pointer;
+
+
     }
 </style>
