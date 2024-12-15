@@ -72,7 +72,7 @@ $id_sha1_projet= $_SESSION["id_sha1_projet"] ;
 
 $file_path = $dir.$id_sha1_projet[0].'X'.$_SESSION["img"].$total;
 
-$_SESSION["file_path"] = $file_path ; 
+$_SESSION["file_path"] = $_SESSION["cheminDossier"]."/".$_SESSION["img"].$total ; 
 $file_data = decode_chunk($_POST['file_data']);
 
 if (false === $file_data) {
