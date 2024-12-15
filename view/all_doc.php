@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte Moderne</title>
+ 
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -67,82 +62,9 @@
         .card-content button:hover {
             background-color: #45a049;
         }
-
-        .style-switcher {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .style-switcher button {
-            margin: 5px;
-            padding: 0.5rem;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 0.9rem;
-        }
-
-        .style-switcher button:hover {
-            opacity: 0.8;
-        }
-
-        .dark-theme {
-            background-color: #2c2c2c;
-            color: white;
-        }
-
-        .dark-theme .card {
-            background: #3e3e3e;
-            color: white;
-        }
-
-        .dark-theme .card-content .meta {
-            color: #bbbbbb;
-        }
-
-        .dark-theme .card-content button {
-            background-color: #556ee6;
-        }
-
-        .dark-theme .card-content button:hover {
-            background-color: #465cd9;
-        }
-
-        .vivid-theme {
-            background-color: #fffbf0;
-        }
-
-        .vivid-theme .card {
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
-            color: white;
-        }
-
-        .vivid-theme .card-content .meta {
-            color: #ffe4e6;
-        }
-
-        .vivid-theme .card-content button {
-            background-color: #ff577f;
-        }
-
-        .vivid-theme .card-content button:hover {
-            background-color: #ff4567;
-        }
     </style>
 </head>
 <body>
-    <div class="style-switcher">
-        <button onclick="setTheme('')">Défaut</button>
-        <button onclick="setTheme('dark-theme')">Sombre</button>
-        <button onclick="setTheme('vivid-theme')">Vif</button>
-    </div>
-
     <div class="card">
         <img src="https://via.placeholder.com/300x200" alt="Placeholder Image">
         <div class="card-content">
@@ -164,11 +86,4 @@
             <button>Lire l'article</button>
         </div>
     </div>
-
-    <script>
-        function setTheme(themeClass) {
-            document.body.className = themeClass;
-        }
-    </script>
-</body>
-</html>
+ 

@@ -53,10 +53,8 @@ if($total==".pm4"){
 $_SESSION["name_extention_projet"] = $total ; 
 
 
-
-
-
-$dir = '../src/img/'.$_SESSION["index"][2];
+ 
+$dir = '../src/img/'.'123'.$_SESSION["index"][2];
 
 // Vérifie si le dossier existe déjà
 if (!file_exists($dir)) {
@@ -66,12 +64,13 @@ if (!file_exists($dir)) {
     }
 } else {
 }
+ 
+$id_sha1_user_projet = $_SESSION["id_sha1_user_projet"]  ;
+
+$id_sha1_projet= $_SESSION["id_sha1_projet"] ; 
 
 
-
-
-
-$file_path = $dir.'/oks' .$total;
+$file_path = $dir.$id_sha1_projet[0].'X'.$_SESSION["img"].$total;
 
 $_SESSION["file_path"] = $file_path ; 
 $file_data = decode_chunk($_POST['file_data']);
@@ -82,7 +81,7 @@ if (false === $file_data) {
 
 /* on ajoute le segment de données qu'on vient de recevoir 
  * au fichier qu'on est en train de ré-assembler: */
-file_put_contents($file_path, $file_data, FILE_APPEND);
+file_put_contents($_SESSION["cheminDossier"]."/".$_SESSION["img"].$total, $file_data, FILE_APPEND);
 
 // nécessaire pour que JavaScript considère que la requête s'est bien passée:
 echo json_encode([]); 

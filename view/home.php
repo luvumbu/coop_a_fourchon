@@ -25,6 +25,9 @@ $index_update = $index . $__ . "update" . $__;
 $index_all = $index . $__ . "all" . $__;
 $index_remove= $index . $__ . "remove" . $__;
 
+$index_sitting= $index . $__ . "sitting" . $__;
+$index_img= $index . $__ . "img" . $__;
+
 $databaseHandler = new DatabaseHandler("root", "root");
 
 if (isset($_SESSION["home"])) {
@@ -34,16 +37,11 @@ if (isset($_SESSION["home"])) {
         case "insert":
         case "all":
             $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' ";
-            break;
-        case "update":
+             break;
+        default:
             $id_sha1_projet =  $_SESSION["id_sha1_projet"];
             $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' ";
-            break;
-        case "remove":
-            //code block
-            break;
-        default:
-            //code block
+           
     }
 
     $databaseHandler->getListOfTables_Child("projet");
@@ -52,6 +50,13 @@ if (isset($_SESSION["home"])) {
     $count = count($dynamicVariables['id_sha1_projet']);
 
     for ($a = 0; $a < $count; $a++) {
+
+
+
+      //  require 'all_doc.php'; 
+ 
+
+      echo '<div class="all_doc">';
         // echo $dynamicVariables['id_sha1_projet'][$a] ; 
         echo "<br/>";
         $id_sha1_projet =  $dynamicVariables['id_sha1_projet'][$a];
@@ -60,28 +65,26 @@ if (isset($_SESSION["home"])) {
         echo '<input type="text" value="' . $title_projet . '" class="' . $index_update . $id_sha1_projet . '" onkeyup="a(this)">';
         echo '<textarea type="text" class="' . $index_update . $id_sha1_projet . '" onkeyup="a(this)">' . $description_projet . ' </textarea>';
         echo "<br/>";
-
-
-
-        echo "<br/>";
-
-
-
         echo '<div onclick="a(this)" class="' . $index_remove . $id_sha1_projet .'">'; 
-        echo '<img width="50" height="50" src="https://img.icons8.com/color/50/delete-forever.png" alt="delete-forever"/>';
-
+            echo '<img width="50" height="50" src="https://img.icons8.com/color/50/delete-forever.png" alt="delete-forever"/>';
         echo '</div>';
- 
 
+        /*
+        echo '<div class="' . $index_sitting . $id_sha1_projet .'" onclick="a(this)">' ; 
+            echo '<img width="50" height="50" src="https://img.icons8.com/ios/50/settings--v1.png" alt="settings--v1"/>';
+        echo '</div>' ; 
+        */
+        echo '<div class="' . $index_img . $id_sha1_projet .'" onclick="a(this)">' ; 
+            echo '<img class="cursor_pointer" width="50" height="50" src="https://img.icons8.com/ios/50/image-file.png" alt="image-file"/>';
+        echo '</div>' ; 
+        echo '</div>' ; 
 
-
-        echo '<img width="50" height="50" src="https://img.icons8.com/ios/50/settings--v1.png" alt="settings--v1"/>';
-
-
-        echo '<img width="70" height="70" src="https://img.icons8.com/ios/70/image-file.png" alt="image-file"/>';
+      
     }
 }
 
+
+//echo  'HOME : '.$_SESSION["home"] ; 
 ?>
 <div class="black_element" onkeyup="">
     <div class="<?php echo  $index_insert ?>" onclick="a(this)">option insert</div>
@@ -112,18 +115,31 @@ if (isset($_SESSION["home"])) {
         ok.add("general_function", element[4]); // ajout de l'information pour lenvoi 
         ok.add("tagName", _this.tagName); // ajout de l'information pour lenvoi 
         ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
-        console.log(ok.info()); // demande l'information dans le tableau
+       console.log(ok.info()); // demande l'information dans le tableau
         ok.push(); // envoie l'information au code pkp 
+ 
+ if( element[4]=="img") {
+    var add_img = document.getElementById("add_img").className ;
+
+if(add_img=="display_none"){
+    document.getElementById("add_img").className =""; 
+}
+else {
+    document.getElementById("add_img").className ="display_none"; 
 
 
-        //const myTimeout = setTimeout(x, 250);
-
-       /* function x() {
+}
+}
+if(_this.tagName=="DIV") {
+ //  const myTimeout = setTimeout(x, 250);
+}
+       
+ 
+       function x() {
             location.reload();
 
         }
-            */
-
+            
     }
 </script>
 
@@ -153,5 +169,23 @@ if (isset($_SESSION["home"])) {
     .black_element div:hover {
         background-color: white;
         color: black;
+    }
+
+    .all_doc{
+        
+        margin-bottom: 135px;
+    }
+    .all_doc  {
+     
+        width: 80%;
+        margin: auto;
+       
+    }
+   .all_doc textarea,.all_doc input{
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    .cursor_pointer:hover{
+        cursor: pointer;
     }
 </style>
