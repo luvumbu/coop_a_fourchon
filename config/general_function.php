@@ -3,7 +3,9 @@ session_start() ;
 header("Access-Control-Allow-Origin: *");
 require_once "../Class/dbCheck.php" ; 
 require_once "../Class/DatabaseHandler.php" ;
- 
+require_once "../Class/AsciiConverter.php" ;
+
+
  
 
 $general_function =  $_POST["general_function"] ; // const
@@ -17,15 +19,18 @@ $_SESSION["id_user_projet"]  = $_POST["id_user_projet"] ; //3
 $_SESSION["id_sha1_user_projet"] = $_POST["id_sha1_user_projet"] ; // 4
  
 $_SESSION["id_sha1_projet"] = $id_sha1_projet ;
-echo $id_sha1_projet ; 
+ 
 $value = $_POST["value"] ; 
 
+
+
+  
 $tagName = $_POST["tagName"] ; 
 $databaseHandler = new DatabaseHandler($dbname, $username);
 $_SESSION["home"] ="" ;   
 
-
 echo $general_function ; 
+ 
 switch ($general_function) {
     case "insert":
 
@@ -34,10 +39,12 @@ switch ($general_function) {
     
         break;
     case "update":
+ 
 
- 
- 
-  
+ $value = AsciiConverter::stringToAscii($value); // Affiche "72,101,108,108,111"
+
+      $databaseHandler->action_sql('UPDATE  `projet` SET `description_projet` = "'.$value.'"   WHERE  `id_sha1_projet` ="'.$id_sha1_projet.'" ');
+/*
  if($tagName=="INPUT") {
    $databaseHandler->action_sql('UPDATE  `projet` SET `title_projet` = "'.$value.'"   WHERE  `id_sha1_projet` ="'.$id_sha1_projet.'" ');
 
@@ -47,6 +54,8 @@ switch ($general_function) {
    $databaseHandler->action_sql('UPDATE  `projet` SET `description_projet` = "'.$value.'"   WHERE  `id_sha1_projet` ="'.$id_sha1_projet.'" ');
 
  }
+
+ */
 
       break;
     case "all":

@@ -36,6 +36,8 @@ session_start();
   require_once 'Class/DivGenerator.php';
   require_once 'Class/DivGenerator2.php';
   require_once 'Class/delete_file.php';
+  require_once 'Class/AsciiConverter.php';
+
 
 
 

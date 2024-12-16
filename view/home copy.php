@@ -49,7 +49,51 @@ if (isset($_SESSION["home"])) {
     $count = count($dynamicVariables['id_sha1_projet']);
 
     
-require_once 'home_modif.php'; 
+    for ($a = 0; $a < $count; $a++) {
+
+
+
+        //  require 'all_doc.php'; 
+
+
+        echo '<div class="all_doc">';
+        // echo $dynamicVariables['id_sha1_projet'][$a] ; 
+        echo "<br/>";
+        $id_sha1_projet =  $dynamicVariables['id_sha1_projet'][$a];
+        $title_projet =  $dynamicVariables['title_projet'][$a];
+        $description_projet =  $dynamicVariables['description_projet'][$a];
+
+
+        $img_projet_src = $dynamicVariables['img_projet_src'][$a] ; 
+        echo '<input type="text" value="' . $title_projet . '" class="' . $index_update . $id_sha1_projet . '" onkeyup="a(this)">';
+        echo '<textarea  type="text" class="' . $index_update . $id_sha1_projet . '" onkeyup="a(this)">' . $description_projet . ' </textarea>';
+        echo "<br/>";
+
+
+
+        echo '<div class="div_img_projet_src">';
+
+        if($img_projet_src!="") {
+            echo '<img class="' . $index_img . $id_sha1_projet . '" onclick="a(this)" src="'.$img_projet_src.'" alt="" srcset="">';
+        }
+             
+        echo '</div>';
+
+        /*
+        echo '<div class="' . $index_sitting . $id_sha1_projet .'" onclick="a(this)">' ; 
+            echo '<img width="50" height="50" src="https://img.icons8.com/ios/50/settings--v1.png" alt="settings--v1"/>';
+        echo '</div>' ; 
+        */
+        echo '<div class="' . $index_img . $id_sha1_projet . '" onclick="a(this)">';
+        echo '<img class="cursor_pointer" width="50" height="50" src="https://img.icons8.com/ios/50/image-file.png" alt="image-file"/>';
+        echo '</div>';
+
+
+        echo '<div style="width:50px" style="" height="50"  onclick="a(this)" class="' . $index_remove . $id_sha1_projet . '">';
+        echo '<img width="50" height="50" src="https://img.icons8.com/color/50/delete-forever.png" alt="delete-forever"/>';
+        echo '</div>';
+        echo '</div>';
+    }
 }
 
 
