@@ -98,9 +98,7 @@ $index_img = $index . $__ . "img" . $__;
         <button id="orderedListButton<?= $i ?>">Liste numérotée</button>
         <button id="insertLinkButton<?= $i ?>">Insérer un lien</button>
         <button id="insertImageButton<?= $i ?>">Insérer une image</button>
- 
-  <button id="clearButton<?= $i ?>">Effacer le contenu</button>
-
+        <button id="clearButton<?= $i ?>">Effacer le contenu</button>
 
 
       </div>
@@ -166,15 +164,16 @@ $index_img = $index . $__ . "img" . $__;
         const url = prompt('Entrez l\'URL du lien:');
         if (url) applyStyle<?= $i ?>('createLink', url);
       });
+      insertImageButton<?= $i ?>.addEventListener('click', () => {
+        const url = prompt('Entrez l\'URL de l\'image:');
+        if (url) applyStyle<?= $i ?>('insertImage', url);
+      });
+
       const clearButton<?= $i ?> = document.getElementById('clearButton<?= $i ?>');
 clearButton<?= $i ?>.addEventListener('click', () => {
   textInput<?= $i ?>.innerHTML = ''; // Vide tout le contenu
 });
 
-      insertImageButton<?= $i ?>.addEventListener('click', () => {
-        const url = prompt('Entrez l\'URL de l\'image:');
-        if (url) applyStyle<?= $i ?>('insertImage', url);
-      });
       removeFormattingButton<?= $i ?>.addEventListener('click', () => applyStyle<?= $i ?>('removeFormat'));
     <?php endfor; ?>
   </script>
