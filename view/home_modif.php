@@ -98,9 +98,9 @@ $index_img = $index . $__ . "img" . $__;
         <button id="orderedListButton<?= $i ?>">Liste numérotée</button>
         <button id="insertLinkButton<?= $i ?>">Insérer un lien</button>
         <button id="insertImageButton<?= $i ?>">Insérer une image</button>
-        <button id="removeFormattingButton<?= $i ?>">Effacer le formatage</button>
+ 
+  <button id="clearButton<?= $i ?>">Effacer le contenu</button>
 
-        <button id="clearButton<?= $i ?>">Effacer le contenu</button>
 
 
       </div>
