@@ -25,6 +25,7 @@ $index_insert = $index . $__ . "insert";
 $index_update = $index . $__ . "update" . $__;
 $index_all = $index . $__ . "all" . $__;
 $index_remove = $index . $__ . "remove" . $__;
+$index_add = $index . $__ . "add" . $__;
 
 $index_sitting = $index . $__ . "sitting" . $__;
 $index_img = $index . $__ . "img" . $__;
@@ -39,12 +40,12 @@ if (isset($_SESSION["home"])) {
         case "all":
 
          
-            $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' AND activation_projet ='' ";
+            $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' AND activation_projet ='' AND id_sha1_parent_projet ='' ";
             break;
         default:
        
             $id_sha1_projet =  $_SESSION["id_sha1_projet"];
-            $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' AND activation_projet ='' ";
+            $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' AND activation_projet =''AND id_sha1_parent_projet =''  ";
     }
 
     $databaseHandler->getListOfTables_Child("projet");

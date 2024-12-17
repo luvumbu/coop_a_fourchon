@@ -146,9 +146,16 @@
        <div onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__ textInput' ?>" id="textInput<?= $i ?>" spellcheck="false"><?php echo $description_projet; ?></div>
 
 
-       <div onclick="remove_all(this)" class="<?php echo $index_remove . $dynamicVariables['id_sha1_projet'][$i] ?>">
-         <img width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1" />
 
+       <div class="display_flex1">
+
+         <div onclick="remove_all(this)" class="<?php echo $index_remove . $dynamicVariables['id_sha1_projet'][$i] ?>">
+           <img width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1" />
+
+         </div>
+         <div onclick="add_child(this)" class="<?php echo $index_add . $dynamicVariables['id_sha1_projet'][$i] ?>">
+           <img width="50" height="50" src="https://img.icons8.com/office/50/plus--v1.png" alt="delete-forever--v1" />
+         </div>
        </div>
 
      </div>
@@ -255,9 +262,28 @@
        ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
        console.log(ok.info()); // demande l'information dans le tableau
        ok.push(); // envoie l'information au code pkp 
-
-
        location.reload();
+     }
+
+
+     function add_child(_this) {
+
+
+      var ok = new Information("config/add_child.php"); // création de la classe 
+      var element = afficherValeursFormattees2(_this.className, __);
+      console.log(element);
+         ok.add("nom_user", element[0]); // ajout de l'information pour lenvoi 
+         ok.add("password_user", element[1]); // ajout de l'information pour lenvoi 
+         ok.add("id_user_projet", element[2]); // ajout de l'information pour lenvoi 
+         ok.add("id_sha1_user_projet", element[3]); // ajout de l'information pour lenvoi
+         ok.add("general_function", element[4]); // ajout de l'information pour lenvoi 
+         ok.add("tagName", _this.tagName); // ajout de l'information pour lenvoi 
+         ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
+
+ 
+         console.log(ok.info()); // demande l'information dans le tableau
+         ok.push(); // envoie l'information au code pkp 
+
 
 
 
@@ -278,9 +304,6 @@
 
    <script>
      function add_img2(_this) {
-
-
-
        document.getElementById("add_img").className = "";
      }
    </script>
@@ -305,5 +328,18 @@
        box-shadow: 1px 1px 17px black;
        transition: 1s all;
        cursor: pointer;
+     }
+     .display_flex1{
+      display: flex;
+      justify-content: space-around;
+
+     }
+     .display_flex1  {
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+     }
+     .display_flex1 div:hover {
+      cursor: pointer;
      }
    </style>
