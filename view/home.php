@@ -39,12 +39,12 @@ if (isset($_SESSION["home"])) {
         case "all":
 
          
-            $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' ";
+            $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' AND activation_projet ='' ";
             break;
         default:
        
             $id_sha1_projet =  $_SESSION["id_sha1_projet"];
-            $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' ";
+            $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' AND activation_projet ='' ";
     }
 
     $databaseHandler->getListOfTables_Child("projet");

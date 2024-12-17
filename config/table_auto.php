@@ -34,6 +34,8 @@ $mainTableName2 = $dbname ;
  require 'auto_exe.php' ; 
 $databaseHandler = new DatabaseHandler($dbname,$username); 
 $databaseHandler->set_column_names("id_projet");
+$databaseHandler->set_column_names("activation_projet");
+
 $databaseHandler->set_column_names("id_general");
 $databaseHandler->set_column_names("id_user_projet");
 $databaseHandler->set_column_names("id_sha1_user_projet");
@@ -71,6 +73,8 @@ $databaseHandler->set_column_types("LONGTEXT NOT NULL");
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
 
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
+$databaseHandler->set_column_types("LONGTEXT NOT NULL");
+
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
