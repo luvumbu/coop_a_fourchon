@@ -62,9 +62,9 @@
        <h2>Éditeur de texte <?= $i ?></h2>
        <div class="toolbar">
          <label>Couleur du texte:</label>
-         <input type="color" id="textColorPicker<?= $i ?>">
+         <input  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" type="color" id="textColorPicker<?= $i ?>">
          <label>Couleur de l'arrière-plan:</label>
-         <input type="color" id="bgColorPicker<?= $i ?>">
+         <input  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" type="color" id="bgColorPicker<?= $i ?>">
          <label>Taille de la police:</label>
          <select   class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" id="fontSizePicker<?= $i ?>">
            <option  value="1">Très petite</option>
@@ -76,26 +76,26 @@
            <option value="7">Gigantesque</option>
          </select>
          <label>Police:</label>
-         <select id="fontFamilyPicker<?= $i ?>">
+         <select  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)"  id="fontFamilyPicker<?= $i ?>">
            <option value="Arial">Arial</option>
            <option value="Courier New">Courier New</option>
            <option value="Georgia">Georgia</option>
            <option value="Times New Roman">Times New Roman</option>
            <option value="Verdana">Verdana</option>
          </select>
-         <button id="boldButton<?= $i ?>"><b>B</b></button>
-         <button id="italicButton<?= $i ?>"><i>I</i></button>
-         <button id="underlineButton<?= $i ?>"><u>U</u></button>
-         <button id="strikeThroughButton<?= $i ?>"><s>S</s></button>
-         <button id="alignLeftButton<?= $i ?>">Aligner à gauche</button>
-         <button id="alignCenterButton<?= $i ?>">Centrer</button>
-         <button id="alignRightButton<?= $i ?>">Aligner à droite</button>
-         <button id="justifyButton<?= $i ?>">Justifier</button>
-         <button id="unorderedListButton<?= $i ?>">Liste à puces</button>
-         <button id="orderedListButton<?= $i ?>">Liste numérotée</button>
-         <button id="insertLinkButton<?= $i ?>">Insérer un lien</button>
-         <button id="insertImageButton<?= $i ?>">Insérer une image</button>
-         <button id="removeFormattingButton<?= $i ?>">Effacer le formatage</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="boldButton<?= $i ?>"><b>B</b></button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="italicButton<?= $i ?>"><i>I</i></button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="underlineButton<?= $i ?>"><u>U</u></button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="strikeThroughButton<?= $i ?>"><s>S</s></button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="alignLeftButton<?= $i ?>">Aligner à gauche</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="alignCenterButton<?= $i ?>">Centrer</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="alignRightButton<?= $i ?>">Aligner à droite</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="justifyButton<?= $i ?>">Justifier</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="unorderedListButton<?= $i ?>">Liste à puces</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="orderedListButton<?= $i ?>">Liste numérotée</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="insertLinkButton<?= $i ?>">Insérer un lien</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="insertImageButton<?= $i ?>">Insérer une image</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="removeFormattingButton<?= $i ?>">Effacer le formatage</button>
        </div>
 
        <?php
