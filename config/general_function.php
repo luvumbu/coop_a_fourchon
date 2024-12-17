@@ -29,7 +29,7 @@ $tagName = $_POST["tagName"] ;
 $databaseHandler = new DatabaseHandler($dbname, $username);
 $_SESSION["home"] ="" ;   
 
-echo $general_function ; 
+
  
 switch ($general_function) {
     case "insert":
@@ -39,23 +39,22 @@ switch ($general_function) {
     
         break;
     case "update":
- 
 
- $value = AsciiConverter::stringToAscii($value); // Affiche "72,101,108,108,111"
+     
+      $value = AsciiConverter::stringToAscii($value); // Affiche "72,101,108,108,111"
 
-      $databaseHandler->action_sql('UPDATE  `projet` SET `description_projet` = "'.$value.'"   WHERE  `id_sha1_projet` ="'.$id_sha1_projet.'" ');
-/*
+
  if($tagName=="INPUT") {
-   $databaseHandler->action_sql('UPDATE  `projet` SET `title_projet` = "'.$value.'"   WHERE  `id_sha1_projet` ="'.$id_sha1_projet.'" ');
+  $databaseHandler->action_sql('UPDATE  `projet` SET `title_projet` = "'.$value.'"   WHERE  `id_sha1_projet` ="'.$id_sha1_projet.'" ');
 
  }
  else {
- 
-   $databaseHandler->action_sql('UPDATE  `projet` SET `description_projet` = "'.$value.'"   WHERE  `id_sha1_projet` ="'.$id_sha1_projet.'" ');
+  $databaseHandler->action_sql('UPDATE  `projet` SET `description_projet` = "'.$value.'"   WHERE  `id_sha1_projet` ="'.$id_sha1_projet.'" ');
 
  }
 
- */
+ 
+ 
 
       break;
     case "all":

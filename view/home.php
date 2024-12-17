@@ -76,9 +76,20 @@ require_once 'home_modif.php';
         // valeur si update 
         // le tableau a une case en plus dans les parametres 
 
+ 
+ 
 
-        ok.add("value", _this.value); // ajout de l'information pour lenvoi 
-        ok.add("nom_user", element[0]); // ajout de l'information pour lenvoi 
+
+ if(_this.tagName!="INPUT") {
+    ok.add("value", _this.innerHTML); // ajout de l'information pour lenvoi 
+
+ }
+ else {
+    ok.add("value", _this.value); // ajout de l'information pour lenvoi 
+
+ }
+
+       ok.add("nom_user", element[0]); // ajout de l'information pour lenvoi 
         ok.add("password_user", element[1]); // ajout de l'information pour lenvoi 
         ok.add("id_user_projet", element[2]); // ajout de l'information pour lenvoi 
         ok.add("id_sha1_user_projet", element[3]); // ajout de l'information pour lenvoi
@@ -110,7 +121,7 @@ require_once 'home_modif.php';
 
 
         function x() {
-            location.reload();
+           // location.reload();
 
         }
 
