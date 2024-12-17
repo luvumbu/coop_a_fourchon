@@ -47,32 +47,26 @@ $total = strrev($total) ;
 
 
 
-if($total==".pm4"){
-    $total = ".mp3" ; 
-}
-$_SESSION["name_extention_projet"] = $total ; 
+
+
+
+$img = $_SESSION["img"] ; 
+
+
+$file_path = $_SESSION["cheminDossier"]."/".$img.$total;
 
 
  
-$dir = '../src/img/'.'123'.$_SESSION["index"][2];
+$_SESSION["file_data1"] = $file_path ; 
+$_SESSION["file_data2"] = $total; 
 
-// Vérifie si le dossier existe déjà
-if (!file_exists($dir)) {
-    // Crée le dossier avec des permissions par défaut (0777)
-    if (mkdir($dir, 0777, true)) {
-    } else {
-    }
-} else {
-}
+
+
+
  
-$id_sha1_user_projet = $_SESSION["id_sha1_user_projet"]  ;
 
-$id_sha1_projet= $_SESSION["id_sha1_projet"] ; 
+ 
 
-
-$file_path = $dir.$id_sha1_projet[0].'X'.$_SESSION["img"].$total;
-
-$_SESSION["file_path"] = $_SESSION["cheminDossier"]."/".$_SESSION["img"].$total ; 
 $file_data = decode_chunk($_POST['file_data']);
 
 if (false === $file_data) {
@@ -81,15 +75,8 @@ if (false === $file_data) {
 
 /* on ajoute le segment de données qu'on vient de recevoir 
  * au fichier qu'on est en train de ré-assembler: */
-file_put_contents($_SESSION["cheminDossier"]."/".$_SESSION["img"].$total, $file_data, FILE_APPEND);
+file_put_contents($file_path, $file_data, FILE_APPEND);
 
 // nécessaire pour que JavaScript considère que la requête s'est bien passée:
 echo json_encode([]); 
-
-
-
-
-
-
-
 ?>

@@ -50,7 +50,7 @@ $(function() {
                        
 
                         setTimeout(function(){ 
-                            window.location.href = "add_img/name_bdd.php";
+                     document.location.reload(true);
                         }, 800);
                         
 
@@ -75,8 +75,5 @@ $(function() {
 
 
 
-
  
-
-
  

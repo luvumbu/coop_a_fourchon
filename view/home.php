@@ -33,13 +33,16 @@ $databaseHandler = new DatabaseHandler("root", "root");
 
 if (isset($_SESSION["home"])) {
 
-
+ 
     switch ($_SESSION["home"]) {
         case "insert":
         case "all":
+
+         
             $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' ";
             break;
         default:
+       
             $id_sha1_projet =  $_SESSION["id_sha1_projet"];
             $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' ";
     }
@@ -49,9 +52,12 @@ if (isset($_SESSION["home"])) {
     $databaseHandler->get_dynamicVariables();
     $count = count($dynamicVariables['id_sha1_projet']);
 
+
     
-require_once 'home_modif.php'; 
+
+    require_once 'home_modif.php';
 }
+ 
 
 
 //echo  'HOME : '.$_SESSION["home"] ; 
@@ -64,7 +70,7 @@ require_once 'home_modif.php';
 <script>
     function a(_this) {
 
-      
+
         var element = afficherValeursFormattees2(_this.className, __);
         console.log(element);
         var ok = new Information("config/general_function.php"); // création de la classe 
@@ -79,20 +85,19 @@ require_once 'home_modif.php';
         // valeur si update 
         // le tableau a une case en plus dans les parametres 
 
- 
- 
 
 
- if(_this.tagName!="INPUT") {
-    ok.add("value", _this.innerHTML); // ajout de l'information pour lenvoi 
 
- }
- else {
-    ok.add("value", _this.value); // ajout de l'information pour lenvoi 
 
- }
+        if (_this.tagName != "INPUT") {
+            ok.add("value", _this.innerHTML); // ajout de l'information pour lenvoi 
 
-       ok.add("nom_user", element[0]); // ajout de l'information pour lenvoi 
+        } else {
+            ok.add("value", _this.value); // ajout de l'information pour lenvoi 
+
+        }
+
+        ok.add("nom_user", element[0]); // ajout de l'information pour lenvoi 
         ok.add("password_user", element[1]); // ajout de l'information pour lenvoi 
         ok.add("id_user_projet", element[2]); // ajout de l'information pour lenvoi 
         ok.add("id_sha1_user_projet", element[3]); // ajout de l'information pour lenvoi
@@ -102,7 +107,8 @@ require_once 'home_modif.php';
         console.log(ok.info()); // demande l'information dans le tableau
         ok.push(); // envoie l'information au code pkp 
 
-        if (element[4] == "img") {
+
+        if (_this.tagName == "IMG") {
             var add_img = document.getElementById("add_img").className;
 
             if (add_img == "display_none") {
@@ -114,34 +120,34 @@ require_once 'home_modif.php';
             }
         }
         if (_this.tagName == "DIV") {
-           
 
-            if(element[4]!="img"){
+
+            if (_this.tagName != "img") {
                 const myTimeout = setTimeout(xxxx, 250);
             }
-          
+
         }
 
 
         function xxxx() {
 
 
-            switch(_this.innerHTML) {
-  case "option insert":
-  case "MES PROJET":
-    location.reload();
-    break;
-  case y:
-    // code block
-    break;
-  default:
-    // code block
-}
+            switch (_this.innerHTML) {
+                case "option insert":
+                case "MES PROJET":
+                    location.reload();
+                    break;
+                case y:
+                    // code block
+                    break;
+                default:
+                    // code block
+            }
 
 
 
-     
- 
+
+
 
         }
 
@@ -193,29 +199,33 @@ require_once 'home_modif.php';
         width: 100%;
         border: 1px solid rgba(0, 0, 0, 0.1);
     }
-    .all_doc textarea{
+
+    .all_doc textarea {
         height: 230px;
     }
 
     .cursor_pointer:hover {
         cursor: pointer;
     }
-    .div_img_projet_src img{
-       width: 100%;
+
+    .div_img_projet_src img {
+        width: 100%;
         margin-top: 50px;
         margin-bottom: 50px;
         box-shadow: 1px 1px 7px black;
-text-align: center;
+        text-align: center;
     }
-    .div_img_projet_src img:hover{
-  cursor: pointer;
+
+    .div_img_projet_src img:hover {
+        cursor: pointer;
 
 
     }
+
     .div_img_projet_src {
-       
+
         margin: auto;
         width: 300px;
-        
+
     }
 </style>

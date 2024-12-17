@@ -23,7 +23,7 @@ $(function() {
             }
 
             $.ajax({
-                url: "Class/upload.php",
+                url: "add_img/upload.php",
                 type: 'POST',
                 dataType: 'json',
                 cache: false,

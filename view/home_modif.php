@@ -57,12 +57,22 @@
     $count = count($dynamicVariables['id_sha1_projet']);
 
     ?>
+
+    <?php
+    
+    
+   
+    ?>
    <?php for ($i = 0; $i < $count; $i++): ?>
-     <div class="editor-container">
+     <div class="editor-container largeur_juste">
+
+
        <h2>Éditeur de texte <?= $i ?></h2>
        <div class="toolbar">
          <label>Couleur du texte:</label>
          <input  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" type="color" id="textColorPicker<?= $i ?>">
+        
+        
          <label>Couleur de l'arrière-plan:</label>
          <input  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" type="color" id="bgColorPicker<?= $i ?>">
          <label>Taille de la police:</label>
@@ -83,6 +93,10 @@
            <option value="Times New Roman">Times New Roman</option>
            <option value="Verdana">Verdana</option>
          </select>
+        <div>
+        <img   class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" onclick="a(this)" title="<?php echo $dynamicVariables['id_sha1_projet'][$i]?>" class="cursor_pointer" width="50" height="50" src="https://img.icons8.com/ios/50/image--v1.png" alt="image--v1"/>
+
+        </div>
          <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="boldButton<?= $i ?>"><b>B</b></button>
          <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="italicButton<?= $i ?>"><i>I</i></button>
          <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="underlineButton<?= $i ?>"><u>U</u></button>
@@ -108,6 +122,30 @@ $description_projet = AsciiConverter::asciiToString( $dynamicVariables['descript
         
         ?>
        <input id="textInput2<?= $i ?>" value="<?php echo $title_projet?>" type="text" onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>">
+       
+ 
+
+ 
+<?php
+
+ 
+
+if($dynamicVariables['img_projet_src1'][$i]!=""){
+  $grande_image = str_replace("../","",$dynamicVariables['img_projet_src1'][$i]);
+
+}
+else {
+  $grande_image = "https://i.pinimg.com/736x/c9/aa/b6/c9aab66148552cff001fc98ef22c4c98.jpg";
+
+}
+
+
+?>
+
+<div class="grande_image">
+  <img src="<?php echo $grande_image ?>"  onclick="a(this)" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>"  src="https://i.pinimg.com/236x/7c/cd/81/7ccd8106106ec20a9af1186b8065caee.jpg" alt="">
+</div>
+
        <div onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__ textInput' ?>" id="textInput<?= $i ?>" spellcheck="false"><?php echo $description_projet ;?></div>
      </div>
    <?php endfor; ?>
@@ -217,3 +255,37 @@ function x() {
 
   }
 </script>
+
+<style>
+  .largeur_juste {
+   
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    margin-bottom: 25px;
+  }
+</style>
+
+
+
+<script>
+  function add_img2(_this){
+ 
+
+ 
+document.getElementById("add_img").className="" ; 
+  }
+</script>
+
+<style>
+  .grande_image{
+    width: 300px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+  }
+  .grande_image img{
+    width: 100%;
+  }
+</style>
