@@ -13,6 +13,7 @@
 
 
 <?php
+
 $__ = "__";
 $index_0 = $_SESSION["index"][0];
 $index_1 = $_SESSION["index"][1];
@@ -62,6 +63,8 @@ require_once 'home_modif.php';
 </div>
 <script>
     function a(_this) {
+
+      
         var element = afficherValeursFormattees2(_this.className, __);
         console.log(element);
         var ok = new Information("config/general_function.php"); // création de la classe 
@@ -114,14 +117,31 @@ require_once 'home_modif.php';
            
 
             if(element[4]!="img"){
-                const myTimeout = setTimeout(x, 250);
+                const myTimeout = setTimeout(xxxx, 250);
             }
           
         }
 
 
-        function x() {
-           // location.reload();
+        function xxxx() {
+
+
+            switch(_this.innerHTML) {
+  case "option insert":
+  case "MES PROJET":
+    location.reload();
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+
+
+     
+ 
 
         }
 

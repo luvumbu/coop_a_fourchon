@@ -95,8 +95,11 @@
          <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="orderedListButton<?= $i ?>">Liste numérotée</button>
          <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="insertLinkButton<?= $i ?>">Insérer un lien</button>
          <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="insertImageButton<?= $i ?>">Insérer une image</button>
-         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="removeFormattingButton<?= $i ?>">Effacer le formatage</button>
-       </div>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="removeFormattingButton<?= $i ?>"  style="background-color:black">Effacer le formatage</button>
+         <button  class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)"  id="clearButton<?= $i ?>" style="background-color:#c93d2f">Effacer le contenu</button>
+
+     
+        </div>
 
        <?php
 
@@ -129,6 +132,12 @@ $description_projet = AsciiConverter::asciiToString( $dynamicVariables['descript
        const insertLinkButton<?= $i ?> = document.getElementById('insertLinkButton<?= $i ?>');
        const insertImageButton<?= $i ?> = document.getElementById('insertImageButton<?= $i ?>');
        const removeFormattingButton<?= $i ?> = document.getElementById('removeFormattingButton<?= $i ?>');
+
+
+       const clearButton<?= $i ?> = document.getElementById('clearButton<?= $i ?>');
+clearButton<?= $i ?>.addEventListener('click', () => {
+  textInput<?= $i ?>.innerHTML = ''; // Vide tout le contenu
+});
 
        function applyStyle<?= $i ?>(command, value = null) {
          document.execCommand(command, false, value);
