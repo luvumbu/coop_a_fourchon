@@ -52,7 +52,7 @@ if (isset($_SESSION["home"])) {
     $databaseHandler->getListOfTables_Child("projet");
     $databaseHandler->getDataFromTable2X($req_sql);
     $databaseHandler->get_dynamicVariables();
-    $count = count($dynamicVariables['id_sha1_projet']);
+    $count = count($id_sha1_projet_dynamic_1 );
 
 
     $id_projet_dynamic_1 = $dynamicVariables['id_projet'];
@@ -87,8 +87,17 @@ if (isset($_SESSION["home"])) {
     $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'];
     
     
+/*
  
- 
+var_dump($dynamicVariables['date_inscription_projet']) ; 
+ $databaseHandler = new DatabaseHandler($dbname, $username);
+ $req_sql = "SELECT * FROM projet WHERE `id_sha1_parent_projet` ='1734470458' ";
+ $databaseHandler->getListOfTables_Child("projet");
+ $databaseHandler->getDataFromTable2X($req_sql);
+ $databaseHandler->get_dynamicVariables();
+ $count = count($id_sha1_projet_dynamic_1 );
+ var_dump($dynamicVariables['date_inscription_projet']) ; 
+*/
 
 
     require_once 'home_modif.php';

@@ -54,7 +54,7 @@
 
    <?php
 
-    $count = count($dynamicVariables['id_sha1_projet']);
+    $count = count($id_sha1_projet_dynamic_1 );
 
     ?>
 
@@ -146,15 +146,10 @@ $id_sha1_projet_dynamic_1_ =$id_sha1_projet_dynamic_1[$i] ;
        <div class="grande_image">
          <img src="<?php echo $grande_image ?>" onclick="a(this)" class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" src="https://i.pinimg.com/236x/7c/cd/81/7ccd8106106ec20a9af1186b8065caee.jpg" alt="">
        </div>
-
        <div onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__ textInput' ?>" id="textInput<?= $i ?>" spellcheck="false"><?php echo $description_projet; ?></div>
-
-
-
        <div class="display_flex1">
-
          <div onclick="remove_all(this)" class="<?php echo $index_remove . $id_sha1_projet_dynamic_1_ ?>">
-           <img width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1" />
+        <img width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1" />
 
          </div>
          <div onclick="add_child(this)" class="<?php echo $index_add . $id_sha1_projet_dynamic_1_ ?>">
