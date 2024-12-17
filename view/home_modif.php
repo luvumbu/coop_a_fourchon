@@ -66,8 +66,8 @@
          <label>Couleur de l'arrière-plan:</label>
          <input type="color" id="bgColorPicker<?= $i ?>">
          <label>Taille de la police:</label>
-         <select id="fontSizePicker<?= $i ?>">
-           <option value="1">Très petite</option>
+         <select   class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" id="fontSizePicker<?= $i ?>">
+           <option  value="1">Très petite</option>
            <option value="2">Petite</option>
            <option value="3" selected>Moyenne</option>
            <option value="4">Grande</option>
@@ -104,7 +104,7 @@ $title_projet = AsciiConverter::asciiToString( $dynamicVariables['title_projet']
 $description_projet = AsciiConverter::asciiToString( $dynamicVariables['description_projet'][$i]) ; 
         
         ?>
-       <input value="<?php echo $title_projet?>" type="text" onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>">
+       <input id="textInput2<?= $i ?>" value="<?php echo $title_projet?>" type="text" onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>">
        <div onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__ textInput' ?>" id="textInput<?= $i ?>" spellcheck="false"><?php echo $description_projet ;?></div>
      </div>
    <?php endfor; ?>
@@ -159,3 +159,52 @@ $description_projet = AsciiConverter::asciiToString( $dynamicVariables['descript
        removeFormattingButton<?= $i ?>.addEventListener('click', () => applyStyle<?= $i ?>('removeFormat'));
      <?php endfor; ?>
    </script>
+
+
+
+
+<script>
+  function b(_this) {
+    
+
+
+  
+
+
+ const myTimeout = setTimeout(x, 250);
+
+function x() {
+  var textInput2 = document.getElementById("textInput2"+_this.title).value  ; 
+  var textInput0=  document.getElementById("textInput"+_this.title).innerHTML ; 
+  var element = afficherValeursFormattees2(_this.className, __);
+  console.log(element);
+
+
+  var ok = new Information("config/general_function_update.php"); // création de la classe 
+
+ ok.add("nom_user", element[0]); // ajout de l'information pour lenvoi 
+ ok.add("password_user", element[1]); // ajout de l'information pour lenvoi 
+ ok.add("id_user_projet", element[2]); // ajout de l'information pour lenvoi 
+ ok.add("id_sha1_user_projet", element[3]); // ajout de l'information pour lenvoi
+ ok.add("general_function", element[4]); // ajout de l'information pour lenvoi 
+ ok.add("tagName", _this.tagName); // ajout de l'information pour lenvoi 
+ ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
+ 
+ ok.add("textInput2",textInput2); // ajout de l'information pour lenvoi 
+ ok.add("textInput0",textInput0); // ajout de l'information pour lenvoi 
+
+
+ 
+
+
+
+ console.log(ok.info()); // demande l'information dans le tableau
+ ok.push(); // envoie l'information au code pkp 
+
+}
+
+
+
+
+  }
+</script>
