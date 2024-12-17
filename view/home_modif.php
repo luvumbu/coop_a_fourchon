@@ -65,18 +65,22 @@
     ?>
    <?php for ($i = 0; $i < $count; $i++): ?>
      <div class="editor-container largeur_juste">
+<?php 
 
+$id_sha1_projet_dynamic_1_ =$id_sha1_projet_dynamic_1[$i] ; 
+
+?>
 
        <h2>Éditeur de texte <?= $i ?></h2>
        <div class="toolbar">
          <label>Couleur du texte:</label>
-         <input class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" type="color" id="textColorPicker<?= $i ?>">
+         <input class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" type="color" id="textColorPicker<?= $i ?>">
 
 
          <label>Couleur de l'arrière-plan:</label>
-         <input class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" type="color" id="bgColorPicker<?= $i ?>">
+         <input class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" type="color" id="bgColorPicker<?= $i ?>">
          <label>Taille de la police:</label>
-         <select class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" id="fontSizePicker<?= $i ?>">
+         <select class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" id="fontSizePicker<?= $i ?>">
            <option value="1">Très petite</option>
            <option value="2">Petite</option>
            <option value="3" selected>Moyenne</option>
@@ -86,7 +90,7 @@
            <option value="7">Gigantesque</option>
          </select>
          <label>Police:</label>
-         <select class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" id="fontFamilyPicker<?= $i ?>">
+         <select class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" id="fontFamilyPicker<?= $i ?>">
            <option value="Arial">Arial</option>
            <option value="Courier New">Courier New</option>
            <option value="Georgia">Georgia</option>
@@ -94,23 +98,23 @@
            <option value="Verdana">Verdana</option>
          </select>
          <div>
-           <img class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" onclick="a(this)" title="<?php echo $dynamicVariables['id_sha1_projet'][$i] ?>" class="cursor_pointer" width="50" height="50" src="https://img.icons8.com/ios/50/image--v1.png" alt="image--v1" />
+           <img class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" onclick="a(this)" title="<?php echo $id_sha1_projet_dynamic_1_ ?>" class="cursor_pointer" width="50" height="50" src="https://img.icons8.com/ios/50/image--v1.png" alt="image--v1" />
 
          </div>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="boldButton<?= $i ?>"><b>B</b></button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="italicButton<?= $i ?>"><i>I</i></button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="underlineButton<?= $i ?>"><u>U</u></button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="strikeThroughButton<?= $i ?>"><s>S</s></button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="alignLeftButton<?= $i ?>">Aligner à gauche</button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="alignCenterButton<?= $i ?>">Centrer</button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="alignRightButton<?= $i ?>">Aligner à droite</button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="justifyButton<?= $i ?>">Justifier</button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="unorderedListButton<?= $i ?>">Liste à puces</button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="orderedListButton<?= $i ?>">Liste numérotée</button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="insertLinkButton<?= $i ?>">Insérer un lien</button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="insertImageButton<?= $i ?>">Insérer une image</button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="removeFormattingButton<?= $i ?>" style="background-color:black">Effacer le formatage</button>
-         <button class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="clearButton<?= $i ?>" style="background-color:#c93d2f">Effacer le contenu</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="boldButton<?= $i ?>"><b>B</b></button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="italicButton<?= $i ?>"><i>I</i></button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="underlineButton<?= $i ?>"><u>U</u></button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="strikeThroughButton<?= $i ?>"><s>S</s></button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="alignLeftButton<?= $i ?>">Aligner à gauche</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="alignCenterButton<?= $i ?>">Centrer</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="alignRightButton<?= $i ?>">Aligner à droite</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="justifyButton<?= $i ?>">Justifier</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="unorderedListButton<?= $i ?>">Liste à puces</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="orderedListButton<?= $i ?>">Liste numérotée</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="insertLinkButton<?= $i ?>">Insérer un lien</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="insertImageButton<?= $i ?>">Insérer une image</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="removeFormattingButton<?= $i ?>" style="background-color:black">Effacer le formatage</button>
+         <button class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onclick="b(this)" id="clearButton<?= $i ?>" style="background-color:#c93d2f">Effacer le contenu</button>
 
 
        </div>
@@ -121,7 +125,7 @@
         $description_projet = AsciiConverter::asciiToString($dynamicVariables['description_projet'][$i]);
 
         ?>
-       <input id="textInput2<?= $i ?>" value="<?php echo $title_projet ?>" type="text" onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>">
+       <input id="textInput2<?= $i ?>" value="<?php echo $title_projet ?>" type="text" onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>">
 
 
 
@@ -140,20 +144,20 @@
         ?>
 
        <div class="grande_image">
-         <img src="<?php echo $grande_image ?>" onclick="a(this)" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__' ?>" src="https://i.pinimg.com/236x/7c/cd/81/7ccd8106106ec20a9af1186b8065caee.jpg" alt="">
+         <img src="<?php echo $grande_image ?>" onclick="a(this)" class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" src="https://i.pinimg.com/236x/7c/cd/81/7ccd8106106ec20a9af1186b8065caee.jpg" alt="">
        </div>
 
-       <div onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $dynamicVariables['id_sha1_projet'][$i] . '__ textInput' ?>" id="textInput<?= $i ?>" spellcheck="false"><?php echo $description_projet; ?></div>
+       <div onkeyup="a(this)" contenteditable="true" class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__ textInput' ?>" id="textInput<?= $i ?>" spellcheck="false"><?php echo $description_projet; ?></div>
 
 
 
        <div class="display_flex1">
 
-         <div onclick="remove_all(this)" class="<?php echo $index_remove . $dynamicVariables['id_sha1_projet'][$i] ?>">
+         <div onclick="remove_all(this)" class="<?php echo $index_remove . $id_sha1_projet_dynamic_1_ ?>">
            <img width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1" />
 
          </div>
-         <div onclick="add_child(this)" class="<?php echo $index_add . $dynamicVariables['id_sha1_projet'][$i] ?>">
+         <div onclick="add_child(this)" class="<?php echo $index_add . $id_sha1_projet_dynamic_1_ ?>">
            <img width="50" height="50" src="https://img.icons8.com/office/50/plus--v1.png" alt="delete-forever--v1" />
          </div>
        </div>
