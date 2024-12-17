@@ -30,7 +30,7 @@ $index_add = $index . $__ . "add" . $__;
 $index_sitting = $index . $__ . "sitting" . $__;
 $index_img = $index . $__ . "img" . $__;
 
-$databaseHandler = new DatabaseHandler("root", "root");
+$databaseHandler = new DatabaseHandler($dbname, $username);
 
 if (isset($_SESSION["home"])) {
 
@@ -40,20 +40,25 @@ if (isset($_SESSION["home"])) {
         case "all":
 
          
-            $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' AND activation_projet ='' AND id_sha1_parent_projet ='' ";
+       $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' AND activation_projet ='' AND id_sha1_parent_projet ='' ";
             break;
-        default:
+            case "":
        
             $id_sha1_projet =  $_SESSION["id_sha1_projet"];
             $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' AND activation_projet =''AND id_sha1_parent_projet =''  ";
-    }
-
+            break;
+        }
+ 
     $databaseHandler->getListOfTables_Child("projet");
     $databaseHandler->getDataFromTable2X($req_sql);
     $databaseHandler->get_dynamicVariables();
     $count = count($dynamicVariables['id_sha1_projet']);
 
 
+
+    
+ 
+ 
     
 
     require_once 'home_modif.php';
