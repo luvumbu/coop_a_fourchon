@@ -367,9 +367,7 @@ else {
        var ok = new Information("config/add_child.php"); // création de la classe 
        var element = afficherValeursFormattees2(_this.className, __);
 
-       console.log(element);
-
-       console.log(_this.src);
+ 
 
 
 
@@ -379,10 +377,35 @@ else {
 
        if (_this.src == visible_1) {
          _this.src = visible_2;
+         visivility="(0-0)" ; 
        } else {
          _this.src = visible_1;
+         visivility="" ; 
+
 
        }
+
+
+
+       var ok = new Information("config/visivility.php"); // création de la classe 
+ 
+
+ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
+ok.add("visivility", visivility); // ajout de l'information pour lenvoi 
+
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
+
+
+
+
+
+//const myTimeout = setTimeout(xxx, 250);
+
+function xxx() {
+  location.reload();
+
+}
 
 
      }

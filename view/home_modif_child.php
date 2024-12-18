@@ -48,6 +48,10 @@ $id_sha1_projet__ = $dynamicVariables['id_sha1_projet'];
 
 $id_sha1_projet__ = $dynamicVariables['id_sha1_projet'];
 
+$visibility_1_projet__ = $dynamicVariables['visibility_1_projet'];
+
+
+
 
 
 
@@ -67,12 +71,27 @@ for ($y = 0; $y < $kount; $y++) {
 
 
     $title_projet__ = AsciiConverter::asciiToString($dynamicVariables['title_projet'][$y]);  
-
+    $visibility_1_projet____ = $visibility_1_projet__[$y] ; 
   
 
+   
+
+if( $visibility_1_projet____==""){
 ?>
 
-    <div class="card_child" title="<?php echo $id_sha1_projet__[$y]  ?>" onclick="voir_children(this)">
+<div style="opacity: 0.2;" class="card_child" title="<?php echo $id_sha1_projet__[$y]  ?>" onclick="voir_children(this)">
+
+<?php 
+}
+else {
+?>
+
+<div class="card_child" title="<?php echo $id_sha1_projet__[$y]  ?>" onclick="voir_children(this)">
+
+<?php 
+}
+?>
+
         <div>
 
         <?php 
