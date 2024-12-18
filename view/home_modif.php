@@ -61,23 +61,23 @@
    <?php
 
 
-$lorem ='Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    $lorem = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.
  Odit dignissimos necessitatibus recusandae eius sint, maxime cum nisi? Eveniet magni saepe quam,
- earum neque molestiae debitis sequi. Ducimus, placeat provident. Esse.' ; 
+ earum neque molestiae debitis sequi. Ducimus, placeat provident. Esse.';
     ?>
    <?php for ($i = 0; $i < $count; $i++): ?>
 
 
 
-    <?php 
- $id_sha1_projet_dynamic_1_ = $id_sha1_projet_dynamic_1[$i];
-
- 
+     <?php
+      $id_sha1_projet_dynamic_1_ = $id_sha1_projet_dynamic_1[$i];
 
 
 
- 
-/*
+
+
+
+      /*
  $databaseHandler = new DatabaseHandler($dbname, $username);
  $req_sql = "SELECT * FROM projet WHERE  id_sha1_parent_projet ='$id_sha1_projet_dynamic_1_ ' ";
  $databaseHandler->getListOfTables_Child("projet");
@@ -96,11 +96,11 @@ $lorem ='Lorem ipsum dolor sit amet consectetur adipisicing elit.
  */
 
 
- ?>
+      ?>
      <div class="editor-container largeur_juste">
        <?php
 
-       
+
 
         ?>
 
@@ -185,18 +185,45 @@ $lorem ='Lorem ipsum dolor sit amet consectetur adipisicing elit.
            <img width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1" />
 
          </div>
+
+         <div>
+
+
+
+           <?php
+
+ 
+
+
+if($visibility_1_projet_dynamic_1[$i]==""){
+?>
+
+<img onclick="visivility(this)" class="<?php echo $index_visivility . $id_sha1_projet_dynamic_1_ ?>" width="50" height="50" src="<?php echo $visible_1 ?>" alt="visible--v1" />
+
+<?php 
+}
+else {
+  ?>
+<img onclick="visivility(this)" class="<?php echo $index_visivility . $id_sha1_projet_dynamic_1_ ?>" width="50" height="50" src="<?php echo $visible_2 ?>" alt="visible--v1" />
+
+
+<?php 
+}
+            ?>
+
+         </div>
          <div onclick="add_child(this)" class="<?php echo $index_add . $id_sha1_projet_dynamic_1_ ?>">
            <img width="50" height="50" src="https://img.icons8.com/office/50/plus--v1.png" alt="delete-forever--v1" />
          </div>
        </div>
 
      </div>
-     <?php 
+     <?php
 
-require "home_modif_child.php" ; 
+      require "home_modif_child.php";
 
-?>
- 
+      ?>
+
    <?php endfor; ?>
 
    <script>
@@ -253,10 +280,10 @@ require "home_modif_child.php" ;
          if (url) applyStyle<?= $i ?>('insertImage', url);
        });
        removeFormattingButton<?= $i ?>.addEventListener('click', () => applyStyle<?= $i ?>('removeFormat'));
-   
 
-   
-       <?php endfor; ?>
+
+
+     <?php endfor; ?>
    </script>
 
 
@@ -318,10 +345,10 @@ require "home_modif_child.php" ;
        ok.add("general_function", element[4]); // ajout de l'information pour lenvoi 
        ok.add("tagName", _this.tagName); // ajout de l'information pour lenvoi 
        ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
-      
-     
-      
-        console.log(ok.info()); // demande l'information dans le tableau
+
+
+
+       console.log(ok.info()); // demande l'information dans le tableau
        ok.push(); // envoie l'information au code pkp 
        const myTimeout = setTimeout(xxx, 250);
 
@@ -329,6 +356,35 @@ require "home_modif_child.php" ;
          location.reload();
 
        }
+     }
+
+
+     function visivility(_this) {
+
+
+
+
+       var ok = new Information("config/add_child.php"); // création de la classe 
+       var element = afficherValeursFormattees2(_this.className, __);
+
+       console.log(element);
+
+       console.log(_this.src);
+
+
+
+
+
+
+
+       if (_this.src == visible_1) {
+         _this.src = visible_2;
+       } else {
+         _this.src = visible_1;
+
+       }
+
+
      }
    </script>
 

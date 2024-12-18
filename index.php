@@ -17,8 +17,15 @@ session_start();
 
  
 
+<script>
+         var visible_1 = "https://img.icons8.com/ios/100/hide.png";
+         var visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
+</script>
+<?php 
 
-
+$visible_1 = "https://img.icons8.com/ios/100/hide.png";
+$visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
+?>
 <style>
   .display_none {
     display: none;
@@ -134,5 +141,4 @@ $name_projet = $databaseHandler->tableList_info;
 
 
 
-var_dump($_SESSION["index"] ) ; 
 ?>

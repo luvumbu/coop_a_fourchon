@@ -30,7 +30,18 @@ $index_add = $index . $__ . "add" . $__;
 $index_sitting = $index . $__ . "sitting" . $__;
 $index_img = $index . $__ . "img" . $__;
 
+
+$index_visivility = $index . $__ . "visivility" . $__;
 $databaseHandler = new DatabaseHandler($dbname, $username);
+
+?>
+
+
+<div class="black_element" onkeyup="">
+    <div class="<?php echo  $index_insert ?>" onclick="a(this)">option insert</div>
+    <div class="<?php echo  $index_all ?>" onclick="a(this)">MES PROJET</div>
+</div>
+<?php 
 
 if (isset($_SESSION["home"])) {
 
@@ -107,10 +118,7 @@ var_dump($dynamicVariables['date_inscription_projet']) ;
 //echo  'HOME : '.$_SESSION["home"] ; 
 ?>
 
-<div class="black_element" onkeyup="">
-    <div class="<?php echo  $index_insert ?>" onclick="a(this)">option insert</div>
-    <div class="<?php echo  $index_all ?>" onclick="a(this)">MES PROJET</div>
-</div>
+
 <script>
     function a(_this) {
 
@@ -215,6 +223,7 @@ var_dump($dynamicVariables['date_inscription_projet']) ;
         color: white;
         display: flex;
         justify-content: space-around;
+        margin-bottom: 75px;
     }
 
     .black_element div {
