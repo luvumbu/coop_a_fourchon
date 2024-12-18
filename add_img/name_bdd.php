@@ -1,4 +1,5 @@
 <?php 
+ 
 session_start() ; 
 require_once '../Class/DatabaseHandler.php' ; 
 require_once '../Class/dbCheck.php' ; 
