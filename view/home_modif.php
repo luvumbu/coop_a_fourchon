@@ -104,7 +104,7 @@
 
         ?>
 
-       <h2>Éditeur de texte <?= $i ?></h2>
+       <h2>Éditeur de texte <?= $id_sha1_projet_dynamic_1_  ?></h2>
        <div class="toolbar">
          <label>Couleur du texte:</label>
          <input class="<?php echo $index_update . $id_sha1_projet_dynamic_1_ . '__' ?>" title="<?php echo $i ?>" onchange="b(this)" type="color" id="textColorPicker<?= $i ?>">
@@ -185,6 +185,9 @@
            <img width="50" height="50" src="https://img.icons8.com/ios/50/delete-forever--v1.png" alt="delete-forever--v1" />
 
          </div>
+         <a href="<?= 'blog.php/'.$id_sha1_projet_dynamic_1_?>">
+           <img width="50" height="50" src="https://img.icons8.com/ios/50/link--v1.png" alt="link--v1" />
+         </a>
 
          <div>
 
@@ -192,23 +195,22 @@
 
            <?php
 
- 
 
 
-if($visibility_1_projet_dynamic_1[$i]==""){
-?>
 
-<img onclick="visivility(this)" class="<?php echo $index_visivility . $id_sha1_projet_dynamic_1_ ?>" width="50" height="50" src="<?php echo $visible_1 ?>" alt="visible--v1" />
+            if ($visibility_1_projet_dynamic_1[$i] == "") {
+            ?>
 
-<?php 
-}
-else {
-  ?>
-<img onclick="visivility(this)" class="<?php echo $index_visivility . $id_sha1_projet_dynamic_1_ ?>" width="50" height="50" src="<?php echo $visible_2 ?>" alt="visible--v1" />
+             <img onclick="visivility(this)" class="<?php echo $index_visivility . $id_sha1_projet_dynamic_1_ ?>" width="50" height="50" src="<?php echo $visible_1 ?>" alt="visible--v1" />
+
+           <?php
+            } else {
+            ?>
+             <img onclick="visivility(this)" class="<?php echo $index_visivility . $id_sha1_projet_dynamic_1_ ?>" width="50" height="50" src="<?php echo $visible_2 ?>" alt="visible--v1" />
 
 
-<?php 
-}
+           <?php
+            }
             ?>
 
          </div>
@@ -367,7 +369,7 @@ else {
        var ok = new Information("config/add_child.php"); // création de la classe 
        var element = afficherValeursFormattees2(_this.className, __);
 
- 
+
 
 
 
@@ -377,10 +379,10 @@ else {
 
        if (_this.src == visible_1) {
          _this.src = visible_2;
-         visivility="(0-0)" ; 
+         visivility = "(0-0)";
        } else {
          _this.src = visible_1;
-         visivility="" ; 
+         visivility = "";
 
 
        }
@@ -388,24 +390,24 @@ else {
 
 
        var ok = new Information("config/visivility.php"); // création de la classe 
- 
-
-ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
-ok.add("visivility", visivility); // ajout de l'information pour lenvoi 
-
-console.log(ok.info()); // demande l'information dans le tableau
-ok.push(); // envoie l'information au code pkp 
 
 
+       ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
+       ok.add("visivility", visivility); // ajout de l'information pour lenvoi 
+
+       console.log(ok.info()); // demande l'information dans le tableau
+       ok.push(); // envoie l'information au code pkp 
 
 
 
-//const myTimeout = setTimeout(xxx, 250);
 
-function xxx() {
-  location.reload();
 
-}
+       //const myTimeout = setTimeout(xxx, 250);
+
+       function xxx() {
+         location.reload();
+
+       }
 
 
      }
