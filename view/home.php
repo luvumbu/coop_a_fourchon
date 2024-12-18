@@ -38,11 +38,19 @@ $databaseHandler = new DatabaseHandler($dbname, $username);
 
 
 <div class="black_element" onkeyup="">
-    <div class="<?php echo  $index_insert ?>" onclick="a(this)">option insert</div>
+  
+ 
+   
+      <div class="<?php echo  $index_insert ?>" onclick="a(this)">option insert</div>
     <div class="<?php echo  $index_all ?>" onclick="a(this)">MES PROJET</div>
+ 
+   
+
+    <a href="Class/Log_off.php" class="deconexion"> <div>DECONNEXION</div></a>
+   
 </div>
 <?php 
-
+    
 if (isset($_SESSION["home"])) {
 
  
@@ -52,7 +60,8 @@ if (isset($_SESSION["home"])) {
 
          
        $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' AND activation_projet ='' AND id_sha1_parent_projet ='' ";
-            break;
+      
+       break;
             case "":
        
             $id_sha1_projet =  $_SESSION["id_sha1_projet"];
@@ -60,12 +69,18 @@ if (isset($_SESSION["home"])) {
             break;
         }
  
+      
+
+ 
     $databaseHandler->getListOfTables_Child("projet");
     $databaseHandler->getDataFromTable2X($req_sql);
     $databaseHandler->get_dynamicVariables();
-    $count = count($id_sha1_projet_dynamic_1 );
 
 
+
+ 
+
+ 
     $id_projet_dynamic_1 = $dynamicVariables['id_projet'];
     $activation_projet_dynamic_1 = $dynamicVariables['activation_projet'];
     $id_general_dynamic_1 = $dynamicVariables['id_general'];
@@ -97,7 +112,7 @@ if (isset($_SESSION["home"])) {
     $shop_projet_dynamic_1 = $dynamicVariables['shop_projet'];
     $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'];
     
-    
+    $count = count($id_sha1_projet_dynamic_1 );
  /*
  
 var_dump($dynamicVariables['date_inscription_projet']) ; 
@@ -280,5 +295,10 @@ var_dump($dynamicVariables['date_inscription_projet']) ;
         margin: auto;
         width: 300px;
 
+    }
+    .deconexion{
+        background-color: red;
+        color: white;
+        text-decoration: none;
     }
 </style>

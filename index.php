@@ -48,11 +48,16 @@ $visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
   // Inclusion des fichiers de classe PHP nécessaires
 
 
-  require_once 'Class/path_general_class.php';
-  require_once 'Class/DivGenerator.php';
-  require_once 'Class/DivGenerator2.php';
-  require_once 'Class/delete_file.php';
+
+ require_once 'Class/DatabaseHandler.php';
+ 
+  require_once 'Class/Delete_file.php';
+  
   require_once 'Class/AsciiConverter.php';
+  
+  require_once 'Class/CheckFileExists.php';
+
+ 
 
 
 
@@ -64,6 +69,8 @@ $databaseHandler = new DatabaseHandler($config_dbname, $config_password);
 $databaseHandler->getDataFromTable($req_sql, "name_projet");
 $name_projet = $databaseHandler->tableList_info;
  */
+
+
 
 
 
