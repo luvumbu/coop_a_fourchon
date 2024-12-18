@@ -1,79 +1,141 @@
-<h1>INFO <?php echo $id_sha1_projet_dynamic_1_ ?></h1>
-<?php 
-
-$databaseHandler = new DatabaseHandler($dbname, $username);
-$req_sql = "SELECT * FROM projet WHERE  id_sha1_parent_projet ='$id_sha1_projet_dynamic_1_' ";
- 
-$databaseHandler->getListOfTables_Child("projet");
-$databaseHandler->getDataFromTable2X($req_sql);
-$databaseHandler->get_dynamicVariables();
-
-
-
-$id_sha1_projet_dynamic_1_child = $dynamicVariables['date_inscription_projet'] ; 
- 
-
-$kount = count($id_sha1_projet_dynamic_1_child ) ; 
-
- 
-
-
-echo '<div class="display_flex_children">' ; 
-for ($y=0; $y < $kount; $y++) { 
-
- 
-?>
- <div class="card_child">
-    <div>
-        <img src="data:image/jpeg;base64,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" alt="">
-    </div>
-    <div>
-        <h1><?php      echo  $y ;  ?></h1>
-    </div>
-    <div>
-        <h3>Voir projet:</h3>
-    </div>
-</div>
-
-<?php 
-}
-
-
-
-echo '</div>' ; 
-
-?>
- 
-
-
-
- 
-
-
 <style>
     .card_child {
-   
-        width: 150px; 
+
+        width: 280px;
         margin: auto;
         border: 1px solid black;
         margin-bottom: 100px;
         text-align: center;
         margin: 50px;
     }
+
     .card_child img {
         width: 100%;
         height: auto;
-        object-fit: cover; /* ou replacez par "contain" si nécessaire */
+        object-fit: cover;
+        /* ou replacez par "contain" si nécessaire */
     }
+
     .card_child h3 {
         padding: 15px;
         background-color: black;
         color: white;
         margin: 0;
     }
-    .display_flex_children{
+
+    .display_flex_children {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
     }
 </style>
+
+ 
+<?php
+
+$databaseHandler = new DatabaseHandler($dbname, $username);
+$req_sql = "SELECT * FROM projet WHERE  id_sha1_parent_projet ='$id_sha1_projet_dynamic_1_' ";
+
+$databaseHandler->getListOfTables_Child("projet");
+$databaseHandler->getDataFromTable2X($req_sql);
+$databaseHandler->get_dynamicVariables();
+
+
+
+$id_sha1_projet_dynamic_1_child = $dynamicVariables['date_inscription_projet'];
+$id_sha1_projet__ = $dynamicVariables['id_sha1_projet'];
+
+
+$id_sha1_projet__ = $dynamicVariables['id_sha1_projet'];
+
+
+
+
+$kount = count($id_sha1_projet_dynamic_1_child);
+
+
+
+
+echo '<div class="display_flex_children">';
+for ($y = 0; $y < $kount; $y++) {
+
+
+
+ 
+
+    $img_projet_src1__ = str_replace("../","",$dynamicVariables['img_projet_src1'][$y]); ; 
+
+
+    $title_projet__ = AsciiConverter::asciiToString($dynamicVariables['title_projet'][$y]);  
+
+  
+
+?>
+
+    <div class="card_child" title="<?php echo $id_sha1_projet__[$y]  ?>" onclick="voir_children(this)">
+        <div>
+
+        <?php 
+
+if($img_projet_src1__ !=""){
+ 
+
+    echo '<img src="'.$img_projet_src1__.'" alt="">';
+}
+else {
+    echo '<img src="'.$grande_image__.'" alt="">';
+
+}
+
+        ?>
+        </div>
+          <div>
+           
+            <h4>
+                <?php echo $title_projet__ ?>
+            </h4> 
+            <h3>Voir projet:</h3>
+        </div>
+    </div>
+
+<?php
+}
+
+
+
+echo '</div>';
+
+?>
+
+
+
+
+
+
+
+<style>
+    .card_child:hover {
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    function voir_children(_this) {
+        var ok = new Information("config/voir_children.php"); // création de la classe 
+
+ 
+        ok.add("id_sha1_projet", _this.title); // ajout de l'information pour lenvoi 
+        console.log(ok.info()); // demande l'information dans le tableau
+        ok.push(); // envoie l'information au code pkp 
+
+     
+
+
+
+        const myTimeout = setTimeout(xxxx, 250);
+
+function xxxx() {
+    location.reload() ; 
+}
+    }
+</script>

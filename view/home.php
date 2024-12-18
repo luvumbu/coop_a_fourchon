@@ -45,7 +45,7 @@ if (isset($_SESSION["home"])) {
             case "":
        
             $id_sha1_projet =  $_SESSION["id_sha1_projet"];
-            $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' AND activation_projet =''AND id_sha1_parent_projet =''  ";
+            $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' AND activation_projet =''  ";
             break;
         }
  

@@ -170,7 +170,7 @@ $lorem ='Lorem ipsum dolor sit amet consectetur adipisicing elit.
         if ($img_projet_src1_dynamic_1[$i] != "") {
           $grande_image = str_replace("../", "", $img_projet_src1_dynamic_1[$i]);
         } else {
-          $grande_image = "https://i.pinimg.com/736x/c9/aa/b6/c9aab66148552cff001fc98ef22c4c98.jpg";
+          $grande_image = $grande_image__;
         }
 
 
