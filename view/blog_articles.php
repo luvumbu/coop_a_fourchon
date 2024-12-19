@@ -44,6 +44,11 @@ echo '<div class="all_articles">';
 for ($a = 0; $a < $count; $a++) {
 
 
+ 
+
+
+if ($visibility_1_projet_dynamic_1[$a] != ""):
+    // Code à exécuter si la condition est vraie
 
     $title_projet_dynamic_1__   = AsciiConverter::asciiToString($title_projet_dynamic_1[$a]);
     $description_projet_dynamic_1__   = AsciiConverter::asciiToString($description_projet_dynamic_1[$a]);
@@ -190,6 +195,10 @@ for ($a = 0; $a < $count; $a++) {
 <?php
     }
     echo '</div';
+else:
+    echo "<h1 class='autorisation'>Vous n'êtes pas autorisé à accéder à cette page.</h1>" ; 
+endif;
+ 
 }
 echo '</div>';
 
@@ -221,6 +230,16 @@ echo '</div>';
     .article_description {
         text-align: justify;
         margin-top: 75px;
+    }
+    .autorisation{
+        background-color: black;
+        color: white;
+        margin-top: 100px ; 
+        border-radius: 7px;
+        position: absolute;
+        top: 400px;
+        width: 80%;
+        margin: auto;
     }
 </style>
 

@@ -83,16 +83,11 @@ $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'
 
 $count = count($id_sha1_projet_dynamic_1 );
 
-
- 
-
 $count = count($date_inscription_projet_dynamic_1) ; 
 
 if  ($count <1){
    ?>
-<div class="image_">
-   <img src="../src/img/01.webp" alt=""> 
-</div>
+ 
 
 
 <style>
