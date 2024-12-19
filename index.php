@@ -2,7 +2,7 @@
 session_start();
 
 
- 
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,14 +14,19 @@ session_start();
   <link rel="icon" type="image/x-icon" href="https://ih1.redbubble.net/image.1762483057.7729/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp">
 </head>
 
+<script>
+  window.onload = function() {
+   document.getElementById("body").className="";
 
- 
+  };
+</script>
+
 
 <script>
-         var visible_1 = "https://img.icons8.com/ios/100/hide.png";
-         var visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
+  var visible_1 = "https://img.icons8.com/ios/100/hide.png";
+  var visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
 </script>
-<?php 
+<?php
 
 $visible_1 = "https://img.icons8.com/ios/100/hide.png";
 $visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
@@ -32,8 +37,21 @@ $visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
   }
 </style>
 
-<body>
+<body class="display_none" id="body">
+<style>
+  
+  .chargement {
+    width: 600px;
+    margin: auto;
+    
+  }  .chargement img{
+    width: 100%;
+    
+  }
 
+
+</style>
+ 
   <?php
 
 
@@ -49,19 +67,19 @@ $visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
 
 
 
- require_once 'Class/DatabaseHandler.php';
- 
+  require_once 'Class/DatabaseHandler.php';
+
   require_once 'Class/Delete_file.php';
-  
+
   require_once 'Class/AsciiConverter.php';
-  
+
   require_once 'Class/CheckFileExists.php';
 
- 
 
 
 
-  $grande_image__ = "https://i.pinimg.com/236x/46/51/27/465127dc4dad2655628bd36e0e3c088a.jpg" ; 
+
+  $grande_image__ = "https://i.pinimg.com/236x/46/51/27/465127dc4dad2655628bd36e0e3c088a.jpg";
 
 
   /*
@@ -96,7 +114,7 @@ $name_projet = $databaseHandler->tableList_info;
         if (unlink($path)) {
   ?>
           <meta http-equiv="refresh" content="0"> <!-- Rafraîchit toutes les 5 secondes -->
-  <?php
+        <?php
         }
       }
     } else {
@@ -107,15 +125,15 @@ $name_projet = $databaseHandler->tableList_info;
       $databaseHandler->getDataFromTable2X($req_sql);
       $databaseHandler->get_dynamicVariables();
       $count_ = count($dynamicVariables['id_sha1_user']);
-      if ($count_ < 1) { 
+      if ($count_ < 1) {
         delete_file("Class/dbCheck.php");
         ?>
         <meta http-equiv="refresh" content="0"> <!-- Rafraîchit toutes les 5 secondes -->
-<?php
+  <?php
       }
 
-      
-      
+
+
       // require_once 'view/form_creation_table_bdd.php';
       //  require_once 'view/test.php';
       if (isset($_SESSION["index"])) {
@@ -144,8 +162,3 @@ $name_projet = $databaseHandler->tableList_info;
 
   </div>
 
-  <?php 
-
-
-
-?>
