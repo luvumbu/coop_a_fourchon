@@ -372,11 +372,13 @@
 
 
 
+  
+var  visivility ="" ;
+
+ 
 
 
-
-
-
+ 
        if (_this.src == visible_1) {
          _this.src = visible_2;
          visivility = "(0-0)";
@@ -386,8 +388,7 @@
 
 
        }
-
-
+ 
 
        var ok = new Information("config/visivility.php"); // création de la classe 
 
@@ -397,8 +398,7 @@
 
        console.log(ok.info()); // demande l'information dans le tableau
        ok.push(); // envoie l'information au code pkp 
-
-
+ 
 
 
 
