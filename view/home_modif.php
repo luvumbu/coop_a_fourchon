@@ -217,6 +217,39 @@
          <div onclick="add_child(this)" class="<?php echo $index_add . $id_sha1_projet_dynamic_1_ ?>">
            <img width="50" height="50" src="https://img.icons8.com/office/50/plus--v1.png" alt="delete-forever--v1" />
          </div>
+       
+   
+ 
+     
+    
+      <div>
+      <form action="" method="post">
+        <label for="choix" >Choisissez un intervalle :</label>
+        <select name="choix" class="<?= $id_sha1_projet_dynamic_1_ ?>" onchange="my_date(this)" title="1" >
+            <option value="1">1h</option>
+            <option value="2">2h</option>
+            <option value="3">3h</option>
+            <option value="4">4h</option>
+            <option value="5">5h</option>
+            <option value="6">6h</option>
+            <option value="7">7h</option>
+            <option value="8">8h</option>
+            <option value="1jour">1 jour</option>
+            <option value="2jours">2 jours</option>
+            <option value="3jours">3 jours</option>
+            <option value="1nuit">1 nuit</option>
+            <option value="2nuits">2 nuits</option>
+            <option value="3nuits">3 nuits</option>             
+        </select>
+
+ 
+    </form>
+    <input  title="2" class="<?= $id_sha1_projet_dynamic_1_ ?>" onchange="my_date(this)" style="padding: 15px;" type="date" name="date" min="<?php echo date('Y-m-d'); ?>">
+
+      </div>
+      
+        </div>
+
        </div>
 
      </div>
@@ -360,6 +393,45 @@
        }
      }
 
+
+
+     function add_calendar(_this) {
+      var ok = new Information("config/add_calendar.php"); // création de la classe 
+       var element = afficherValeursFormattees2(_this.className, __);
+       console.log(element);
+       ok.add("nom_user", element[0]); // ajout de l'information pour lenvoi 
+       ok.add("password_user", element[1]); // ajout de l'information pour lenvoi 
+       ok.add("id_user_projet", element[2]); // ajout de l'information pour lenvoi 
+       ok.add("id_sha1_user_projet", element[3]); // ajout de l'information pour lenvoi
+       ok.add("general_function", element[4]); // ajout de l'information pour lenvoi 
+       ok.add("tagName", _this.tagName); // ajout de l'information pour lenvoi 
+       ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
+
+
+
+       console.log(ok.info()); // demande l'information dans le tableau
+       ok.push(); // envoie l'information au code pkp 
+     }
+
+
+     function my_date(_this) {
+     
+      console.log(_this.value) ; 
+
+      var ok = new Information("config/my_date.php"); // création de la classe 
+       var element = afficherValeursFormattees2(_this.className, __);
+       
+       ok.add("heure_debut_projet",_this.value); // ajout de l'information pour lenvoi 
+ 
+       ok.add("id_sha1_projet",_this.className); // ajout de l'information pour lenvoi 
+       ok.add("title",_this.title); // ajout de l'information pour lenvoi 
+
+ 
+       console.log(ok.info()); // demande l'information dans le tableau
+       ok.push(); // envoie l'information au code pkp 
+
+
+     }
 
      function visivility(_this) {
 

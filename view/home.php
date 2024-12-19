@@ -29,7 +29,7 @@ $index_add = $index . $__ . "add" . $__;
 
 $index_sitting = $index . $__ . "sitting" . $__;
 $index_img = $index . $__ . "img" . $__;
-
+$index_calendar = $index . $__ . "calendar" . $__;
 
 $index_visivility = $index . $__ . "visivility" . $__;
 $databaseHandler = new DatabaseHandler($dbname, $username);
