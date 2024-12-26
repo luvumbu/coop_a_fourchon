@@ -136,7 +136,7 @@ for ($a = 0; $a < $count; $a++) {
                 echo '<img src="' . $grande_image__ . '" alt="">';
             }
  
-
+echo "<i class='date_articles'>".  $date_inscription_projet_dynamic_2[$y].'</i>';
             echo "<br/>" ; 
 
             echo   $description_projet_dynamic_2_c ; 
@@ -170,5 +170,9 @@ echo '</div>';
     }
     .all_articles img {
         background-color: red;
+    }
+    .date_articles {
+        margin-top: 25px; 
+        margin-bottom: 25px;
     }
 </style>
