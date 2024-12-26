@@ -1,4 +1,4 @@
- 
+<link rel="stylesheet" href="view/blog_articles.css">
 <?php
 /*
 $id_projet_dynamic_1 = $dynamicVariables['id_projet'];
@@ -58,8 +58,8 @@ for ($a = 0; $a < $count; $a++) {
         ?>
         <h1><?php echo $title_projet_dynamic_1__  ?></h1>
 
-        <div>
-            <img  src="<?=  $img_projet_src1_dynamic_1__ ?>" alt="">
+        <div class="img_article">
+            <img src="<?= $img_projet_src1_dynamic_1__ ?>" alt="">
         </div>
         <p class="article_description"><?php echo $description_projet_dynamic_1__  ?></p>
         <b><?= $date_inscription_projet_dynamic_1 ?></b>
@@ -161,14 +161,5 @@ echo '</div>';
     h1{
          
         width: 100%;
-    }
-    .display_flex_children img {
-        width: 100%;
-    }
-    .img_article img {
-        width: 100%;
-    }
-    .all_articles img {
-        background-color: red;
     }
 </style>

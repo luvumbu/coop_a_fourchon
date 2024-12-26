@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 
 <title>Bootstrap 5 Example</title>
@@ -9,7 +9,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
+<link rel="stylesheet" href="../view/blog.css">
 
+ 
 <?php
 $grande_image__ = "https://i.pinimg.com/236x/46/51/27/465127dc4dad2655628bd36e0e3c088a.jpg" ; 
 require_once "Class/Give_url.php" ; 
@@ -60,25 +62,13 @@ $publication_date_h_projet_dynamic_1 = $dynamicVariables['publication_date_h_pro
 $shop_projet_dynamic_1 = $dynamicVariables['shop_projet'];
 $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'];
 
-$count = count($id_sha1_projet_dynamic_1 );
+ 
 $count = count($date_inscription_projet_dynamic_1) ; 
 
-if  ($count <1){
-   ?>
-<style>
-    body{
-        margin: 0;
 
-    }
-    .image_{
-        width: 100%;
-        margin: auto;
-    }
-    .image_ img {
-        width: 100%;
-    }
-</style>
-   <?php 
+ 
+if  ($count <1){
+ 
 } 
 else {
    require_once "view/blog_articles.php" ; 

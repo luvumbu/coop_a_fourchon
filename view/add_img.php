@@ -1,39 +1,4 @@
-<style>
-     .element_1 {
-         width: 30%;
-         top: 35px;
-         text-align: center;
-         margin: auto;
-         border: 1px solid rgba(0, 0, 0, 0.9);
-         border-radius: 15px;
-         position: absolute;
-         background-color: white;
-         z-index: 2;
-         left: 45%;
-     }
-
-     .element_1 div {
-         padding: 7px;
-         padding-left: 90px;
-         padding-right: 90px;
-
-     }
-
-     #bg_black {
-         z-index: 1;
-
-         background-color: rgba(0, 0, 0, 0.6);
-         width: 100%;
-         height: 100%;
-         position: fixed;
-         top: 0;
-     }
-
-     body {
-         padding: 0;
-         margin: 0;
-     }
- </style>
+ <link rel="stylesheet" href="view/add_img.css">
  <link rel="icon" href="https://pbs.twimg.com/profile_images/1244325575659061249/YjvhVutG_400x400.jpg" type="image/gif" sizes="16x16">
  <div class="element_1">
      <form style="position: fixed;">
@@ -58,11 +23,7 @@
      <script type="text/javascript" src="add_img/upload.js"></script>
  </div>
  <div id="bg_black" onclick="bg_black(this)"></div>
- <style>
-     .class1 {
-         display: none;
-     }
- </style>
+ 
  <script>
      function bg_black(_this) {
          document.getElementById("add_img").className = "display_none";
