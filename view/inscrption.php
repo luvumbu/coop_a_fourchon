@@ -5,11 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password forgot</title>
-  <?php 
-require_once  '../Class/js.php' ; 
-
-?>
-
+    <script src="../Class/Js.js"></script>
+<h1>INSCRITION</h1>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -102,19 +99,21 @@ require_once  '../Class/js.php' ;
             <input type="text" id="username" name="username" required>
 
             <!-- Div acting as a button -->
-            <div class="submit-btn" onclick="password_forgot(this)">Vérifier la Connexion</div>
+            <div class="submit-btn" onclick="inscription(this)">Vérifier la Connexion</div>
         </form>
     </div>
 
 
     <script>
-        function password_forgot() {
+        function inscription() {
          
             const username = document.getElementById("username").value;
 
 
-            var ok = new Information("../req/password_forgot_mail.php"); // création de la classe 
-            ok.add("nom_user", username); // ajout de l'information pour lenvoi 
+            var ok = new Information("../req/inscription_mail.php"); // création de la classe 
+            
+         
+            ok.add("username", username); // ajout de l'information pour lenvoi 
             console.log(ok.info()); // demande l'information dans le tableau
             ok.push(); // envoie l'information au code pkp 
 

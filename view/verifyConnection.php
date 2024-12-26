@@ -116,6 +116,8 @@
 
      <script>
          function verifyConnection_() {
+
+          
              const dbname = document.getElementById("dbname").value;
              const username = document.getElementById("username").value;
 
@@ -146,6 +148,7 @@
         .inscrption{
             background-color: #3498db;
             margin-bottom: 45px;
+            padding: 10px;
             text-align: center;
         }
      </style>

@@ -179,8 +179,7 @@ if (strpos($chaine, '.') !== false) {
     
     </style>
 
-
-<a href="../">
+<a href="../" style="margin-top: 150px;">
 <img width="100" height="100" src="https://img.icons8.com/ios/100/login-rounded-right--v1.png" alt="login-rounded-right--v1"/>
 </a>
 </body>

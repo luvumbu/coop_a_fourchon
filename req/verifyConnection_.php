@@ -29,9 +29,18 @@ $databaseHandler->get_dynamicVariables();
  
 $id_user = $dynamicVariables['id_user'][0];
 $id_sha1_user = $dynamicVariables['id_sha1_user'][0] ;
-$_SESSION["index"] = array($dbname_, $username_,$id_user,$id_sha1_user);
+
+
+
+
+if(count($dynamicVariables['id_user'])>0){
+    $_SESSION["index"] = array($dbname_, $username_,$id_user,$id_sha1_user);
+
+}
  
  
+
+
 
 
  

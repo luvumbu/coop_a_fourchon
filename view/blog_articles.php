@@ -1,4 +1,3 @@
- 
  <style>
      h1 {
 
@@ -6,40 +5,44 @@
      }
 
      .display_flex_children img {
-  
+
          text-align: center;
          margin: auto;
      }
-     .display_flex_children{
-        background-color: red;
+
+     .display_flex_children {
+         background-color: red;
      }
 
      .img_article img {
-  
+
          text-align: center;
          margin: auto;
      }
-.all_articles{
-    padding: 20px;
-    
-     
-}
-.grande_image{
-    
-    padding: 20px;
-    max-width: 50%;
-    margin: auto;
-}
-.grande_image img{
 
-width: 100%;
- 
-}
- 
+     .all_articles {
+         padding: 20px;
+
+
+     }
+
+     .grande_image {
+
+         padding: 20px;
+         max-width: 50%;
+         margin: auto;
+     }
+
+     .grande_image img {
+
+         width: 100%;
+
+     }
+
      .date_articles {
          margin-top: 25px;
          margin-bottom: 25px;
-  
+
          width: 300px;
 
      }
@@ -87,27 +90,36 @@ $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'
 
             $date_inscription_projet_dynamic_1  = $date_inscription_projet_dynamic_1[$a];
             $img_projet_src1_dynamic_1__ =   $img_projet_src1_dynamic_1[$a];
+            $id_sha1_projet_dynamic_1__ = $id_sha1_projet_dynamic_1[$a];
 
 
+    ?>
 
-
+         <?php
 
             if ($id_sha1_parent_projet_dynamic_1[$a] != "") {
-    ?>
+            ?>
              <a href="<?= $id_sha1_parent_projet_dynamic_1[$a] ?>">
-                 <img  style="width: 50px;" src="https://img.icons8.com/ios/50/home--v1.png" alt="home--v1" />
+                 <img style="width: 50px;" src="https://img.icons8.com/ios/50/home--v1.png" alt="home--v1" />
+             </a>
+
+         <?php
+            } else {
+            ?>
+             <a href="1">
+                 <img style="width: 50px;" src="https://img.icons8.com/office/40/home--v1.png" alt="home--v1" />
              </a>
 
          <?php
             }
-            else {
-                ?>
-                <a href="1">
-                    <img  style="width: 50px;" src="https://img.icons8.com/office/40/home--v1.png" alt="home--v1" />
-                </a>
-   
-            <?php
-            }
+            ?>
+
+         <?php
+
+
+
+
+
             ?>
          <h1><?php echo $title_projet_dynamic_1__  ?></h1>
 
@@ -115,6 +127,13 @@ $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'
              <img src="<?= $img_projet_src1_dynamic_1__ ?>" alt="">
          </div>
          <p class="article_description"><?php echo $description_projet_dynamic_1__  ?></p>
+         <a href="../view/redirection_lecture.php/<?= $id_sha1_projet_dynamic_1__ ?>">
+             <img class="cursor_pointer" style="margin-top: 50px;margin-bottom:50px" width="50" height="50" src="https://img.icons8.com/ios/50/high-volume--v1.png" alt="high-volume--v1" />
+         </a>
+
+
+         </br>
+
          <b><?= $date_inscription_projet_dynamic_1 ?></b>
          <?php
             $databaseHandler = new DatabaseHandler($dbname, $username);
@@ -181,7 +200,7 @@ $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'
 
 
 
-                echo '     <div class="grande_image">' ; 
+                echo '     <div class="grande_image">';
 
                 if ($img_projet_src1__ != "") {
 
@@ -190,7 +209,7 @@ $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'
                 } else {
                     echo '<img src="' . $grande_image__ . '" alt="">';
                 }
-                echo '     </div>' ; 
+                echo '     </div>';
 
                 echo "<br/>";
                 echo "<i class='date_articles'>" .  $date_inscription_projet_dynamic_2[$y] . '</i>';
@@ -201,11 +220,15 @@ $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'
 
             ?>
 
-<a href="<?= $id_sha1_projet__c  ?>">
-     <h4>
-         Article complet
-     </h4>
- </a>
+             <a href="<?= $id_sha1_projet__c  ?>">
+                 <h4>
+                     Article complet
+                 </h4>
+             </a>
+
+
+
+
  <?php
             }
             echo '</div';
@@ -218,4 +241,15 @@ $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'
     ?>
 
 
- 
+
+
+
+ <a href="../" style="margin-top: 150px;">
+     <img width="100" height="100" src="https://img.icons8.com/ios/100/login-rounded-right--v1.png" alt="login-rounded-right--v1" />
+ </a>
+
+ <style>
+     .cursor_pointer:hover {
+         cursor: pointer;
+     }
+ </style>
