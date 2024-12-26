@@ -9,46 +9,25 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    
 
 <?php
-  $grande_image__ = "https://i.pinimg.com/236x/46/51/27/465127dc4dad2655628bd36e0e3c088a.jpg" ; 
-
+$grande_image__ = "https://i.pinimg.com/236x/46/51/27/465127dc4dad2655628bd36e0e3c088a.jpg" ; 
 require_once "Class/Give_url.php" ; 
 require_once "Class/DatabaseHandler.php" ; 
 require_once "Class/dbCheck.php" ; 
 require_once 'Class/AsciiConverter.php';
-
-
- 
 // Création d'une instance de la classe, avec $_SERVER['PHP_SELF'] par défaut
 $url = new Give_url();
 // Afficher le nom du fichier actuel
-
 // Utilisation de la méthode split_basename pour séparer par "_"
 $url->split_basename('_');
- 
-
-
-
-
-
 $id_sha1_projet = $url->get_basename() ; 
-
 $databaseHandler = new DatabaseHandler($dbname, $username);
 $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet'   ";
- 
-  
-
 
 $databaseHandler->getListOfTables_Child("projet");
 $databaseHandler->getDataFromTable2X($req_sql);
 $databaseHandler->get_dynamicVariables();
-
-
-
-
-
 
 $id_projet_dynamic_1 = $dynamicVariables['id_projet'];
 $activation_projet_dynamic_1 = $dynamicVariables['activation_projet'];
@@ -82,14 +61,10 @@ $shop_projet_dynamic_1 = $dynamicVariables['shop_projet'];
 $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'];
 
 $count = count($id_sha1_projet_dynamic_1 );
-
 $count = count($date_inscription_projet_dynamic_1) ; 
 
 if  ($count <1){
    ?>
- 
-
-
 <style>
     body{
         margin: 0;

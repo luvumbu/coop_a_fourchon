@@ -1,114 +1,110 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exploration Spatiale : Devenir Astronaute</title>
+    <title>3D Cube Rotation and Mouse Movement</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Fond très sombre pour simuler l'espace */
-            color: #f5f5f5; /* Texte clair pour contraster avec le fond sombre */
-            margin: 0;
-            padding: 0;
-        }
-        .article {
-            background-color: #1e1e1e; /* Fond légèrement plus clair pour l'article */
-            padding: 30px;
-            margin: 40px auto;
-            max-width: 800px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-        .article img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
-        }
-        .article-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #3e3e3e;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-        .article-header h1 {
-            font-size: 2.8rem;
-            color: #4b9cd3; /* Bleu clair pour le titre, inspiré des couleurs de l'espace */
-        }
-        .article-meta {
-            font-size: 1.1rem;
-            color: #a5a5a5; /* Gris clair pour les informations de publication */
-        }
-        .article-meta p {
-            margin: 0;
-        }
-        .article-content {
-            line-height: 1.7;
-            font-size: 1.1rem;
-            color: #d1d1d1; /* Texte principal légèrement plus clair */
-        }
-        .article-content h2 {
-            color: #6a5acd; /* Violet doux pour les sous-titres */
-            font-size: 1.6rem;
-            margin-top: 20px;
-        }
-        .article-footer {
-            border-top: 2px solid #3e3e3e;
-            padding-top: 15px;
-            margin-top: 20px;
-            font-size: 1rem;
-            color: #a5a5a5;
-        }
-        a {
-            color: #4b9cd3; /* Bleu clair pour les liens */
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+        body { margin: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; }
+        canvas { border: 1px solid #000; }
     </style>
 </head>
 <body>
 
-<div class="article">
-    <div class="article-header">
-        <h1>Devenir Astronaute : Voyage vers l'Inconnu</h1>
-        <div class="article-meta">
-            <p><strong>Publié le :</strong> 18 décembre 2024</p>
-            <p><strong>Par :</strong> Jane Doe</p>
-        </div>
-    </div>
+<canvas id="myCanvas" width="500" height="500"></canvas>
 
-    <img src="astronaut_image.jpg" alt="Astronaute dans l'espace">
+<script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
 
-    <div class="article-content">
-        <p>L'exploration spatiale fascine l'humanité depuis des siècles. Mais devenir astronaute est un chemin semé d'embûches, alliant formation rigoureuse, tests physiques et passion pour l'univers. Dans cet article, nous explorons comment se préparer à un voyage vers l'inconnu.</p>
+    const width = canvas.width;
+    const height = canvas.height;
 
-        <h2>Les Qualifications Requises</h2>
-        <p>Les astronautes doivent posséder un large éventail de compétences. Voici les qualifications les plus courantes :</p>
-        <ul>
-            <li>Un diplôme en ingénierie, sciences physiques, biologie ou mathématiques.</li>
-            <li>Une formation en pilotage d'avion, de préférence pour les astronautes militaires.</li>
-            <li>Des compétences exceptionnelles en travail d'équipe et en gestion de crise.</li>
-        </ul>
+    const cubeVertices = [
+        [-50, -50, -50],
+        [ 50, -50, -50],
+        [ 50,  50, -50],
+        [-50,  50, -50],
+        [-50, -50,  50],
+        [ 50, -50,  50],
+        [ 50,  50,  50],
+        [-50,  50,  50]
+    ];
 
-        <h2>La Formation : Un Voyage en Soi</h2>
-        <p>Les astronautes suivent une formation intense, comprenant des simulations de microgravité, des expériences dans des environnements extrêmes et des exercices physiques pour résister à l'apesanteur.</p>
+    const edges = [
+        [0, 1], [1, 2], [2, 3], [3, 0], // front face
+        [4, 5], [5, 6], [6, 7], [7, 4], // back face
+        [0, 4], [1, 5], [2, 6], [3, 7]  // connecting edges
+    ];
 
-        <h2>Exploration de l'Espace : Le Futur</h2>
-        <p>Le futur de l'exploration spatiale est prometteur. Les missions vers Mars, la construction de stations spatiales plus avancées et la recherche d'exoplanètes habitables sont les nouveaux défis pour les astronautes.</p>
-    </div>
+    let rotationX = 0;
+    let angle = 0.02;
+    let offsetX = 0;
+    let offsetY = 0;
 
-    <div class="article-footer">
-        <p>Partagez cet article sur vos réseaux sociaux :</p>
-        <a href="https://twitter.com" target="_blank">Twitter</a> |
-        <a href="https://facebook.com" target="_blank">Facebook</a> |
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-    </div>
-</div>
+    // Fonction pour gérer la rotation du cube autour de l'axe X
+    function rotate(vertices) {
+        const cosX = Math.cos(rotationX);
+        const sinX = Math.sin(rotationX);
+
+        return vertices.map(([x, y, z]) => {
+            let tempY = cosX * y - sinX * z;
+            let tempZ = sinX * y + cosX * z;
+            y = tempY;
+            z = tempZ;
+
+            return [x, y, z];
+        });
+    }
+
+    // Fonction pour projeter les coordonnées 3D sur 2D
+    function project([x, y, z]) {
+        const scale = 400 / (z + 400); // Perspective simple
+        const xProj = x * scale + offsetX;
+        const yProj = y * scale + offsetY;
+        return [xProj, yProj];
+    }
+
+    // Fonction pour dessiner le cube
+    function draw() {
+        ctx.clearRect(0, 0, width, height); // Efface le canevas avant de redessiner
+
+        // Rotation des sommets du cube autour de l'axe X
+        const rotatedVertices = rotate(cubeVertices);
+
+        // Projection des sommets 3D en 2D
+        const projectedVertices = rotatedVertices.map(project);
+
+        // Dessiner les arêtes du cube
+        ctx.beginPath();
+        edges.forEach(([start, end]) => {
+            const [x1, y1] = projectedVertices[start];
+            const [x2, y2] = projectedVertices[end];
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+        });
+        ctx.strokeStyle = '#000'; // Couleur des lignes (noir)
+        ctx.lineWidth = 2; // Largeur des lignes
+        ctx.stroke(); // Applique le dessin
+
+        rotationX += angle; // Mise à jour de l'angle de rotation
+
+        requestAnimationFrame(draw); // Demande une nouvelle image pour l'animation
+    }
+
+    // Fonction pour capturer la position de la souris et déplacer le cube
+    canvas.addEventListener('mousemove', (event) => {
+        const mouseX = event.clientX - canvas.offsetLeft; // Position X de la souris sur le canevas
+        const mouseY = event.clientY - canvas.offsetTop; // Position Y de la souris sur le canevas
+
+        // Mettre à jour la position du cube avec les coordonnées de la souris
+        offsetX = mouseX;
+        offsetY = mouseY;
+    });
+
+    draw(); // Appel initial pour commencer l'animation
+
+</script>
 
 </body>
 </html>

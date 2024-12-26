@@ -1,11 +1,4 @@
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Créer une Table</title>
+ 
      <style>
          body {
             font-family: Arial, sans-serif;
@@ -115,7 +108,7 @@
             }
         }
     </style>
-</head>  
+ 
     <h1>Créer une nouvelle table dans la base de données</h1>
     <form action="config/config_form_creation_table_bdd.php" method="POST">
         <label for="main_table_name">Nom de la table :</label>
@@ -225,6 +218,4 @@
             // Ajouter le nouveau champ à la liste
             document.getElementById("columns").appendChild(columnDiv);
         });
-    </script>
-</body>
-</html>
+    </script> 
