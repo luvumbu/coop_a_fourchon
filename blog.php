@@ -72,10 +72,7 @@ $count = count($date_inscription_projet_dynamic_1) ;
 <link rel="stylesheet" href="../view/blog.css">
 
  
-<?php
-
-
- 
+<?php 
 if  ($count <1){
   require_once "view/all_articles.php" ; 
  ?>

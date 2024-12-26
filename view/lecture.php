@@ -1,39 +1,80 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php 
-    require_once '../Class/DatabaseHandler.php';
-    require_once '../Class/dbCheck.php';
-    require_once '../Class/AsciiConverter.php';
-    require_once '../Class/Give_url.php';
+<?php
+require_once '../Class/DatabaseHandler.php';
+require_once '../Class/dbCheck.php';
+require_once '../Class/AsciiConverter.php';
+require_once '../Class/Give_url.php';
 
-    $url = new Give_url();
-    $URL = $url->get_basename();
+$url = new Give_url();
+$URL = $url->get_basename();
 
-    $databaseHandler = new DatabaseHandler($dbname, $username);
-    $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$URL'";
+$databaseHandler = new DatabaseHandler($dbname, $username);
+$req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$URL'";
 
-    $databaseHandler->getListOfTables_Child("projet");
-    $databaseHandler->getDataFromTable2X($req_sql);
-    $databaseHandler->get_dynamicVariables();
+$databaseHandler->getListOfTables_Child("projet");
+$databaseHandler->getDataFromTable2X($req_sql);
+$databaseHandler->get_dynamicVariables();
 
-    $description_projet__ = $dynamicVariables['description_projet'];
+$description_projet__ = $dynamicVariables['description_projet'];
 
 
-    $id_sha1_projet__ = $dynamicVariables['id_sha1_projet'];
+$id_sha1_projet__ = $dynamicVariables['id_sha1_projet'];
 
-    $title_projet__ = $dynamicVariables['title_projet'];
+$title_projet__ = $dynamicVariables['title_projet'];
 
-    $img_projet_src1__ = $dynamicVariables['img_projet_src1'];
+$img_projet_src1__ = $dynamicVariables['img_projet_src1'];
 
-    ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$databaseHandler_ = new DatabaseHandler($dbname, $username);
+$req_sql = "SELECT * FROM projet WHERE id_sha1_parent_projet ='$URL'";
+
+$databaseHandler_->getListOfTables_Child("projet");
+$databaseHandler_->getDataFromTable2X($req_sql);
+$databaseHandler_->get_dynamicVariables();
+
+$description_projet__child = $dynamicVariables['description_projet'];
+
+
+$id_sha1_projet__child = $dynamicVariables['id_sha1_projet'];
+
+$title_projet__child = $dynamicVariables['title_projet'];
+
+$img_projet_src1__child = $dynamicVariables['img_projet_src1'];
+
+
+
+
+ 
+
+$kkount = count($id_sha1_projet__child);
+
+
+?>
+
 <head>
- 
-  <title>   <?php echo AsciiConverter::asciiToString($title_projet__[0]); ?> </title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
- 
+
+    <title> <?php echo AsciiConverter::asciiToString($title_projet__[0]); ?> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -93,8 +134,8 @@
 </head>
 
 <body>
-    
- 
+
+
 
     <h1><?php echo AsciiConverter::asciiToString($title_projet__[0]); ?></h1>
 
@@ -238,20 +279,65 @@
         <img width="50" height="50" src="https://img.icons8.com/dusk/50/google-blog-search.png" alt="google-blog-search" />
     </a>
 
+
+    <div class="liste_projet">
+        <?php
+
+        for ($x = 0; $x < $kkount; $x++) {
+
+        ?>
+        <a href="<?= $id_sha1_projet__child[$x]  ?>">
+
+        
+            <div class="liste_projet_img">
+                <p><?php echo AsciiConverter::asciiToString($title_projet__child [$x]); ?> </p>
+                <img src="../../src/img/1735162964.jpeg" alt="" srcset="">
+            </div>
+        </a>
+
+        <?php
+        }
+
+
+        ?>
+    </div>
 </body>
 
 
 <style>
-    .img_grand{
+    .img_grand {
         max-width: 80%;
         margin: auto;
 
     }
+
     .img_grand img {
         width: 100%;
     }
-    h1{
+
+    h1 {
         text-align: center;
+    }
+
+    .liste_projet_img {
+        width: 100px;
+        margin: auto;
+    }
+
+    .liste_projet_img img {
+        width: 100%;
+
+    }
+
+    .liste_projet_img {
+
+        width: 300px;
+        text-align: center;
+    }
+
+    .liste_projet {
+        display: flex;
+        justify-content: space-around;
     }
 </style>
 
