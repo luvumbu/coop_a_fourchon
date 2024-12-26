@@ -60,7 +60,7 @@ $img_projet_src1__child = $dynamicVariables['img_projet_src1'];
 
 
 
- 
+
 
 $kkount = count($id_sha1_projet__child);
 
@@ -276,24 +276,45 @@ $kkount = count($id_sha1_projet__child);
     </script>
 
     <a href="../../blog.php/<?= $URL ?>">
-        <img width="50" height="50" src="https://img.icons8.com/dusk/50/google-blog-search.png" alt="google-blog-search" />
+
     </a>
 
 
-    <div class="liste_projet">
+    <div class="liste_projet" style="margin-top: 75px;">
         <?php
 
         for ($x = 0; $x < $kkount; $x++) {
 
         ?>
-        <a href="<?= $id_sha1_projet__child[$x]  ?>">
 
-        
-            <div class="liste_projet_img">
-                <p><?php echo AsciiConverter::asciiToString($title_projet__child [$x]); ?> </p>
-                <img src="../../src/img/1735162964.jpeg" alt="" srcset="">
-            </div>
-        </a>
+
+
+
+
+
+            <a href="<?= $id_sha1_projet__child[$x]  ?>">
+
+
+                <div class="liste_projet_img">
+                    <p><?php echo AsciiConverter::asciiToString($title_projet__child[$x]); ?> </p>
+
+
+                    <?php
+                    if ($img_projet_src1__child[$x] != "") {
+                    ?>
+                        <img src="<?= '../' . $img_projet_src1__child[$x] ?>" alt="">
+
+                    <?php
+                    } else {
+                    ?>
+                        <img src="../../src/img/1735162964.jpeg" alt="" srcset="">
+                    <?php
+                    }
+
+
+                    ?>
+                </div>
+            </a>
 
         <?php
         }
