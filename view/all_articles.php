@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-
-<title>Bootstrap 5 Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-<body>
-<link rel="stylesheet" href="../view/blog.css">
-
- 
 <?php
-$grande_image__ = "https://i.pinimg.com/236x/46/51/27/465127dc4dad2655628bd36e0e3c088a.jpg" ; 
-require_once "Class/Give_url.php" ; 
-require_once "Class/DatabaseHandler.php" ; 
-require_once "Class/dbCheck.php" ; 
-require_once 'Class/AsciiConverter.php';
-// Création d'une instance de la classe, avec $_SERVER['PHP_SELF'] par défaut
-$url = new Give_url();
-// Afficher le nom du fichier actuel
-// Utilisation de la méthode split_basename pour séparer par "_"
-$url->split_basename('_');
-$id_sha1_projet = $url->get_basename() ; 
+
+
+
+
 $databaseHandler = new DatabaseHandler($dbname, $username);
-$req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet'   ";
+$req_sql = "SELECT * FROM projet WHERE id_sha1_parent_projet='' AND activation_projet='' ";
 
 $databaseHandler->getListOfTables_Child("projet");
 $databaseHandler->getDataFromTable2X($req_sql);
@@ -62,19 +41,135 @@ $publication_date_h_projet_dynamic_1 = $dynamicVariables['publication_date_h_pro
 $shop_projet_dynamic_1 = $dynamicVariables['shop_projet'];
 $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'];
 
- 
-$count = count($date_inscription_projet_dynamic_1) ; 
 
 
  
-if  ($count <1){
-  require_once "view/all_articles.php" ; 
+
+
+
  
-} 
-else {
-   require_once "view/blog_articles.php" ; 
-}
+// Création d'une instance de la classe, avec $_SERVER['PHP_SELF'] par défaut
+$url = new Give_url();
+ 
+
+
+
+
+
+
+
+
+$chaine = $url->get_basename();
+
+if (strpos($chaine, '.') !== false) {
+    ?>
+    <meta http-equiv="refresh" content="0; URL=blog.php/1">
+    </head>
+        <?php 
+}  
+
+ 
  
 ?>
+
+<h1>BOKONZI</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+
+    <?php
+    $img_projet_src1_dynamic_1__ = "../src/img/1735162964.jpeg";
+    $kount = count($img_projet_src1_dynamic_1);
+
+
+
+
+    echo '<div class="classcontainer container mt-3">';
+    for ($a = 0; $a < $kount; $a++) {
+
+
+
+
+
+
+
+
+        // Texte original
+        $text__ = AsciiConverter::asciiToString($description_projet_dynamic_1[$a]);
+
+      
+
+
+
+
+
+    ?>
+
+
+
+
+        <div class="card" style="width:400px">
+
+            <?php
+
+            if ($img_projet_src1_dynamic_1[$a] != "") {
+            ?>
+                <img class="card-img-top" src="<?= $img_projet_src1_dynamic_1[$a]  ?>" alt="Card image" style="width:100%">
+
+            <?php
+            } else {
+            ?>
+                <img class="card-img-top" src="<?= $img_projet_src1_dynamic_1__ ?>" alt="Card image" style="width:100%">
+
+            <?php
+            }
+            ?>
+
+            <div class="card-body">
+                <h4 class="card-title"><?= AsciiConverter::asciiToString($title_projet_dynamic_1[$a]) ?></h4>
+ 
+                <a href="<?= $id_sha1_projet_dynamic_1[$a]?>" class="btn btn-primary">voir projet</a>
+            </div>
+        </div>
+
+
+
+
+        <?php
+
+
+        ?>
+    <?php
+
+    }
+    echo '</div>';
+    ?>
+
+
+    <style>
+        .classcontainer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .classcontainer div {
+            margin-bottom: 75px;
+        }
+
+    
+    </style>
 </body>
+
 </html>
