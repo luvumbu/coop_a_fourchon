@@ -100,6 +100,14 @@ $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'
 
          <?php
             }
+            else {
+                ?>
+                <a href="1">
+                    <img  style="width: 50px;" src="https://img.icons8.com/office/40/home--v1.png" alt="home--v1" />
+                </a>
+   
+            <?php
+            }
             ?>
          <h1><?php echo $title_projet_dynamic_1__  ?></h1>
 
