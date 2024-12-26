@@ -359,7 +359,17 @@ $kkount = count($id_sha1_projet__child);
     .liste_projet {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
+    
+    }
+    .liste_projet div {
+        margin: 25px;
     }
 </style>
 
+<div style="margin-top: 150px;"></div>
+
+<a href="../../" >
+<img width="48" height="48" src="https://img.icons8.com/color/48/all.png" alt="all"/>
+</a>
 </html>
