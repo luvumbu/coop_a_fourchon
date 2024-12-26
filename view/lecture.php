@@ -1,57 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        textarea {
-            width: 100%;
-            height: 150px;
-            margin: 10px 0;
-            padding: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        #cleanedText {
-            margin: 20px 0;
-            padding: 10px;
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-        }
-        .settings {
-            margin: 15px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 5px;
-        }
-        .settings label {
-            margin-right: 10px;
-        }
-        select, input {
-            margin: 5px;
-            padding: 5px;
-        }
-    </style>
-</head>
-<body>
-    <?php
+<?php 
     require_once '../Class/DatabaseHandler.php';
     require_once '../Class/dbCheck.php';
     require_once '../Class/AsciiConverter.php';
@@ -71,10 +20,88 @@
 
 
     $id_sha1_projet__ = $dynamicVariables['id_sha1_projet'];
+
+    $title_projet__ = $dynamicVariables['title_projet'];
+
+    $img_projet_src1__ = $dynamicVariables['img_projet_src1'];
+
     ?>
+<head>
+ 
+  <title>   <?php echo AsciiConverter::asciiToString($title_projet__[0]); ?> </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
 
-    <h1>Lecteur de texte à voix haute</h1>
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin: 10px 0;
+            padding: 10px;
+        }
 
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #cleanedText {
+            margin: 20px 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+        }
+
+        .settings {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .settings label {
+            margin-right: 10px;
+        }
+
+        select,
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    
+ 
+
+    <h1><?php echo AsciiConverter::asciiToString($title_projet__[0]); ?></h1>
+
+
+    <div class="img_grand">
+        <img src="<?= '../' . $img_projet_src1__[0]  ?>" alt="">
+    </div>
     <textarea style="display: none;" id="textToRead" placeholder="Collez votre texte HTML ici...">
         <?php echo AsciiConverter::asciiToString($description_projet__[0]); ?>
     </textarea>
@@ -82,11 +109,11 @@
     <div class="settings">
         <label>Voix : </label>
         <select id="voiceSelect"></select>
-        
+
         <label>Vitesse : </label>
         <input type="range" id="rate" min="0.5" max="2" value="1.4" step="0.1">
         <span id="rateValue">1.4</span>
-        
+
         <label>Hauteur : </label>
         <input type="range" id="pitch" min="0.5" max="2" value="1" step="0.1">
         <span id="pitchValue">1</span>
@@ -112,7 +139,7 @@
         function stripHtml(html) {
             let temp = document.createElement('div');
             temp.innerHTML = html;
-            
+
             let text = temp.textContent || temp.innerText;
             text = text.replace(/&nbsp;/g, ' ');
             text = text.replace(/&amp;/g, '&');
@@ -120,7 +147,7 @@
             text = text.replace(/&gt;/g, '>');
             text = text.replace(/&quot;/g, '"');
             text = text.replace(/\s+/g, ' ').trim();
-            
+
             return text;
         }
 
@@ -132,22 +159,22 @@
 
         // Charger les voix disponibles
         function loadVoices() {
-        
+
             const voices = synth.getVoices();
             voiceSelect.innerHTML = '';
-            
+
             // Filtrer pour n'avoir que les voix françaises
-            const frenchVoices = voices.filter(voice => 
-                voice.lang.startsWith('fr') 
+            const frenchVoices = voices.filter(voice =>
+                voice.lang.startsWith('fr')
             );
-            
+
             frenchVoices.forEach(voice => {
                 const option = document.createElement('option');
                 option.value = voice.name;
                 option.textContent = `${voice.name} (${voice.lang})`;
                 // Sélectionner par défaut une voix masculine si disponible
-                if (voice.name.toLowerCase().includes('thomas') || 
-                    voice.name.toLowerCase().includes('male') || 
+                if (voice.name.toLowerCase().includes('thomas') ||
+                    voice.name.toLowerCase().includes('male') ||
                     voice.name.toLowerCase().includes('homme')) {
                     option.selected = true;
                 }
@@ -157,6 +184,7 @@
 
         // Initialisation au chargement
         const initTimeout = setTimeout(initializeText, 250);
+
         function initializeText() {
             cleanAndShow();
         }
@@ -172,22 +200,22 @@
         pitchInput.oninput = () => pitchValue.textContent = pitchInput.value;
 
         function speak() {
-       
+
             const cleanedDiv = document.getElementById('cleanedText');
             const text = cleanedDiv.textContent || stripHtml(document.getElementById('textToRead').value);
-            
+
             stop();
-            
+
             utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'fr-FR';
-            
+
             const voices = synth.getVoices();
             const selectedVoice = voices.find(voice => voice.name === voiceSelect.value);
             if (selectedVoice) utterance.voice = selectedVoice;
-            
+
             utterance.rate = parseFloat(rateInput.value);
             utterance.pitch = parseFloat(pitchInput.value);
-            
+
             synth.speak(utterance);
         }
 
@@ -206,9 +234,25 @@
         }
     </script>
 
-<a href="../../blog.php/<?= $URL ?>">
-<img width="50" height="50" src="https://img.icons8.com/dusk/50/google-blog-search.png" alt="google-blog-search"/>
-</a>
- 
+    <a href="../../blog.php/<?= $URL ?>">
+        <img width="50" height="50" src="https://img.icons8.com/dusk/50/google-blog-search.png" alt="google-blog-search" />
+    </a>
+
 </body>
+
+
+<style>
+    .img_grand{
+        max-width: 80%;
+        margin: auto;
+
+    }
+    .img_grand img {
+        width: 100%;
+    }
+    h1{
+        text-align: center;
+    }
+</style>
+
 </html>
