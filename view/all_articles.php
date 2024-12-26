@@ -62,20 +62,28 @@ $url = new Give_url();
 $chaine = $url->get_basename();
 
 if (strpos($chaine, '.') !== false) {
+
+
     ?>
+
+    <style>
+        body{
+            background-color: white;
+            display: none;
+        }
+    </style>
     <meta http-equiv="refresh" content="0; URL=blog.php/1">
     </head>
         <?php 
 }  
 
+
  
  
 ?>
 
-<h1>BOKONZI</h1>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -170,6 +178,11 @@ if (strpos($chaine, '.') !== false) {
 
     
     </style>
+
+
+<a href="../">
+<img width="100" height="100" src="https://img.icons8.com/ios/100/login-rounded-right--v1.png" alt="login-rounded-right--v1"/>
+</a>
 </body>
 
 </html>

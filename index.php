@@ -96,17 +96,41 @@ $name_projet = $databaseHandler->tableList_info;
         } else {
         }
       } else {
+       
         require_once 'view/verifyConnection.php';
+  
+
       }
     }
   } else {
+
+    
+ 
     require_once 'view/login_bdd.php';
   }
   ?>
+<a href="blog.php/1" >
+
+
+<h3 class="projet_all">
+  Voir tous les projet
+</h3>
+ </a>
   <script src="Class/js.js"></script>
   <?php
   // require_once 'log/log.php';
   // requare all 
   ?>
   </div>
+
+
+  <style>
+    .projet_all{
+      background-color:  #5264a9;
+      color: white;
+      padding: 15px;
+      box-shadow: 1px 1px 8px black;
+      float:left ; 
+    }
+  </style>
 
