@@ -14,6 +14,9 @@ session_start();
   <link rel="icon" type="image/x-icon" href="https://ih1.redbubble.net/image.1762483057.7729/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.webp">
 </head>
 
+
+<script src="Class/Js.js"></script>
+
 <script>
   window.onload = function() {
    document.getElementById("body").className="";
@@ -68,6 +71,8 @@ $visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
 
 
   require_once 'Class/DatabaseHandler.php';
+ 
+
 
   require_once 'Class/Delete_file.php';
 
