@@ -12,3 +12,13 @@ function IsLocal()
 }
 
 ?>
+
+<?php
+/*
+if (IsLocal()) {
+    echo "Vous êtes en environnement local.";
+} else {
+    echo "Vous êtes en environnement de production.";
+}
+    */
+?>

@@ -125,3 +125,20 @@ class ImageResizer
     }
 }
 ?>
+
+<?php
+/*
+$imageResizer = new ImageResizer('path/to/your/image.jpg'); // Charger l'image
+$imageResizer->resize(800, 600); // Redimensionner l'image (800px de large, 600px de hauteur max)
+$imageResizer->output(); // Afficher l'image dans le navigateur
+*/
+?>
+
+<?php
+/*
+$imageResizer = new ImageResizer('path/to/your/image.jpg'); // Charger l'image
+$imageResizer->resize(800, 600); // Redimensionner l'image
+$imageResizer->save('path/to/save/resized_image.jpg'); // Sauvegarder l'image redimensionnée
+*/
+?>
+
