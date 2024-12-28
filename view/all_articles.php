@@ -82,18 +82,6 @@ if (strpos($chaine, '.') !== false) {
  
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
-
-<body>
 
 
     <?php
@@ -182,6 +170,5 @@ if (strpos($chaine, '.') !== false) {
 <a href="../" style="margin-top: 150px;">
 <img width="100" height="100" src="https://img.icons8.com/ios/100/login-rounded-right--v1.png" alt="login-rounded-right--v1"/>
 </a>
-</body>
 
-</html>
+

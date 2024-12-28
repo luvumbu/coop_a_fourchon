@@ -252,4 +252,11 @@ $date_inscription_projet_dynamic_1 = $dynamicVariables['date_inscription_projet'
      .cursor_pointer:hover {
          cursor: pointer;
      }
+ 
+
+     @media screen and (max-width: 1200px) {
+        .all_articles{
+       width: 100%;
+     }
+}
  </style>
