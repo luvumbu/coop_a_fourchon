@@ -43,9 +43,7 @@ $tabe_name_result =$url->get_elements()[2] ;
  * d'une table spécifique dans une base de données en générant des variables dynamiques.
  */
  
-// Configuration de la base de données
-$dbname = "root";   // Nom d'utilisateur pour la base de données
-$username = "root";   // Mot de passe pour la base de données
+
 $nom_table = "projet"; // Nom de la table cible
 
 
