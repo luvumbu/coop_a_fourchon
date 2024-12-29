@@ -30,7 +30,7 @@ $img_projet_src1__ = $dynamicVariables['img_projet_src1'];
 
 
 
-
+require_once '../function/add_ip.php';
 
 
 

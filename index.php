@@ -48,7 +48,7 @@ $visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
   require_once 'Class/CheckFileExists.php';
 
 
-  require_once 'function/add_ip.php';
+
   $grande_image__ = "https://i.pinimg.com/236x/46/51/27/465127dc4dad2655628bd36e0e3c088a.jpg";
   /*
 $databaseHandler = new DatabaseHandler($config_dbname, $config_password);
@@ -63,6 +63,7 @@ $name_projet = $databaseHandler->tableList_info;
   $path = "Class/dbCheck.php";
   if (checkFileExists($path)) {
     require_once  'Class/dbCheck.php';
+  
   $databaseHandler = new DatabaseHandler($dbname, $username);
     if ($databaseHandler->verif != 1) {
       require_once 'view/verifyConnection.php';
