@@ -835,3 +835,29 @@ $databaseHandler->action_sql("DELETE FROM `projet` WHERE `id_projet` = '11'");
 // Exemple de suppression d'un élément dans une table spécifique
 */
 ?>
+
+
+<?php 
+ /*
+
+// Suppression d'un enregistrement dans la base de données
+// Exemple de suppression d'un élément dans une table spécifique
+
+// Définition des paramètres de connexion à la base de données
+$dbname = "root";  // Nom de la base de données
+$username = "root"; // Nom d'utilisateur pour la connexion
+
+// Initialisation du gestionnaire de base de données
+// Un objet '$databaseHandler' est créé avec les paramètres de connexion spécifiés
+$databaseHandler = new DatabaseHandler($dbname, $username);
+
+// Exécution de la requête SQL pour supprimer un enregistrement
+// La méthode 'action_sql()' est utilisée pour exécuter des requêtes SQL directes
+// Cette requête supprime un enregistrement de la table 'projet'
+// où 'id_projet' est égal à 11
+$databaseHandler->action_sql("INSERT INTO  `visit_user` (`id_visit_user`, `id_general`, `id_projet_visit_user`, `ip1_visit_user`, `ip2_visit_user`, `ip3_visit_user`, `ip4_visit_user`, `ip5_visit_user`, `ip6_visit_user`, `ip7_visit_user`, `ip8_visit_user`, `ip9_visit_user`, `x_visit_user`, `y_visit_user`, `click_visit_user`, `screen_shoot_visit_user`, `timestamp_visit_user`) VALUES (NULL, '1', '2', '3', '4', '5', '6', '', '', '', '', '', '', '', '', '', CURRENT_TIMESTAMP);");
+
+// Suppression d'un enregistrement dans la base de données
+// Exemple de suppression d'un élément dans une table spécifique
+ */
+?>

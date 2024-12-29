@@ -6,6 +6,7 @@ require_once "Class/Give_url.php" ;
 require_once "Class/DatabaseHandler.php" ; 
 require_once "Class/dbCheck.php" ; 
 require_once 'Class/AsciiConverter.php';
+require_once 'function/add_ip.php';
 // Création d'une instance de la classe, avec $_SERVER['PHP_SELF'] par défaut
 $url = new Give_url();
 // Afficher le nom du fichier actuel
