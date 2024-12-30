@@ -2,6 +2,8 @@
 require_once "Class/DatabaseHandler.php";
 require_once "Class/dbCheck.php";
 require_once "Class/Give_url.php";
+require_once "Class/AsciiConverter.php";
+
 
 // Création d'une instance de la classe, avec $_SERVER['PHP_SELF'] par défaut
 $url = new Give_url();
@@ -93,36 +95,36 @@ $shop_projet_ = $dynamicVariables['shop_projet'];
 $date_inscription_projet_ = $dynamicVariables['date_inscription_projet'];
 
 // Deuxième étape : Ajout des variables dans des tableaux
-$id_projet_1 = [$id_projet_];
-$activation_projet_1 = [$activation_projet_];
-$id_general_1 = [$id_general_];
-$id_user_projet_1 = [$id_user_projet_];
-$id_master_projet_1 = [$id_master_projet_];
-$id_sha1_projet_1 = [$id_sha1_projet_];
-$id_sha1_parent_projet_1 = [$id_sha1_parent_projet_];
-$id_sha1_parent_projet2_1 = [$id_sha1_parent_projet2_];
-$cryptage_projet_1 = [$cryptage_projet_];
-$input_cryptage_projet_1 = [$input_cryptage_projet_];
-$name_projet_1 = [$name_projet_];
-$name_extention_projet_1 = [$name_extention_projet_];
+$id_projet_1 = $id_projet_;
+$activation_projet_1 = $activation_projet_;
+$id_general_1 = $id_general_;
+$id_user_projet_1 = $id_user_projet_;
+$id_master_projet_1 = $id_master_projet_;
+$id_sha1_projet_1 = $id_sha1_projet_;
+$id_sha1_parent_projet_1 = $id_sha1_parent_projet_;
+$id_sha1_parent_projet2_1 = $id_sha1_parent_projet2_;
+$cryptage_projet_1 = $cryptage_projet_;
+$input_cryptage_projet_1 = $input_cryptage_projet_;
+$name_projet_1 = $name_projet_;
+$name_extention_projet_1 = $name_extention_projet_;
 
-$title_projet_1 = [$title_projet_];
-$description_projet_1 = [$description_projet_];
-$password_projet_1 = [$password_projet_];
-$visibility_1_projet_1 = [$visibility_1_projet_];
-$visibility_2_projet_1 = [$visibility_2_projet_];
-$screen_shoot_projet_1 = [$screen_shoot_projet_];
-$img_projet_src_1 = [$img_projet_src_];
-$img_projet_src2_1 = [$img_projet_src2_];
-$img_projet_visibility_1 = [$img_projet_visibility_];
-$group_projet_1 = [$group_projet_];
-$heure_debut_projet_1 = [$heure_debut_projet_];
-$date_debut_projet_1 = [$date_debut_projet_];
-$dure_projet_1 = [$dure_projet_];
-$publication_date_i_projet_1 = [$publication_date_i_projet_];
-$publication_date_h_projet_1 = [$publication_date_h_projet_];
-$shop_projet_1 = [$shop_projet_];
-$date_inscription_projet_1 = [$date_inscription_projet_];
+$title_projet_1 = $title_projet_;
+$description_projet_1 = $description_projet_;
+$password_projet_1 = $password_projet_;
+$visibility_1_projet_1 = $visibility_1_projet_;
+$visibility_2_projet_1 = $visibility_2_projet_;
+$screen_shoot_projet_1 = $screen_shoot_projet_;
+$img_projet_src_1 = $img_projet_src_;
+$img_projet_src2_1 = $img_projet_src2_;
+$img_projet_visibility_1 = $img_projet_visibility_;
+$group_projet_1 = $group_projet_;
+$heure_debut_projet_1 = $heure_debut_projet_;
+$date_debut_projet_1 = $date_debut_projet_;
+$dure_projet_1 = $dure_projet_;
+$publication_date_i_projet_1 = $publication_date_i_projet_;
+$publication_date_h_projet_1 = $publication_date_h_projet_;
+$shop_projet_1 = $shop_projet_;
+$date_inscription_projet_1 = $date_inscription_projet_;
 
 // Création d'une instance de la classe `DatabaseHandler`
 $databaseHandler = new DatabaseHandler($dbname, $username);
@@ -173,38 +175,57 @@ $shop_projet_ = $dynamicVariables['shop_projet'];
 $date_inscription_projet_ = $dynamicVariables['date_inscription_projet'];
 
 // Deuxième étape : Ajout des variables dans des tableaux
-$id_projet_2 = [$id_projet_];
-$activation_projet_2 = [$activation_projet_];
-$id_general_2 = [$id_general_];
-$id_user_projet_2 = [$id_user_projet_];
-$id_master_projet_2 = [$id_master_projet_];
-$id_sha1_projet_2 = [$id_sha1_projet_];
-$id_sha1_parent_projet_2 = [$id_sha1_parent_projet_];
-$id_sha1_parent_projet2_2 = [$id_sha1_parent_projet2_];
-$cryptage_projet_2 = [$cryptage_projet_];
-$input_cryptage_projet_2 = [$input_cryptage_projet_];
-$name_projet_2 = [$name_projet_];
-$name_extention_projet_2 = [$name_extention_projet_];
-$title_projet_2 = [$title_projet_];
-$description_projet_2 = [$description_projet_];
-$password_projet_2 = [$password_projet_];
-$visibility_2_projet_2 = [$visibility_1_projet_];
-$visibility_2_projet_2 = [$visibility_2_projet_];
-$screen_shoot_projet_2 = [$screen_shoot_projet_];
-$img_projet_src_2 = [$img_projet_src_];
-$img_projet_src2_2 = [$img_projet_src2_];
-$img_projet_visibility_2 = [$img_projet_visibility_];
-$group_projet_2 = [$group_projet_];
-$heure_debut_projet_2 = [$heure_debut_projet_];
-$date_debut_projet_2 = [$date_debut_projet_];
-$dure_projet_2 = [$dure_projet_];
-$publication_date_i_projet_2 = [$publication_date_i_projet_];
-$publication_date_h_projet_2 = [$publication_date_h_projet_];
-$shop_projet_2 = [$shop_projet_];
-$date_inscription_projet_2 = [$date_inscription_projet_];
+$id_projet_2 = $id_projet_;
+$activation_projet_2 = $activation_projet_;
+$id_general_2 = $id_general_;
+$id_user_projet_2 = $id_user_projet_;
+$id_master_projet_2 = $id_master_projet_;
+$id_sha1_projet_2 = $id_sha1_projet_;
+$id_sha1_parent_projet_2 = $id_sha1_parent_projet_;
+$id_sha1_parent_projet2_2 = $id_sha1_parent_projet2_;
+$cryptage_projet_2 = $cryptage_projet_;
+$input_cryptage_projet_2 = $input_cryptage_projet_;
+$name_projet_2 = $name_projet_;
+$name_extention_projet_2 = $name_extention_projet_;
+$title_projet_2 = $title_projet_;
+$description_projet_2 = $description_projet_;
+$password_projet_2 = $password_projet_;
+$visibility_2_projet_2 = $visibility_1_projet_;
+$visibility_2_projet_2 = $visibility_2_projet_;
+$screen_shoot_projet_2 = $screen_shoot_projet_;
+$img_projet_src_2 = $img_projet_src_;
+$img_projet_src2_2 = $img_projet_src2_;
+$img_projet_visibility_2 = $img_projet_visibility_;
+$group_projet_2 = $group_projet_;
+$heure_debut_projet_2 = $heure_debut_projet_;
+$date_debut_projet_2 = $date_debut_projet_;
+$dure_projet_2 = $dure_projet_;
+$publication_date_i_projet_2 = $publication_date_i_projet_;
+$publication_date_h_projet_2 = $publication_date_h_projet_;
+$shop_projet_2 = $shop_projet_;
+$date_inscription_projet_2 = $date_inscription_projet_;
+
+$x=array();
+ 
+$kount = count($title_projet_1) ;
+for($a = 0 ; $a <$kount ; $a++) {
+    array_push($x,AsciiConverter::asciiToString($title_projet_1[$a])) ;
+
+}
+
+$title_projet_1 = $x ; 
 
 
 
+$x=array();
+ 
+$kount = count($title_projet_2) ;
+for($a = 0 ; $a <$kount ; $a++) {
+    array_push($x,AsciiConverter::asciiToString($title_projet_2[$a])) ;
+
+}
+
+$title_projet_2 = $x ; 
 // Création du tableau final avec les deux groupes dans des tableaux
 $finalArray = [
 
@@ -220,7 +241,7 @@ $finalArray = [
         "input_cryptage_projet" => $input_cryptage_projet_1,
         "name_projet" => $name_projet_1,
         "name_extention_projet" => $name_extention_projet_1,
-        "title_projet" => $title_projet_1,
+        "title_projet" =>$title_projet_1[0],
         "description_projet" => $description_projet_1,
         "password_projet" => $password_projet_1,
         "visibility_1_projet" => $visibility_1_projet_1,

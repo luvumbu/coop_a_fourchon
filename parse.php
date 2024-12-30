@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<html>
-<body>
-<title id="title">dddddddddddddddddde</title>
-<h2>Use the XMLHttpRequest to get the content of a file.</h2>
-<p>The content is written in JSON format, and can easily be converted into a JavaScript object.</p>
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <title id="title">dddddddddddddddddde</title>
+ </head>
+ <body>
+  
 
 <p id="demo"></p>
+ 
+
+<h1 id="title_h1"></h1>
+<h1>Coop’ à Fourchon</h1>
 <script>
   class AsciiConverter {
     /**
@@ -50,6 +59,38 @@
         return asciiArray.join(',');
     }
 }
+
+
+class HtmlEntityConverter {
+    /**
+     * Remplace les caractères spéciaux par leurs entités HTML correspondantes.
+     * @param {string} text - Texte contenant les caractères spéciaux.
+     * @returns {string} - Texte transformé avec les entités HTML.
+     */
+    static encodeToHtmlEntities(text) {
+        const entityMap = {
+            '’': '&rsquo;', // Apostrophe droite
+            'à': '&agrave;', // a accent grave
+            'â': '&acirc;',  // a accent circonflexe
+            'é': '&eacute;', // e accent aigu
+            'è': '&egrave;', // e accent grave
+            'ê': '&ecirc;',  // e accent circonflexe
+            'ç': '&ccedil;', // c cédille
+            'ô': '&ocirc;',  // o accent circonflexe
+            'î': '&icirc;',  // i accent circonflexe
+            'û': '&ucirc;',  // u accent circonflexe
+            '…': '&hellip;', // Points de suspension
+            '“': '&ldquo;',  // Guillemet ouvrant
+            '”': '&rdquo;',  // Guillemet fermant
+            '«': '&laquo;',  // Guillemets français ouvrants
+            '»': '&raquo;'   // Guillemets français fermants
+        };
+
+        // Remplacer chaque caractère spécial par son entité HTML
+        return text.replace(/[’àâéèêçôîû…“”«»]/g, char => entityMap[char] || char);
+    }
+}
+
 
 // Exemple d'utilisation
 const asciiString = "72, 101, 108, 108, 111";
@@ -97,18 +138,26 @@ xmlhttp.onreadystatechange = function() {
   if (this.readyState == 4 && this.status == 200) {
     var myObj = JSON.parse(this.responseText);
    
-  //  console.log(myObj) ; 
+ 
 
  
 
 
 
-const decodedString = AsciiConverter.asciiToString(myObj[0].title_projet[0][0]);
- 
+ document.getElementById("title").innerHTML = myObj[0].title_projet ;
+ document.getElementById("title_h1").innerHTML =myObj[0].title_projet ;
 
-document.getElementById("title").innerText = decodedString ;
- 
 
+
+
+ 
+/*
+
+
+
+
+
+*/
   }
 };
 xmlhttp.open("GET", "../json.php/"+lastSegment, true);
