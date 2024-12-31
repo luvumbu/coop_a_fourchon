@@ -1,13 +1,13 @@
 <?php
 
-$databaseHandler = new DatabaseHandler($dbname, $username);
+$databaseHandler___ = new DatabaseHandler($dbname, $username);
 
 $id_sha1_user = $_SESSION["index"][3];
-$req_sql = "SELECT * FROM `$dbname` WHERE id_sha1_user ='$id_sha1_user' ";
+$req_sql___ = "SELECT * FROM `$dbname` WHERE id_sha1_user ='$id_sha1_user' ";
 
-$databaseHandler->getListOfTables_Child($dbname);
-$databaseHandler->getDataFromTable2X($req_sql);
-$databaseHandler->get_dynamicVariables();
+$databaseHandler___->getListOfTables_Child($dbname);
+$databaseHandler___->getDataFromTable2X($req_sql___);
+$databaseHandler___->get_dynamicVariables();
 
 
 
