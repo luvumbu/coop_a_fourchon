@@ -51,6 +51,8 @@ $databaseHandler = new DatabaseHandler($dbname, $username);
 </div>
 <?php 
     
+
+    require_once 'view/mon_profil.php' ; 
 if (isset($_SESSION["home"])) {
 
  
