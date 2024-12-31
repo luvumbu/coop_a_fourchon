@@ -95,7 +95,9 @@ $name_projet = $databaseHandler->tableList_info;
         if ($_SESSION["index"][0] == $dbname && $_SESSION["index"][1]  == $username) {
 
           echo '<div class="display_none">';
-          require_once 'view/admin_form_creation_table_bdd.php';
+         ?>
+<link rel="stylesheet" href="view/admin_form_creation_table_bdd.css">
+         <?php
           echo '</div>';
         } else {
         }
@@ -120,7 +122,7 @@ $name_projet = $databaseHandler->tableList_info;
   Voir tous les projet
 </h3>
  </a>
-  <script src="Class/js.js"></script>
+ 
   <?php
   // require_once 'log/log.php';
   // requare all 

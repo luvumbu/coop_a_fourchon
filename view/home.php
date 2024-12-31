@@ -204,9 +204,7 @@ var_dump($dynamicVariables['date_inscription_projet']) ;
                 case "MES PROJET":
                     location.reload();
                     break;
-                case y:
-                    // code block
-                    break;
+ 
                 default:
                     // code block
             }
