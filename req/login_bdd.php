@@ -76,6 +76,7 @@ else {
     // Définition des colonnes et de leurs types dans un tableau associatif
     $columns = [
         "id_user"               => "INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY",
+        "date_user"          => "LONGTEXT NOT NULL",
         "id_sha1_user"          => "LONGTEXT NOT NULL",
         "id_parent_user"        => "LONGTEXT NOT NULL",
         "description_user"      => "LONGTEXT NOT NULL",

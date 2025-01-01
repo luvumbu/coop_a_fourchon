@@ -19,7 +19,7 @@ $cheminDossier = '../src/img/' . $id_sha1_user_projet;
 
 $_SESSION["img"] = time();
 
-
+ 
 
 
 // Vérification si le dossier existe

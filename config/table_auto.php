@@ -5,6 +5,8 @@ require_once '../Class/FileHandler.php';
 
 $databaseHandler = new DatabaseHandler($dbname,$username); 
 $databaseHandler->set_column_names("id_user");
+$databaseHandler->set_column_names("date_user");
+
 $databaseHandler->set_column_names("id_sha1_user");
 $databaseHandler->set_column_names("id_parent_user");
 $databaseHandler->set_column_names("description_user");
@@ -18,6 +20,8 @@ $databaseHandler->set_column_names("activation_user");
 $databaseHandler->set_column_names("date_inscription_user");
 $databaseHandler->set_column_types("INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY");
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
+$databaseHandler->set_column_types("LONGTEXT NOT NULL");
+
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
 $databaseHandler->set_column_types("LONGTEXT NOT NULL");
