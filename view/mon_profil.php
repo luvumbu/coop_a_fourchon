@@ -14,13 +14,32 @@ $databaseHandler___->get_dynamicVariables();
 $title_user = $dynamicVariables['title_user'][0];
 
 $description_user = $dynamicVariables['description_user'][0];
+$img_user = str_replace("../","",$dynamicVariables['img_user'][0]);
 
+//$img_user  ="src/img/1735162964.jpeg" ; 
 
 ?>
 
 <div class="mon_profil">
     <h2>Profil</h2>
+<div class="mon_profil_img">
 
+<?php 
+if($img_user==""){
+?>
+    <img  class="<?= $index_img_user?>" onclick="a(this)" title="<?= $_SESSION["index"][3] ?>" src="https://i.pinimg.com/736x/cd/a5/15/cda5158cf5757f132cf26a8ca614734e.jpg" alt="" srcset="">
+
+<?php 
+}
+else {
+    ?>
+    <img  class="<?= $index_img_user?>" onclick="a(this)" title="<?= $_SESSION["index"][3] ?>" src="<?= $img_user ?>" alt="" srcset="">
+
+    <?php 
+}
+
+?>
+</div>
     <div>
         <b>Pseudo</b>
     </div>
@@ -30,8 +49,12 @@ $description_user = $dynamicVariables['description_user'][0];
         <b>Déscription</b>
     </div>
     <textarea id="description_user" onkeyup="mon_profil_f()"><?= $description_user ?></textarea>
-</div>
 
+
+<a href="control.php">
+<img width="100" height="100" src="https://img.icons8.com/dotty/100/visible.png" alt="visible"/>
+</a>
+</div>
 
 <style>
     .mon_profil {
@@ -44,6 +67,17 @@ $description_user = $dynamicVariables['description_user'][0];
         border: 1px solid rgba(0, 0, 0, 0.2);
         margin-top: 18px;
         margin-bottom: 18px;
+    }
+    .mon_profil_img img {
+        width: 50%;
+       width: 100%;
+    }
+    .mon_profil_img{
+        width: 50%;
+        margin: auto;
+    }
+    .mon_profil_img:hover{
+        cursor: pointer;
     }
 </style>
 

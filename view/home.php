@@ -32,6 +32,9 @@ $index_img = $index . $__ . "img" . $__;
 $index_calendar = $index . $__ . "calendar" . $__;
 
 $index_visivility = $index . $__ . "visivility" . $__;
+
+
+$index_img_user = $index . $__ . "img_2" . $__;
 $databaseHandler = new DatabaseHandler($dbname, $username);
 
 ?>
@@ -142,6 +145,9 @@ var_dump($dynamicVariables['date_inscription_projet']) ;
 
         var element = afficherValeursFormattees2(_this.className, __);
         console.log(element);
+
+
+       
         var ok = new Information("config/general_function.php"); // création de la classe 
 
         // valeur si update       
@@ -173,10 +179,10 @@ var_dump($dynamicVariables['date_inscription_projet']) ;
         ok.add("general_function", element[4]); // ajout de l'information pour lenvoi 
         ok.add("tagName", _this.tagName); // ajout de l'information pour lenvoi 
         ok.add("id_sha1_projet", element[5]); // ajout de l'information pour lenvoi 
-        console.log(ok.info()); // demande l'information dans le tableau
-        ok.push(); // envoie l'information au code pkp 
+     console.log(ok.info()); // demande l'information dans le tableau
+     ok.push(); // envoie l'information au code pkp 
 
-
+ 
         if (_this.tagName == "IMG") {
             var add_img = document.getElementById("add_img").className;
 

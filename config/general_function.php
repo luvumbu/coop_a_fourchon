@@ -5,7 +5,8 @@ require_once "../Class/dbCheck.php";
 require_once "../Class/DatabaseHandler.php";
 require_once "../Class/AsciiConverter.php";
 
-
+date_default_timezone_set('Europe/Paris');
+$date_inscription_projet = date("Y-m-d H:i:s");
     // Chemin du dossier à créer
 
 $general_function =  $_POST["general_function"]; // const
@@ -57,11 +58,12 @@ $_SESSION["home"] = "";
 switch ($general_function) {
   case "insert":
 
-    $databaseHandler->action_sql("INSERT INTO `projet` (id_sha1_user_projet,id_user_projet,id_sha1_projet) VALUES ('$id_sha1_user_projet','$id_user_projet','$id_sha1_projet_time')");
+    $databaseHandler->action_sql("INSERT INTO `projet` (id_sha1_user_projet,id_user_projet,id_sha1_projet,date_inscription_projet) VALUES ('$id_sha1_user_projet','$id_user_projet','$id_sha1_projet_time','$date_inscription_projet')");
     $_SESSION["home"] = "insert";
 
     break;
   case "update":
+
 
 
     $value = AsciiConverter::stringToAscii($value); // Affiche "72,101,108,108,111"
@@ -76,6 +78,9 @@ switch ($general_function) {
 
 
 
+    break;
+      case "img_2":
+        $_SESSION["img_2"] = "img_2";
     break;
   case "all":
     $_SESSION["home"] = "all";

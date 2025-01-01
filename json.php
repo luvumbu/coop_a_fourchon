@@ -64,6 +64,7 @@ $databaseHandler->get_dynamicVariables();
 //echo json_encode($dynamicVariables['id_sha1_projet'], JSON_PRETTY_PRINT);
 // Première étape : Assignation des valeurs des variables dynamiques
 $id_projet_ = $dynamicVariables['id_projet'];
+$id_sha1_user_projet_ = $dynamicVariables['id_sha1_user_projet'];
 $activation_projet_ = $dynamicVariables['activation_projet'];
 $id_general_ = $dynamicVariables['id_general'];
 $id_user_projet_ = $dynamicVariables['id_user_projet'];
@@ -205,6 +206,52 @@ $publication_date_h_projet_2 = $publication_date_h_projet_;
 $shop_projet_2 = $shop_projet_;
 $date_inscription_projet_2 = $date_inscription_projet_;
 
+
+
+
+
+
+
+
+
+
+$id_sha1_user_projet_x =$id_sha1_user_projet_[0] ; 
+
+$databaseHandler = new DatabaseHandler($dbname, $username);
+$req_sql = " SELECT * FROM `$dbname` WHERE id_sha1_user ='$id_sha1_user_projet_x'   ";
+
+// Récupération des informations des tables enfant liées
+$databaseHandler->getListOfTables_Child($dbname);
+// La méthode `getListOfTables_Child` récupère les tables enfants associées à `$nom_table`.
+// Récupération des données de la table via une méthode spécialisée
+$databaseHandler->getDataFromTable2X($req_sql);
+// La méthode `getDataFromTable2X` exécute la requête SQL et prépare les données à être utilisées dynamiquement.
+// Génération de variables dynamiques à partir des données récupérées
+$databaseHandler->get_dynamicVariables();
+// La méthode `get_dynamicVariables` transforme les données récupérées en variables dynamiques disponibles dans le tableau `$dynamicVariables`.
+// Exemple : affichage d'une variable dynamique spécifique
+//echo json_encode($dynamicVariables['id_sha1_projet'], JSON_PRETTY_PRINT);
+
+
+$id_user_ = $dynamicVariables['id_user'];
+$id_sha1_user_ = $dynamicVariables['id_sha1_user'];
+$id_parent_user_ = $dynamicVariables['id_parent_user'];
+$description_user_ = $dynamicVariables['description_user'];
+$title_user_ = $dynamicVariables['title_user'];
+$img_user_ = $dynamicVariables['img_user'];
+$nom_user_ = $dynamicVariables['nom_user'];
+$prenom_user_ = $dynamicVariables['prenom_user'];
+$email_user_ = $dynamicVariables['email_user'];
+$activation_user_ = $dynamicVariables['activation_user'];
+$date_inscription_user_= $dynamicVariables['date_inscription_user	'];
+
+ 
+
+ 
+ 
+// Première étape : Assignation des valeurs des variables dynamiques
+
+
 $x=array();
  
 $kount = count($title_projet_1) ;
@@ -229,6 +276,23 @@ $title_projet_2 = $x ;
 // Création du tableau final avec les deux groupes dans des tableaux
 $finalArray = [
 
+
+    [
+         "id_user" => $id_user_,
+        "id_sha1_user" => $id_sha1_user_,
+        "id_parent_user" => $id_parent_user_,
+        "description_user" => $description_user_,
+        "title_user" => $title_user_,
+        "img_user" => $img_user_,
+        "nom_user" => $nom_user_,
+        "prenom_user" => $prenom_user_,
+        "email_user" => $email_user_,
+        "activation_user" => $activation_user_,
+        
+        "date_inscription_use" => $date_inscription_user
+
+    ]
+    ,
     [
         "id_projet" => $id_projet_1,
         "activation_projet" => $activation_projet_1,
