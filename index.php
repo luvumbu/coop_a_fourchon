@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@ session_start();
 <script src="Class/Js.js"></script>
 <script>
   window.onload = function() {
-   document.getElementById("body").className="";
+    document.getElementById("body").className = "";
 
   };
 </script>
@@ -31,7 +32,7 @@ $visible_2 = "https://img.icons8.com/ios/50/visible--v1.png";
 
 <body class="display_none" id="body">
 
- <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="css.css">
   <?php
 
 
@@ -63,16 +64,16 @@ $name_projet = $databaseHandler->tableList_info;
   $path = "Class/dbCheck.php";
   if (checkFileExists($path)) {
     require_once  'Class/dbCheck.php';
-  
-  $databaseHandler = new DatabaseHandler($dbname, $username);
+
+    $databaseHandler = new DatabaseHandler($dbname, $username);
     if ($databaseHandler->verif != 1) {
       require_once 'view/verifyConnection.php';
       if (file_exists($path)) {
         // Tente de supprimer le fichier
         if (unlink($path)) {
   ?>
-  <meta http-equiv="refresh" content="0"> <!-- Rafraîchit toutes les 5 secondes -->
-  <?php
+          <meta http-equiv="refresh" content="0"> <!-- Rafraîchit toutes les 5 secondes -->
+        <?php
         }
       }
     } else {
@@ -85,7 +86,7 @@ $name_projet = $databaseHandler->tableList_info;
         delete_file("Class/dbCheck.php");
         ?>
         <meta http-equiv="refresh" content="0"> <!-- Rafraîchit toutes les 5 secondes -->
-  <?php
+        <?php
       }
       // require_once 'view/form_creation_table_bdd.php';
       //  require_once 'view/test.php';
@@ -95,34 +96,26 @@ $name_projet = $databaseHandler->tableList_info;
         if ($_SESSION["index"][0] == $dbname && $_SESSION["index"][1]  == $username) {
 
           echo '<div class="display_none">';
-         ?>
-<link rel="stylesheet" href="view/admin_form_creation_table_bdd.css">
-         <?php
+        ?>
+          <link rel="stylesheet" href="view/admin_form_creation_table_bdd.css">
+  <?php
           echo '</div>';
         } else {
         }
       } else {
-       
         require_once 'view/verifyConnection.php';
-  
-
       }
     }
   } else {
-
-    
- 
     require_once 'view/login_bdd.php';
   }
   ?>
-<a href="blog.php/1" >
+  <a href="blog.php/1">
+    <h3 class="projet_all">
+      Voir tous les projet
+    </h3>
+  </a>
 
-
-<h3 class="projet_all">
-  Voir tous les projet
-</h3>
- </a>
- 
   <?php
   // require_once 'log/log.php';
   // requare all 
@@ -131,12 +124,11 @@ $name_projet = $databaseHandler->tableList_info;
 
 
   <style>
-    .projet_all{
-      background-color:  #5264a9;
+    .projet_all {
+      background-color: #5264a9;
       color: white;
       padding: 15px;
       box-shadow: 1px 1px 8px black;
-      float:left ; 
+      float: left;
     }
   </style>
-

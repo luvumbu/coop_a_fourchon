@@ -287,8 +287,7 @@ $finalArray = [
         "nom_user" => $nom_user_,
         "prenom_user" => $prenom_user_,
         "email_user" => $email_user_,
-        "activation_user" => $activation_user_,
-        
+        "activation_user" => $activation_user_,        
         "date_inscription_use" => $date_inscription_user
 
     ]
