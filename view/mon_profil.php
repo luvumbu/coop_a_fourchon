@@ -48,6 +48,9 @@ else {
     <div>
         <b>Déscription</b>
     </div>
+    <div onclick="add_info_user(this)" title="<?= $_SESSION['index'][3] ?>">
+        <img width="50" height="50" src="https://img.icons8.com/ios-filled/50/plus.png" alt="plus">
+    </div>
     <textarea id="description_user" onkeyup="mon_profil_f()"><?= $description_user ?></textarea>
 
 
@@ -100,6 +103,19 @@ ok.push(); // envoie l'information au code pkp
 
 
 
+
+    }
+
+
+    function add_info_user(){
+ 
+ 
+var ok = new Information("config/add_info_user.php"); // création de la classe 
+
+ 
+ 
+console.log(ok.info()); // demande l'information dans le tableau
+ok.push(); // envoie l'information au code pkp 
 
     }
 </script>
