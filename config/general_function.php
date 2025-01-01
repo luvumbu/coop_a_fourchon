@@ -89,6 +89,11 @@ switch ($general_function) {
     $databaseHandler->action_sql("DELETE FROM  `projet` WHERE   `id_sha1_projet` = '$id_sha1_projet'");
 
     break;
+
+    case "profil":
+      $_SESSION["home"] = "profil";
+  
+      break;
  
 
 

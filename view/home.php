@@ -33,6 +33,9 @@ $index_calendar = $index . $__ . "calendar" . $__;
 
 $index_visivility = $index . $__ . "visivility" . $__;
 
+$index_profil = $index . $__ . "profil" . $__;
+
+
 
 $index_img_user = $index . $__ . "img_2" . $__;
 $databaseHandler = new DatabaseHandler($dbname, $username);
@@ -46,6 +49,8 @@ $databaseHandler = new DatabaseHandler($dbname, $username);
    
       <div class="<?php echo  $index_insert ?>" onclick="a(this)">option insert</div>
     <div class="<?php echo  $index_all ?>" onclick="a(this)">MES PROJET</div>
+    <div class="<?php echo  $index_profil ?>" onclick="a(this)">MON PROFIL</div>
+
  
    
 
@@ -55,22 +60,31 @@ $databaseHandler = new DatabaseHandler($dbname, $username);
 <?php 
     
 
-    require_once 'view/mon_profil.php' ; 
+   
+
+    if($_SESSION["home"]=="profil") {
+         require_once 'view/mon_profil.php' ; 
+    }
 if (isset($_SESSION["home"])) {
 
  
     switch ($_SESSION["home"]) {
-        case "insert":
+    
         case "all":
 
          
-       $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' AND activation_projet ='' AND id_sha1_parent_projet ='' ";
-      
+       $req_sql = "SELECT * FROM projet WHERE id_sha1_user_projet='$index_3' AND activation_projet ='' AND id_sha1_parent_projet =''  ";
+       break;
+       case "insert":
+
+       $req_sql = "SELECT * FROM `projet` WHERE id_sha1_user_projet='$index_3'  ORDER BY  `id_projet` DESC LIMIT 1";
+
        break;
             case "":
+            case "profil":
        
             $id_sha1_projet =  $_SESSION["id_sha1_projet"];
-            $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' AND activation_projet =''  ";
+            $req_sql = "SELECT * FROM projet WHERE id_sha1_projet ='$id_sha1_projet' AND activation_projet ='' ORDER BY  `id_projet`  ";
             break;
         }
  
@@ -210,6 +224,7 @@ var_dump($dynamicVariables['date_inscription_projet']) ;
             switch (_this.innerHTML) {
                 case "option insert":
                 case "MES PROJET":
+                case "MON PROFIL":
                     location.reload();
                     break;
  
