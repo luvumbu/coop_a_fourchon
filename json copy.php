@@ -279,7 +279,7 @@ for($a = 0 ; $a <$kount ; $a++) {
 
 
 
-/*
+
 var_dump($id_user_) ; 
 var_dump($id_projet_1) ; 
 var_dump($id_sha1_projet_2) ; 
@@ -288,7 +288,7 @@ var_dump($id_sha1_projet_2) ;
 
 echo '_________________________________________<br/>' ; 
 
-*/
+
 
 
 
@@ -412,54 +412,10 @@ $databaseHandler->get_dynamicVariables();
 //$id_projet_3 = $dynamicVariables['id_projet'];
 
 
-//var_dump($dynamicVariables['id_projet']);
+var_dump($dynamicVariables['id_projet']);
 
 
-$valeurs[$id_sha1_projet_2[$b]] =  
-  //  [$dynamicVariables['id_projet'],$dynamicVariables['activation_projet']];
-
-
-    
-  [
-    "id_projet" => $dynamicVariables['id_projet'],    
-    "activation_projet" => $dynamicVariables['activation_projet'],
-    "id_general" => $dynamicVariables['id_general'],
-    "id_user_projet" => $dynamicVariables['id_user_projet'],
-    "id_master_projet" => $dynamicVariables['id_master_projet'],
-
-    "id_sha1_projet" => $dynamicVariables['id_sha1_projet'],    
-    "id_sha1_parent_projet" => $dynamicVariables['id_sha1_parent_projet'],
-    "id_sha1_parent_projet2" => $dynamicVariables['id_sha1_parent_projet2'],
-    "cryptage_projet" => $dynamicVariables['cryptage_projet'],
-    "input_cryptage_projet" => $dynamicVariables['input_cryptage_projet'],
-
-    "name_projet" => $dynamicVariables['name_projet'],    
-    "name_extention_projet" => $dynamicVariables['name_extention_projet'],
-    "title_projet" => $dynamicVariables['title_projet'],
-    "description_projet" => $dynamicVariables['description_projet'],
-    "password_projet" => $dynamicVariables['password_projet'],
-
-    "visibility_1_projet" => $dynamicVariables['visibility_1_projet'],    
-    "visibility_2_projet" => $dynamicVariables['visibility_2_projet'],
-    "screen_shoot_projet" => $dynamicVariables['screen_shoot_projet'],
-    "img_projet_src1" => $dynamicVariables['img_projet_src1'],
-    "img_projet_src2" => $dynamicVariables['img_projet_src2'],
-
-    "img_projet_visibility" => $dynamicVariables['img_projet_visibility'],    
-    "group_projet" => $dynamicVariables['group_projet'],
-    "heure_debut_projet" => $dynamicVariables['heure_debut_projet'],
-    "date_debut_projet" => $dynamicVariables['date_debut_projet'],
-    "dure_projet" => $dynamicVariables['dure_projet'],
-
-    "publication_date_j_projet" => $dynamicVariables['publication_date_j_projet'],    
-    "publication_date_h_projet" => $dynamicVariables['publication_date_h_projet'],
-    "shop_projet" => $dynamicVariables['shop_projet'],
-    "date_inscription_projet" => $dynamicVariables['date_inscription_projet']
- 
-  ] 
-  
-  ;
-
+$valeurs['info_'.$id_sha1_projet_2[$b]] = [$dynamicVariables['id_projet'],$dynamicVariables['activation_projet']];
 
 /*
 
@@ -511,7 +467,7 @@ $finalArray = [
 
 
     [
-        "id_user" => $id_user_,
+         "id_user" => $id_user_,
         "id_sha1_user" => $id_sha1_user_,
         "id_parent_user" => $id_parent_user_,
         "description_user" => $description_user_,
@@ -585,14 +541,13 @@ $finalArray = [
         "publication_date_h_projet" => $publication_date_h_projet_2,
         "shop_projet" => $shop_projet_2,
         "date_inscription_projet" => $date_inscription_projet_2
-    ],
-    $valeurs
+    ]
 
 
 ];
- echo json_encode($finalArray, JSON_PRETTY_PRINT);
+//echo json_encode($finalArray, JSON_PRETTY_PRINT);
 
 
 
-//var_dump($valeurs) ; 
+var_dump($valeurs) ; 
  

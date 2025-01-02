@@ -40,16 +40,28 @@ $index_profil = $index . $__ . "profil" . $__;
 $index_img_user = $index . $__ . "img_2" . $__;
 $databaseHandler = new DatabaseHandler($dbname, $username);
 
+
+
+$header_text_1 ="Option insert";
+$header_text_2 ="MES PROJET";
+$header_text_3 ="MON PROFIL";
 ?>
 
+<script>
 
-<div class="black_element" onkeyup="">
+const header_text_1= '<?=$header_text_1 ?>';
+const header_text_2= '<?=$header_text_2 ?>';
+const header_text_3= '<?=$header_text_3 ?>';
+
+</script>
+
+<div class="header_element" onkeyup="">
   
  
    
-      <div class="<?php echo  $index_insert ?>" onclick="a(this)">option insert</div>
-    <div class="<?php echo  $index_all ?>" onclick="a(this)">MES PROJET</div>
-    <div class="<?php echo  $index_profil ?>" onclick="a(this)">MON PROFIL</div>
+    <div class="<?php echo  $index_insert ?>" onclick="a(this)"><?= $header_text_1 ?></div>
+    <div class="<?php echo  $index_all ?>" onclick="a(this)"><?= $header_text_2 ?></div>
+    <div class="<?php echo  $index_profil ?>" onclick="a(this)"><?= $header_text_3 ?></div>
 
  
    
@@ -222,9 +234,9 @@ var_dump($dynamicVariables['date_inscription_projet']) ;
 
 
             switch (_this.innerHTML) {
-                case "option insert":
-                case "MES PROJET":
-                case "MON PROFIL":
+                case header_text_1:
+                case header_text_2:
+                case header_text_3:
                     location.reload();
                     break;
  
@@ -254,21 +266,22 @@ var_dump($dynamicVariables['date_inscription_projet']) ;
 
 </div>
 <style>
-    .black_element {
-        background-color: black;
+    .header_element {
+        background-color: #5b8fbc;
         color: white;
         display: flex;
         justify-content: space-around;
         margin-bottom: 75px;
     }
 
-    .black_element div {
+    .header_element div {
         padding: 17px;
     }
 
-    .black_element div:hover {
+    .header_element div:hover {
         background-color: white;
-        color: black;
+        color: #5b8fbc;
+        cursor: pointer;
     }
 
     .all_doc {

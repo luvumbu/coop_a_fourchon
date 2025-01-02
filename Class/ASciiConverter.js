@@ -42,6 +42,8 @@ class AsciiConverter {
     }
 }
 
+/*
+
 // Exemple d'utilisation
 const asciiString = "72, 101, 108, 108, 111";
 const string = "Hello";
@@ -53,3 +55,4 @@ console.log(decodedString); // Affiche "Hello"
 // Conversion de chaîne de caractères à ASCII
 const asciiValues = AsciiConverter.stringToAscii(string);
 console.log(asciiValues); // Affiche "72,101,108,108,111"
+*/
