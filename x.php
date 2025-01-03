@@ -10,11 +10,22 @@
  <body>
   
 
+ <style>
+  .title_h1 {
+    text-align: center;
+  }
+ </style>
+
 <p id="demo"></p>
  
 
-<h1 id="title_h1"></h1>
-<h1>Coop’ à Fourchon</h1>
+<h1 id="title_h1" class="title_h1"></h1>
+ 
+
+
+<h2 class="title_h2" id="title_h2"></h2>
+<input type="text">
+
 <script>
  
 
@@ -70,8 +81,17 @@ xmlhttp.onreadystatechange = function() {
 
 console.log(myObj) ; 
 
+
+document.getElementById("title_h1").innerText = myObj.projet_01.finalArray_name1['title_projet'];  
  
+document.getElementById("title").innerText = myObj.projet_01.finalArray_name1['title_projet'];  
  
+
+
+document.getElementById("title_h2").innerText = myObj.projet_01.finalArray_name2['title_projet'];  
+ 
+
+
 /*
 
 

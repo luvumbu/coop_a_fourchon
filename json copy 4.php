@@ -67,7 +67,7 @@ function General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info
             $description_projet = AsciiConverter::asciiToString($databaseHandler->tableList_info2[14][0]); // Affiche "Hello"
 
 
-           $finalArray_name1 =  [
+            $name =  [
                 "id_projet" => $databaseHandler->tableList_info2[0],
                 "activation_projet" => $databaseHandler->tableList_info2[1],
                 "id_general" => $databaseHandler->tableList_info2[2],
@@ -101,90 +101,12 @@ function General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info
 
 
             ];
-
-
-
-            $databaseHandler = new DatabaseHandler($username, $dbname);
-
-            $req_sql = "SELECT * FROM `$tabe_name` WHERE `id_sha1_parent_projet` ='$tabe_name_result' ";
-
-            // Récupération des informations des tables enfant liées
-            $databaseHandler->getListOfTables_Child($nom_table);
-            // La méthode `getListOfTables_Child` récupère les tables enfants associées à `$nom_table`.
-
-            // Récupération des données de la table via une méthode spécialisée
-            $databaseHandler->getDataFromTable2X($req_sql);
-            // La méthode `getDataFromTable2X` exécute la requête SQL et prépare les données à être utilisées dynamiquement.
-
-            // Génération de variables dynamiques à partir des données récupérées
-            $databaseHandler->get_dynamicVariables();
-            // La méthode `get_dynamicVariables` transforme les données récupérées en variables dynamiques disponibles dans le tableau `$dynamicVariables`.
-            // Exemple : affichage d'une variable dynamique spécifique
-
-
-
-
-            $title_projet = AsciiConverter::asciiToString($databaseHandler->tableList_info2[13][0]); // Affiche "Hello"
-            $description_projet = AsciiConverter::asciiToString($databaseHandler->tableList_info2[14][0]); // Affiche "Hello"
-
-
-           $finalArray_name2 =  [
-                "id_projet" => $databaseHandler->tableList_info2[0],
-                "activation_projet" => $databaseHandler->tableList_info2[1],
-                "id_general" => $databaseHandler->tableList_info2[2],
-                "id_user_projet" => $databaseHandler->tableList_info2[3],
-                "id_sha1_user_projet" => $databaseHandler->tableList_info2[4],
-                "id_sha1_projet" => $databaseHandler->tableList_info2[5],
-                "id_sha1_parent_projet" => $databaseHandler->tableList_info2[6],
-                "id_sha1_parent_projet2" => $databaseHandler->tableList_info2[7],
-                "cryptage_projet" => $databaseHandler->tableList_info2[8],
-                "input_cryptage_projet" => $databaseHandler->tableList_info2[9],
-                "name_projet" => $databaseHandler->tableList_info2[10],
-                "name_extention_projet" => $databaseHandler->tableList_info2[11],
-                "statue_projet" => $databaseHandler->tableList_info2[12],
-                "title_projet" => $title_projet,
-                "description_projet" => $description_projet,
-                "password_projet" => $databaseHandler->tableList_info2[15],
-                "visibility_1_projet" => $databaseHandler->tableList_info2[16],
-                "visibility_2_projet" => $databaseHandler->tableList_info2[17],
-                "screen_shoot_projet" => $databaseHandler->tableList_info2[18],
-                "img_projet_src1" => $databaseHandler->tableList_info2[19],
-                "img_projet_src2" => $databaseHandler->tableList_info2[20],
-                "img_projet_visibility" => $databaseHandler->tableList_info2[21],
-                "group_projet" => $databaseHandler->tableList_info2[22],
-                "heure_debut_projet" => $databaseHandler->tableList_info2[23],
-                "date_debut_projet" => $databaseHandler->tableList_info2[24],
-                "dure_projet" => $databaseHandler->tableList_info2[25],
-                "publication_date_j_projet" => $databaseHandler->tableList_info2[26],
-                "publication_date_h_projet" => $databaseHandler->tableList_info2[27],
-                "shop_projet" => $databaseHandler->tableList_info2[28],
-                "date_inscription_projet" => $databaseHandler->tableList_info2[29]
-
-
-            ];
-
-
-
-
-            $finalArray_name =  [
-                "finalArray_name1" => $finalArray_name1,
-                "finalArray_name2" => $finalArray_name2
-            ];
-
-
-
-            
-            
 
             break;
 
         case 'child':
 
 
-
- echo "child 1" ; 
-
-/*
 
             $req_sql = "SELECT * FROM `$tabe_name` WHERE 1";
 
@@ -208,7 +130,7 @@ function General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info
             $description_projet = AsciiConverter::asciiToString($databaseHandler->tableList_info2[14][0]); // Affiche "Hello"
 
 
-           $finalArray_name =  [
+            $name =  [
                 "id_projet" => $databaseHandler->tableList_info2[0],
                 "activation_projet" => $databaseHandler->tableList_info2[1],
                 "id_general" => $databaseHandler->tableList_info2[2],
@@ -242,16 +164,13 @@ function General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info
 
 
             ];
-            */
 
             break;
 
         case 'root':
 
- 
 
-
-           $req_sql = "SELECT * FROM `root` WHERE `id_sha1_user` ='$tabe_name_result' ";
+            $req_sql = "SELECT * FROM `root` WHERE `id_sha1_user` ='$tabe_name_result' ";
             // Récupération des informations des tables enfant liées
             $databaseHandler->getListOfTables_Child("root");
             // La méthode `getListOfTables_Child` récupère les tables enfants associées à `$nom_table`.
@@ -272,10 +191,7 @@ function General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info
 
 
 
-            
-
-
-           $finalArray_name =  [
+            $name =  [
                 "id_user" => $databaseHandler->tableList_info2[0][0],
                 "date_user" => $databaseHandler->tableList_info2[1][0],
                 "id_sha1_user" => $databaseHandler->tableList_info2[2][0],
@@ -292,7 +208,7 @@ function General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info
             ];
             break;
     }
-    return$finalArray_name;
+    return $name;
 }
 
 
@@ -300,18 +216,113 @@ function General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info
 
 
 $nom_table = "projet";
-$projet_01 = General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info, $tabe_name_result, $nom_table, $nom_table);
-$projet_01_id_sha1_user_projet = $projet_01['finalArray_name1']['id_sha1_user_projet'][0];
- 
+$projet_01 = General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info, $tabe_name_result, $nom_table, 'projet');
+$projet_01_id_sha1_user_projet = $projet_01['id_sha1_user_projet'][0];
+
 $nom_table = "root";
-$information_user = General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info, $projet_01_id_sha1_user_projet, $dbname, $nom_table);
+$root = General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info, $projet_01_id_sha1_user_projet, $nom_table, 'root');
+$nom_table = "projet";
+$resul_child1 = $tabe_name_result;
+
+$child_1 = General_DatabaseHandler($username, $dbname, $tabe_name, $tabe_name_info, $resul_child1, $nom_table, 'child');
+
+$projet_01_id_sha1_user_projet = $projet_01['id_sha1_user_projet'];
+$kount_child = count($child_1['id_sha1_projet']);
+$name_total = $child_1['id_sha1_projet'];
  
+
+ 
+
+
+$nom_table = "child";
+
+
+
+function general_child($dbname,$username,$val_tab ,$push_element,$tabe_name_result ) {
+
+ 
+
+    if($val_tab!=$tabe_name_result){
+
+
+            $nom_table = "projet"; // Nom de la table cible
+        // Création d'une instance de la classe `DatabaseHandler`
+        $databaseHandler = new DatabaseHandler($dbname, $username);
+        // Requête SQL pour récupérer toutes les données de la table
+        $req_sql = "SELECT * FROM `$nom_table` WHERE `id_sha1_parent_projet` = '$val_tab' ";
+        // Récupération des informations des tables enfant liées
+        $databaseHandler->getListOfTables_Child($nom_table);
+        // La méthode `getListOfTables_Child` récupère les tables enfants associées à `$nom_table`.
+        // Récupération des données de la table via une méthode spécialisée
+        $databaseHandler->getDataFromTable2X($req_sql);
+        // La méthode `getDataFromTable2X` exécute la requête SQL et prépare les données à être utilisées dynamiquement.
+        // Génération de variables dynamiques à partir des données récupérées
+        $databaseHandler->get_dynamicVariables();
+        // La méthode `get_dynamicVariables` transforme les données récupérées en variables dynamiques disponibles dans le tableau `$dynamicVariables`.
+        // Exemple : affichage d'une variable dynamique spécifique
+     //   var_dump($dynamicVariables['id_projet']);
+        // `id_sha1_projet` est une clé générée dynamiquement qui correspond à une colonne ou une donnée récupérée dans la table.
+        $title_projet = AsciiConverter::asciiToString($databaseHandler->tableList_info2[5][0]); // Affiche "Hello"
+        $description_projet = AsciiConverter::asciiToString($databaseHandler->tableList_info2[6][0]); // Affiche "Hello"
+        $name =  [
+            "id_user" => $databaseHandler->tableList_info2[0],
+            "date_user" => $databaseHandler->tableList_info2[1],
+            "id_sha1_user" => $databaseHandler->tableList_info2[2],
+            "id_parent_user" => $databaseHandler->tableList_info2[3],
+            "description_user" => $databaseHandler->tableList_info2[4],
+            "title_user" => $title_projet,
+            "img_user" => $description_projet,
+            "nom_user" => $databaseHandler->tableList_info2[7],
+            "prenom_user" => $databaseHandler->tableList_info2[8],
+            "password_user" => $databaseHandler->tableList_info2[9],
+            "email_user" => $databaseHandler->tableList_info2[10],
+            "activation_user" => $databaseHandler->tableList_info2[11],
+            "date_inscription_user" => $databaseHandler->tableList_info2[12]
+        ];
+
+
+        array_push($push_element, $name);  
+        return $name ;  
+    
+   
+}
+}
+
+
+
+
+
+for($f = 0 ; $f <count($name_total) ; $f++){
+
+
+if($f==0) {
+$push_element = [] ;
+//var_dump($p) ;
+$result_child_child = [] ;
+}
+     $result_child_child[$name_total[$f]] =   general_child($dbname,$username,$name_total[$f],$push_element, $tabe_name_result) ; 
+}
+ 
+
+ 
+ 
+
+/*
+ 
+var_dump($projet_01);
+var_dump($root);
+ */
+
+
+
+// Création du tableau final avec les deux groupes dans des tableaux
 $finalArray = [
 
 
 
-    "root" => $information_user,
-    "projet_01"=> $projet_01
+    "root" => $projet_01,
+    "child_1"=> $child_1,
+    "child_2"=>  $result_child_child
 
 
 
